@@ -150,7 +150,7 @@
       document.getElementById('order-items-list').innerHTML = (order.items || []).map(i => `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.85rem;">
           <div style="display: flex; gap: 10px; align-items: center;">
-            <img src="../${i.image}" alt="${i.name}" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
+            <img src="${window.ChorbajarApp.resolveAssetPath(i.image)}" alt="${i.name}" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
             <div>
               <div style="font-weight: 600;">${i.name}</div>
               <div style="color: var(--text-muted); font-size: 0.75rem;">Qty: ${i.quantity} ${i.variant ? '• Variant: ' + i.variant : ''}</div>

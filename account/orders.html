@@ -157,7 +157,7 @@
               <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
                 <div style="display: flex; gap: 12px; align-items: center;">
                   ${(order.items || []).slice(0, 3).map(item => `
-                    <img src="../${item.image}" alt="${item.name}" title="${item.name}" style="width: 50px; height: 50px; border-radius: 4px; object-fit: cover; border: 1px solid var(--border);">
+                    <img src="${window.ChorbajarApp.resolveAssetPath(item.image)}" alt="${item.name}" title="${item.name}" style="width: 50px; height: 50px; border-radius: 4px; object-fit: cover; border: 1px solid var(--border);">
                   `).join('')}
                   <div>
                     <div style="font-weight: 600; font-size: 0.9rem;">${(order.items || []).length} Item(s)</div>

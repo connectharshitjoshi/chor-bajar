@@ -175,7 +175,7 @@
         <tr>
           <td>
             <div style="display: flex; gap: 12px; align-items: center;">
-              <img src="../${i.image}" alt="${i.name}" style="width: 44px; height: 44px; border-radius: 4px; object-fit: cover;">
+              <img src="${window.ChorbajarApp.resolveAssetPath(i.image)}" alt="${i.name}" style="width: 44px; height: 44px; border-radius: 4px; object-fit: cover;">
               <div>
                 <a href="../shop/product-details.html?id=${i.productId}" style="font-weight: 600; color: var(--text-main);">${i.name}</a>
                 ${i.variant ? `<div style="font-size: 0.75rem; color: var(--text-muted);">Variant: ${i.variant}</div>` : ''}

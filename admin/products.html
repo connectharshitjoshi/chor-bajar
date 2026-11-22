@@ -137,7 +137,7 @@
             <td style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.8rem;">#${p.id}</td>
             <td>
               <div style="display: flex; gap: 10px; align-items: center;">
-                <img src="../${p.image}" alt="${p.name}" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover; border: 1px solid var(--border);">
+                <img src="${window.ChorbajarApp.resolveAssetPath(p.image)}" alt="${p.name}" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover; border: 1px solid var(--border);">
                 <div>
                   <a href="../shop/product-details.html?id=${p.id}" target="_blank" style="font-weight: 600; color: var(--text-main); font-size: 0.85rem;" title="${p.name}">
                     ${p.name}

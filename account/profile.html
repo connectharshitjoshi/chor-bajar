@@ -90,13 +90,13 @@
       if (!window.ChorbajarApp.requireAuth()) return;
 
       const user = window.ChorbajarStorage.getCurrentUser();
-      let avatarBase64 = user.avatar || '../assets/harshit.png';
+      let avatarBase64 = user.avatar || 'assets/harshit.png';
 
-      document.getElementById('sidebar-user-avatar').src = avatarBase64;
+      document.getElementById('sidebar-user-avatar').src = window.ChorbajarApp.resolveAssetPath(avatarBase64);
       document.getElementById('sidebar-user-name').textContent = user.name;
       document.getElementById('sidebar-user-email').textContent = user.email;
 
-      document.getElementById('edit-avatar-preview').src = avatarBase64;
+      document.getElementById('edit-avatar-preview').src = window.ChorbajarApp.resolveAssetPath(avatarBase64);
       document.getElementById('profile-name').value = user.name;
       document.getElementById('profile-email').value = user.email;
       document.getElementById('profile-phone').value = user.phone || '9876543210';

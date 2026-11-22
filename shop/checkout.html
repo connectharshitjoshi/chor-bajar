@@ -297,7 +297,7 @@
       document.getElementById('checkout-items-count').textContent = cart.reduce((sum, i) => sum + i.quantity, 0);
       document.getElementById('checkout-items-mini-list').innerHTML = cart.map(i => `
         <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px; font-size: 0.85rem;">
-          <img src="../${i.image}" alt="${i.name}" style="width: 44px; height: 44px; border-radius: 4px; object-fit: cover;">
+          <img src="${window.ChorbajarApp.resolveAssetPath(i.image)}" alt="${i.name}" style="width: 44px; height: 44px; border-radius: 4px; object-fit: cover;">
           <div style="flex: 1;">
             <div style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 190px;">${i.name}</div>
             <div style="color: var(--text-muted); font-size: 0.75rem;">Qty: ${i.quantity} × ${window.ChorbajarApp.formatPrice(i.price)}</div>

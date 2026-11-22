@@ -8,6 +8,7 @@
 
   const STORAGE_KEYS = {
     INIT: 'chorbajar_initialized',
+    VERSION: 'chorbajar_data_version',
     PRODUCTS: 'chorbajar_products',
     USERS: 'chorbajar_users',
     CURRENT_USER: 'chorbajar_current_user',
@@ -47,48 +48,51 @@
       if (!initialized) {
         this.resetToDefaults();
       } else {
-        // Upgrade avatar to harshit.png and name to Harshit Joshi if previously saved with old defaults
-        const users = this.getUsers();
+        this.migrateAssetPaths();
+      }
+      localStorage.setItem(STORAGE_KEYS.VERSION, '2');
+    },
+
+    // Migrate any legacy paths or user info to current schema
+    migrateAssetPaths() {
+      // 1. Products
+      const products = getJSON(STORAGE_KEYS.PRODUCTS, null);
+      if (Array.isArray(products)) {
         let changed = false;
-        users.forEach(u => {
-          if (u.name === 'Rahul Sharma') {
-            u.name = 'Harshit Joshi';
+        products.forEach(p => {
+          if (p.image && !p.image.startsWith('assets/') && !p.image.startsWith('http') && !p.image.startsWith('data:')) {
+            p.image = 'assets/' + p.image.replace(/^(\.\.\/|\.\/)+/, '').replace(/^assets\//, '');
             changed = true;
           }
-          if (!u.avatar || u.avatar.includes('unsplash.com')) {
-            u.avatar = 'assets/harshit.png';
-            changed = true;
+          if (Array.isArray(p.images)) {
+            p.images = p.images.map(img => {
+              if (img && !img.startsWith('assets/') && !img.startsWith('http') && !img.startsWith('data:')) {
+                changed = true;
+                return 'assets/' + img.replace(/^(\.\.\/|\.\/)+/, '').replace(/^assets\//, '');
+              }
+              return img;
+            });
           }
         });
-        if (changed) setJSON(STORAGE_KEYS.USERS, users);
+        if (changed) setJSON(STORAGE_KEYS.PRODUCTS, products);
+      }
 
-        const current = this.getCurrentUser();
-        if (current) {
-          let currChanged = false;
-          if (current.name === 'Rahul Sharma') {
-            current.name = 'Harshit Joshi';
-            currChanged = true;
-          }
-          if (!current.avatar || current.avatar.includes('unsplash.com')) {
-            current.avatar = 'assets/harshit.png';
-            currChanged = true;
-          }
-          if (currChanged) this.setCurrentUser(current, true);
-        }
-
-        // Migrate addresses if any had old default name
-        const addresses = getJSON(STORAGE_KEYS.ADDRESSES, []);
-        let addrChanged = false;
-        addresses.forEach(a => {
-          if (a.fullName && a.fullName.includes('Rahul Sharma')) {
-            a.fullName = a.fullName.replace('Rahul Sharma', 'Harshit Joshi');
-            addrChanged = true;
+      // 2. Cart
+      const cart = getJSON(STORAGE_KEYS.CART, null);
+      if (Array.isArray(cart)) {
+        let cartChanged = false;
+        cart.forEach(item => {
+          if (item.image && !item.image.startsWith('assets/') && !item.image.startsWith('http') && !item.image.startsWith('data:')) {
+            item.image = 'assets/' + item.image.replace(/^(\.\.\/|\.\/)+/, '').replace(/^assets\//, '');
+            cartChanged = true;
           }
         });
-        if (addrChanged) setJSON(STORAGE_KEYS.ADDRESSES, addresses);
+        if (cartChanged) setJSON(STORAGE_KEYS.CART, cart);
+      }
 
-        // Migrate orders if any had old default name
-        const orders = getJSON(STORAGE_KEYS.ORDERS, []);
+      // 3. Orders
+      const orders = getJSON(STORAGE_KEYS.ORDERS, null);
+      if (Array.isArray(orders)) {
         let ordersChanged = false;
         orders.forEach(o => {
           if (o.customerName === 'Rahul Sharma') {
@@ -99,9 +103,58 @@
             o.shippingAddress.fullName = o.shippingAddress.fullName.replace('Rahul Sharma', 'Harshit Joshi');
             ordersChanged = true;
           }
+          if (Array.isArray(o.items)) {
+            o.items.forEach(i => {
+              if (i.image && !i.image.startsWith('assets/') && !i.image.startsWith('http') && !i.image.startsWith('data:')) {
+                i.image = 'assets/' + i.image.replace(/^(\.\.\/|\.\/)+/, '').replace(/^assets\//, '');
+                ordersChanged = true;
+              }
+            });
+          }
         });
         if (ordersChanged) setJSON(STORAGE_KEYS.ORDERS, orders);
       }
+
+      // 4. Users
+      const users = this.getUsers();
+      let usersChanged = false;
+      users.forEach(u => {
+        if (u.name === 'Rahul Sharma') {
+          u.name = 'Harshit Joshi';
+          usersChanged = true;
+        }
+        if (!u.avatar || u.avatar.includes('unsplash.com') || u.avatar === 'harshit.png' || u.avatar === '../assets/harshit.png') {
+          u.avatar = 'assets/harshit.png';
+          usersChanged = true;
+        }
+      });
+      if (usersChanged) setJSON(STORAGE_KEYS.USERS, users);
+
+      // 5. Current User
+      const current = this.getCurrentUser();
+      if (current) {
+        let currChanged = false;
+        if (current.name === 'Rahul Sharma') {
+          current.name = 'Harshit Joshi';
+          currChanged = true;
+        }
+        if (!current.avatar || current.avatar.includes('unsplash.com') || current.avatar === 'harshit.png' || current.avatar === '../assets/harshit.png') {
+          current.avatar = 'assets/harshit.png';
+          currChanged = true;
+        }
+        if (currChanged) this.setCurrentUser(current, true);
+      }
+
+      // 6. Addresses
+      const addresses = getJSON(STORAGE_KEYS.ADDRESSES, []);
+      let addrChanged = false;
+      addresses.forEach(a => {
+        if (a.fullName && a.fullName.includes('Rahul Sharma')) {
+          a.fullName = a.fullName.replace('Rahul Sharma', 'Harshit Joshi');
+          addrChanged = true;
+        }
+      });
+      if (addrChanged) setJSON(STORAGE_KEYS.ADDRESSES, addresses);
     },
 
     // Reset everything back to original mock data
@@ -138,7 +191,18 @@
 
     // PRODUCTS
     getProducts() {
-      return getJSON(STORAGE_KEYS.PRODUCTS, window.CHORBAJAR_DEFAULT_PRODUCTS || []);
+      let products = getJSON(STORAGE_KEYS.PRODUCTS, window.CHORBAJAR_DEFAULT_PRODUCTS || []);
+      if (Array.isArray(products)) {
+        let healed = false;
+        products.forEach(p => {
+          if (p.image && !p.image.startsWith('assets/') && !p.image.startsWith('http') && !p.image.startsWith('data:')) {
+            p.image = 'assets/' + p.image.replace(/^(\.\.\/|\.\/)+/, '').replace(/^assets\//, '');
+            healed = true;
+          }
+        });
+        if (healed) setJSON(STORAGE_KEYS.PRODUCTS, products);
+      }
+      return products;
     },
 
     getProductById(id) {
@@ -149,12 +213,17 @@
     addProduct(product) {
       const products = this.getProducts();
       const newId = products.length > 0 ? Math.max(...products.map(p => Number(p.id) || 0)) + 1 : 1;
+      let cleanImage = (product.image || 'assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg').replace(/^(\.\.\/|\.\/)+/, '');
+      if (!cleanImage.startsWith('http') && !cleanImage.startsWith('data:') && !cleanImage.startsWith('assets/')) {
+        cleanImage = 'assets/' + cleanImage;
+      }
       const newProduct = {
         ...product,
         id: newId,
+        image: cleanImage,
+        images: product.images || [cleanImage, cleanImage, cleanImage],
         reviewsCount: product.reviewsCount || 0,
-        rating: product.rating || 4.5,
-        images: product.images || [product.image]
+        rating: product.rating || 4.5
       };
       products.unshift(newProduct);
       setJSON(STORAGE_KEYS.PRODUCTS, products);
@@ -165,6 +234,9 @@
       const products = this.getProducts();
       const index = products.findIndex(p => String(p.id) === String(id));
       if (index !== -1) {
+        if (updates.image && !updates.image.startsWith('http') && !updates.image.startsWith('data:') && !updates.image.startsWith('assets/')) {
+          updates.image = 'assets/' + updates.image.replace(/^(\.\.\/|\.\/)+/, '');
+        }
         products[index] = { ...products[index], ...updates };
         setJSON(STORAGE_KEYS.PRODUCTS, products);
         return products[index];
@@ -180,7 +252,18 @@
 
     // CART
     getCart() {
-      return getJSON(STORAGE_KEYS.CART, []);
+      let cart = getJSON(STORAGE_KEYS.CART, []);
+      if (Array.isArray(cart)) {
+        let changed = false;
+        cart.forEach(item => {
+          if (item.image && !item.image.startsWith('assets/') && !item.image.startsWith('http') && !item.image.startsWith('data:')) {
+            item.image = 'assets/' + item.image.replace(/^(\.\.\/|\.\/)+/, '').replace(/^assets\//, '');
+            changed = true;
+          }
+        });
+        if (changed) setJSON(STORAGE_KEYS.CART, cart);
+      }
+      return cart;
     },
 
     saveCart(cart) {
@@ -292,13 +375,27 @@
       let user = null;
       try {
         const sUser = sessionStorage.getItem(STORAGE_KEYS.CURRENT_USER);
-        if (sUser) return JSON.parse(sUser);
-        const lUser = localStorage.getItem(STORAGE_KEYS.CURRENT_USER);
-        if (lUser) return JSON.parse(lUser);
+        if (sUser) user = JSON.parse(sUser);
+        else {
+          const lUser = localStorage.getItem(STORAGE_KEYS.CURRENT_USER);
+          if (lUser) user = JSON.parse(lUser);
+        }
       } catch (e) {
         console.error(e);
       }
-      return null;
+      if (user) {
+        let changed = false;
+        if (user.name === 'Rahul Sharma') {
+          user.name = 'Harshit Joshi';
+          changed = true;
+        }
+        if (!user.avatar || user.avatar.includes('unsplash.com') || user.avatar === 'harshit.png' || user.avatar === '../assets/harshit.png') {
+          user.avatar = 'assets/harshit.png';
+          changed = true;
+        }
+        if (changed) this.setCurrentUser(user, true);
+      }
+      return user;
     },
 
     setCurrentUser(user, remember = true) {
@@ -420,6 +517,20 @@
     // ORDERS
     getOrders(userId = null) {
       const all = getJSON(STORAGE_KEYS.ORDERS, window.CHORBAJAR_DEFAULT_ORDERS || []);
+      if (Array.isArray(all)) {
+        let changed = false;
+        all.forEach(o => {
+          if (Array.isArray(o.items)) {
+            o.items.forEach(i => {
+              if (i.image && !i.image.startsWith('assets/') && !i.image.startsWith('http') && !i.image.startsWith('data:')) {
+                i.image = 'assets/' + i.image.replace(/^(\.\.\/|\.\/)+/, '').replace(/^assets\//, '');
+                changed = true;
+              }
+            });
+          }
+        });
+        if (changed) setJSON(STORAGE_KEYS.ORDERS, all);
+      }
       if (!userId) return all;
       return all.filter(o => o.userId === Number(userId));
     },

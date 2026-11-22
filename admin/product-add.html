@@ -135,7 +135,7 @@
 
       imgInput.oninput = () => {
         if (imgInput.value.trim()) {
-          previewImg.src = imgInput.value.trim();
+          previewImg.src = window.ChorbajarApp.resolveAssetPath(imgInput.value.trim());
         }
       };
 
@@ -155,7 +155,7 @@
           document.getElementById('prod-discount').value = product.discount || 0;
           document.getElementById('prod-stock').value = product.stock;
           document.getElementById('prod-image').value = product.image;
-          previewImg.src = '../' + product.image;
+          previewImg.src = window.ChorbajarApp.resolveAssetPath(product.image);
         }
       }
 

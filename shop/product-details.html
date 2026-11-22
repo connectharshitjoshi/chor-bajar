@@ -333,13 +333,13 @@
 
       // Gallery Images
       const mainImg = document.getElementById('main-product-img');
-      mainImg.src = '../' + product.image;
+      mainImg.src = window.ChorbajarApp.resolveAssetPath(product.image);
 
       const thumbsContainer = document.getElementById('gallery-thumbs-container');
       const imagesList = product.images && product.images.length > 0 ? product.images : [product.image];
       thumbsContainer.innerHTML = imagesList.map((imgUrl, idx) => `
         <button class="thumb-btn ${idx === 0 ? 'active' : ''}" data-img="${imgUrl}" data-testid="thumb-${idx}">
-          <img src="../${imgUrl}" alt="${product.name} thumbnail ${idx}">
+          <img src="${window.ChorbajarApp.resolveAssetPath(imgUrl)}" alt="${product.name} thumbnail ${idx}">
         </button>
       `).join('');
 
@@ -347,7 +347,7 @@
         btn.onclick = () => {
           thumbsContainer.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          mainImg.src = '../' + btn.getAttribute('data-img');
+          mainImg.src = window.ChorbajarApp.resolveAssetPath(btn.getAttribute('data-img'));
         };
       });
 

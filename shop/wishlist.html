@@ -78,7 +78,7 @@
                   &times;
                 </button>
                 <a href="product-details.html?id=${p.id}">
-                  <img src="../${p.image}" alt="${p.name}">
+                  <img src="${window.ChorbajarApp.resolveAssetPath(p.image)}" alt="${p.name}">
                 </a>
               </div>
               <div class="product-card-body">

@@ -23,6 +23,15 @@
 
     // Dynamically calculate base path relative to current HTML location
     getBasePath() {
+      try {
+        const script = document.querySelector('script[src*="app.js"]');
+        if (script) {
+          const src = script.getAttribute('src') || '';
+          if (src.startsWith('../')) return '../';
+          if (src.startsWith('js/')) return './';
+        }
+      } catch (e) {}
+
       const path = (window.location.pathname || '').replace(/\\/g, '/');
       const subdirs = ['/admin/', '/account/', '/auth/', '/shop/', '/legal/'];
       for (const dir of subdirs) {
@@ -31,6 +40,41 @@
         }
       }
       return './';
+    },
+
+    // Resolves any asset path (product image, category icon, user avatar) to the correct relative path
+    resolveAssetPath(imgPath) {
+      if (!imgPath) return '';
+      // External URL or base64 data URI
+      if (imgPath.startsWith('data:') || imgPath.startsWith('http://') || imgPath.startsWith('https://')) {
+        return imgPath;
+      }
+
+      // Normalize slashes
+      let clean = imgPath.replace(/\\/g, '/');
+
+      // Strip any leading ./ or ../ or multiple ../
+      clean = clean.replace(/^(\.\.\/|\.\/)+/, '');
+
+      // Avoid double assets/
+      clean = clean.replace(/^assets\/assets\//, 'assets/');
+
+      // If just filename harshit.png, point to assets/harshit.png
+      if (clean === 'harshit.png') {
+        clean = 'assets/harshit.png';
+      }
+
+      // If starts with ecommerce-products/ directly, prepend assets/
+      if (clean.startsWith('ecommerce-products/')) {
+        clean = 'assets/' + clean;
+      }
+
+      // If not yet prefixed with assets/ and it's a relative asset, prepend assets/
+      if (!clean.startsWith('assets/')) {
+        clean = 'assets/' + clean;
+      }
+
+      return this.getBasePath() + clean;
     },
 
     init() {
@@ -219,7 +263,7 @@
               ${currentUser ? `
                 <div class="account-menu">
                   <button class="account-btn" id="navbar-account-toggle" data-testid="navbar-user-btn">
-                    <img src="${base}${currentUser.avatar || 'assets/harshit.png'}" alt="${currentUser.name}">
+                    <img src="${this.resolveAssetPath(currentUser.avatar || 'assets/harshit.png')}" alt="${currentUser.name}">
                     <span>${currentUser.name.split(' ')[0]}</span>
                     <span style="font-size: 0.7rem;">▼</span>
                   </button>
@@ -430,7 +474,7 @@
               ${isWishlisted ? ICONS.heartFilled : ICONS.heart}
             </button>
             <a href="${base}shop/product-details.html?id=${product.id}">
-              <img src="${base}${product.image}" alt="${product.name}" loading="lazy" />
+              <img src="${this.resolveAssetPath(product.image)}" alt="${product.name}" loading="lazy" onerror="this.onerror=null; this.src='${this.resolveAssetPath('assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg')}';" />
             </a>
           </div>
 

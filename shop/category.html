@@ -115,7 +115,7 @@
       document.getElementById('category-breadcrumb-title').textContent = currentCategory.name;
       document.getElementById('category-title').textContent = currentCategory.name;
       document.getElementById('category-description').textContent = currentCategory.description;
-      document.getElementById('category-banner-img').src = '../' + currentCategory.image;
+      document.getElementById('category-banner-img').src = window.ChorbajarApp.resolveAssetPath(currentCategory.image);
 
       // Filter products
       const allProducts = window.ChorbajarStorage.getProducts();

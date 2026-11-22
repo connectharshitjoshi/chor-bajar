@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chorbajar | Authentic E-Commerce Testing Playground</title>
+  <title>Chorbajar | Auth
+    entic E-Commerce Testing Playground</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
 </head>
@@ -135,7 +136,7 @@
         catContainer.innerHTML = window.CHORBAJAR_CATEGORIES.map(cat => `
           <a href="shop/category.html?name=${encodeURIComponent(cat.slug)}" class="category-card" data-testid="category-card-${cat.slug}">
             <div class="category-img-wrap">
-              <img src="${cat.image}" alt="${cat.name}" loading="lazy">
+              <img src="${window.ChorbajarApp.resolveAssetPath(cat.image)}" alt="${cat.name}" loading="lazy">
             </div>
             <div class="category-name">${cat.name}</div>
             <div class="category-count">${cat.count} Items</div>

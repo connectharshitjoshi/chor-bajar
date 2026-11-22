@@ -140,7 +140,7 @@
         const container = document.getElementById('cart-items-container');
         container.innerHTML = cart.map(item => `
           <div class="cart-item-row" data-testid="cart-item-${item.productId}">
-            <img src="../${item.image}" alt="${item.name}" class="cart-item-img">
+            <img src="${window.ChorbajarApp.resolveAssetPath(item.image)}" alt="${item.name}" class="cart-item-img">
             <div class="cart-item-details">
               <div class="product-card-brand">${item.brand}</div>
               <h4><a href="product-details.html?id=${item.productId}">${item.name}</a></h4>

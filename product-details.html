@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <style>
+    .details-layout {
+      display: grid;
+      grid-template-columns: 480px 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+    }
+    .gallery-main {
+      width: 100%;
+      height: 440px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .gallery-thumbs {
+      display: flex;
+      gap: 12px;
+    }
+    .thumb-btn {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 2px solid transparent;
+      padding: 2px;
+      background: #ffffff;
+      cursor: pointer;
+    }
+    .thumb-btn.active {
+      border-color: var(--primary);
+    }
+    .thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .variant-pills {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .variant-btn {
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: #ffffff;
+      transition: all 0.2s;
+    }
+    .variant-btn:hover {
+      border-color: var(--primary);
+    }
+    .variant-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+    .action-row {
+      display: flex;
+      gap: 14px;
+      margin: 2rem 0;
+    }
+    .specs-table {
+      width: 100%;
+      margin-top: 1rem;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    .specs-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .specs-table td:first-child {
+      font-weight: 700;
+      color: var(--text-muted);
+      width: 35%;
+      background: var(--bg-subtle);
+    }
+    .reviews-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .review-item {
+      padding: 1.25rem;
+      background: var(--bg-subtle);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+    @media (max-width: 992px) {
+      .details-layout {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+      .gallery-main {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="products.html">Products</a>
+      <span class="separator">/</span>
+      <a href="#" id="breadcrumb-category">Category</a>
+      <span class="separator">/</span>
+      <span id="breadcrumb-product-name">Product Name</span>
+    </div>
+
+    <!-- Error State Container (for invalid IDs) -->
+    <div class="empty-state" id="product-not-found" style="display: none; margin: 3rem auto;" data-testid="product-not-found">
+      <div class="empty-state-icon">❌</div>
+      <h3 class="empty-state-title">Product Not Found</h3>
+      <p class="empty-state-desc">The product you are looking for does not exist or has been removed from our catalog.</p>
+      <a href="products.html" class="btn btn-primary" data-testid="back-to-catalog">Browse All Products</a>
+    </div>
+
+    <!-- Main Product Detail View -->
+    <div class="details-layout" id="product-detail-layout" style="display: none;" data-testid="product-detail-container">
+      <!-- Gallery Column -->
+      <div class="gallery-column">
+        <div class="gallery-main" data-testid="product-gallery-main">
+          <img id="main-product-img" src="" alt="Product Image" />
+        </div>
+        <div class="gallery-thumbs" id="gallery-thumbs-container" data-testid="product-gallery-thumbs"></div>
+      </div>
+
+      <!-- Information Column -->
+      <div class="info-column">
+        <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--primary); margin-bottom: 6px;" id="product-brand" data-testid="product-brand">
+          BRAND
+        </div>
+        <h1 style="font-size: 1.75rem; font-weight: 800; line-height: 1.3; margin-bottom: 10px;" id="product-title" data-testid="product-title">
+          Product Title
+        </h1>
+
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.25rem;">
+          <span class="rating-pill" id="product-rating-pill" data-testid="product-rating">★ 4.5</span>
+          <span style="font-size: 0.85rem; color: var(--text-muted);" id="product-reviews-count" data-testid="product-reviews-count">(0 Reviews)</span>
+          <span style="color: var(--border);">|</span>
+          <span id="product-stock-badge" class="status-pill status-active" data-testid="product-stock-status">In Stock</span>
+        </div>
+
+        <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 1.5rem;">
+          <span style="font-size: 2rem; font-weight: 800; color: var(--text-main);" id="product-price" data-testid="product-price">₹ 0</span>
+          <span style="font-size: 1.1rem; color: var(--text-light); text-decoration: line-through;" id="product-original-price">₹ 0</span>
+          <span class="product-badge-discount" id="product-discount-badge" style="position: static; font-size: 0.85rem;">-0% OFF</span>
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;" id="product-description" data-testid="product-description">
+          Description
+        </p>
+
+        <!-- Variants (if available) -->
+        <div id="variants-section" style="margin-bottom: 1.5rem; display: none;">
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">
+            Select Variant: <span id="selected-variant-label" style="font-weight: 400; color: var(--text-muted);"></span>
+          </label>
+          <div class="variant-pills" id="variant-pills-container" data-testid="variant-options"></div>
+        </div>
+
+        <!-- Quantity Selector -->
+        <div style="margin-bottom: 1.5rem;">
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">Quantity:</label>
+          <div class="qty-stepper" style="width: 130px;">
+            <button type="button" class="qty-btn" id="qty-minus" data-testid="qty-minus">-</button>
+            <input type="number" id="qty-input" class="qty-input" value="1" min="1" max="10" readonly data-testid="qty-input" />
+            <button type="button" class="qty-btn" id="qty-plus" data-testid="qty-plus">+</button>
+          </div>
+          <span id="stock-warning" style="font-size: 0.75rem; color: var(--accent); margin-top: 4px; display: block;"></span>
+        </div>
+
+        <!-- Actions -->
+        <div class="action-row">
+          <button class="btn btn-primary btn-lg" id="btn-add-cart-detail" style="flex: 2;" data-testid="add-to-cart-detail">
+            Add to Cart
+          </button>
+          <button class="btn btn-secondary btn-lg" id="btn-toggle-wishlist-detail" style="flex: 1;" data-testid="add-to-wishlist-detail">
+            ♥ Wishlist
+          </button>
+        </div>
+
+        <!-- Features Quick List -->
+        <div style="border-top: 1px solid var(--border); padding-top: 1.25rem; font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 6px;">
+          <div>✓ <strong>Free Express Shipping</strong> across India</div>
+          <div>✓ <strong>7 Days Replacement Guarantee</strong></div>
+          <div>✓ <strong>Cash on Delivery & UPI Accepted</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Details Tabs / Specifications & Reviews -->
+    <div style="background: #ffffff; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border); margin-bottom: 3.5rem;" id="details-specs-container">
+      <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; border-bottom: 2px solid var(--border); padding-bottom: 8px;">
+        Specifications & Highlights
+      </h3>
+      <table class="specs-table" id="specs-table" data-testid="specs-table">
+        <tbody>
+          <!-- Injected via JS -->
+        </tbody>
+      </table>
+
+      <!-- Customer Reviews Section -->
+      <div style="margin-top: 3rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-bottom: 1rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 700;">Customer Reviews</h3>
+          <button class="btn btn-outline-primary btn-sm" id="btn-write-review" data-testid="btn-write-review">Write a Review</button>
+        </div>
+
+        <!-- Review Form Modal/Drawer Simulation -->
+        <div id="write-review-form-box" style="display: none; background: var(--bg-subtle); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; border: 1px dashed var(--border);">
+          <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">Share Your Experience</h4>
+          <form id="review-form" onsubmit="event.preventDefault(); window.submitNewReview();">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" id="review-user-name" class="form-control" required placeholder="Enter your name" data-testid="review-user-name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Rating (1 to 5 Stars)</label>
+              <select id="review-rating-select" class="form-control" data-testid="review-rating-select">
+                <option value="5">★★★★★ - Excellent (5 Stars)</option>
+                <option value="4">★★★★☆ - Very Good (4 Stars)</option>
+                <option value="3">★★★☆☆ - Average (3 Stars)</option>
+                <option value="2">★★☆☆☆ - Poor (2 Stars)</option>
+                <option value="1">★☆☆☆☆ - Terrible (1 Star)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Review Comments</label>
+              <textarea id="review-comment" class="form-control" rows="3" required placeholder="What did you like or dislike about this product?" data-testid="review-comment"></textarea>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button type="submit" class="btn btn-primary btn-sm" data-testid="review-submit-btn">Post Review</button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('write-review-form-box').style.display='none';">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="reviews-list" id="product-reviews-list" data-testid="product-reviews-list"></div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div style="margin-bottom: 4rem;" id="related-products-section">
+      <div class="section-header">
+        <h2 class="section-title">Similar Products You Might Like</h2>
+      </div>
+      <div class="products-grid" id="related-products-grid" data-testid="related-products-grid"></div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const productId = window.ChorbajarApp.getUrlParam('id');
+      const product = window.ChorbajarStorage.getProductById(productId);
+
+      const notFoundElem = document.getElementById('product-not-found');
+      const detailLayout = document.getElementById('product-detail-layout');
+      const specsContainer = document.getElementById('details-specs-container');
+      const relatedSection = document.getElementById('related-products-section');
+
+      if (!product) {
+        notFoundElem.style.display = 'block';
+        return;
+      }
+
+      detailLayout.style.display = 'grid';
+      specsContainer.style.display = 'block';
+      relatedSection.style.display = 'block';
+
+      // Set Metadata
+      document.title = `${product.name} | Chorbajar`;
+      document.getElementById('breadcrumb-category').textContent = product.category;
+      document.getElementById('breadcrumb-category').href = `category.html?name=${encodeURIComponent(product.categorySlug || 'electronics')}`;
+      document.getElementById('breadcrumb-product-name').textContent = product.name;
+
+      document.getElementById('product-brand').textContent = product.brand;
+      document.getElementById('product-title').textContent = product.name;
+      document.getElementById('product-rating-pill').textContent = `★ ${product.rating}`;
+      document.getElementById('product-reviews-count').textContent = `(${product.reviewsCount} customer reviews)`;
+      document.getElementById('product-price').textContent = window.ChorbajarApp.formatPrice(product.price);
+      document.getElementById('product-original-price').textContent = window.ChorbajarApp.formatPrice(product.originalPrice);
+      document.getElementById('product-discount-badge').textContent = `-${product.discount}% OFF`;
+      document.getElementById('product-description').textContent = product.description;
+
+      // Stock badge
+      const stockBadge = document.getElementById('product-stock-badge');
+      if (product.stock > 0) {
+        stockBadge.className = 'status-pill status-active';
+        stockBadge.textContent = product.stock > 10 ? 'In Stock' : `Only ${product.stock} units left!`;
+      } else {
+        stockBadge.className = 'status-pill status-blocked';
+        stockBadge.textContent = 'Out of Stock';
+        document.getElementById('btn-add-cart-detail').disabled = true;
+        document.getElementById('btn-add-cart-detail').textContent = 'Out of Stock';
+      }
+
+      // Gallery Images
+      const mainImg = document.getElementById('main-product-img');
+      mainImg.src = product.image;
+
+      const thumbsContainer = document.getElementById('gallery-thumbs-container');
+      const imagesList = product.images && product.images.length > 0 ? product.images : [product.image];
+      thumbsContainer.innerHTML = imagesList.map((imgUrl, idx) => `
+        <button class="thumb-btn ${idx === 0 ? 'active' : ''}" data-img="${imgUrl}" data-testid="thumb-${idx}">
+          <img src="${imgUrl}" alt="${product.name} thumbnail ${idx}">
+        </button>
+      `).join('');
+
+      thumbsContainer.querySelectorAll('.thumb-btn').forEach(btn => {
+        btn.onclick = () => {
+          thumbsContainer.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          mainImg.src = btn.getAttribute('data-img');
+        };
+      });
+
+      // Variants
+      let selectedVariant = null;
+      if (product.variants && product.variants.length > 0) {
+        document.getElementById('variants-section').style.display = 'block';
+        selectedVariant = product.variants[0];
+        document.getElementById('selected-variant-label').textContent = selectedVariant;
+
+        const variantContainer = document.getElementById('variant-pills-container');
+        variantContainer.innerHTML = product.variants.map((v, i) => `
+          <button type="button" class="variant-btn ${i === 0 ? 'active' : ''}" data-variant="${v}" data-testid="variant-btn-${v}">
+            ${v}
+          </button>
+        `).join('');
+
+        variantContainer.querySelectorAll('.variant-btn').forEach(btn => {
+          btn.onclick = () => {
+            variantContainer.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            selectedVariant = btn.getAttribute('data-variant');
+            document.getElementById('selected-variant-label').textContent = selectedVariant;
+          };
+        });
+      }
+
+      // Quantity Logic
+      let quantity = 1;
+      const qtyInput = document.getElementById('qty-input');
+      const maxStock = Math.min(product.stock, 10);
+
+      document.getElementById('qty-minus').onclick = () => {
+        if (quantity > 1) {
+          quantity--;
+          qtyInput.value = quantity;
+        }
+      };
+      document.getElementById('qty-plus').onclick = () => {
+        if (quantity < maxStock) {
+          quantity++;
+          qtyInput.value = quantity;
+        } else {
+          window.ChorbajarApp.showToast(`Maximum allowable quantity is ${maxStock}.`, 'warning');
+        }
+      };
+
+      // Add to Cart Detail
+      document.getElementById('btn-add-cart-detail').onclick = () => {
+        const res = window.ChorbajarStorage.addToCart(product.id, quantity, selectedVariant);
+        if (res.success) {
+          window.ChorbajarApp.showToast(res.message, 'success');
+        } else {
+          window.ChorbajarApp.showToast(res.message, 'warning');
+        }
+      };
+
+      // Toggle Wishlist Detail
+      const wishlistBtn = document.getElementById('btn-toggle-wishlist-detail');
+      function updateWishlistBtn() {
+        const isWish = window.ChorbajarStorage.isInWishlist(product.id);
+        wishlistBtn.innerHTML = isWish ? '♥ In Wishlist' : '♡ Add to Wishlist';
+        wishlistBtn.className = isWish ? 'btn btn-danger btn-lg' : 'btn btn-secondary btn-lg';
+      }
+      updateWishlistBtn();
+      wishlistBtn.onclick = () => {
+        window.ChorbajarStorage.toggleWishlist(product.id);
+        updateWishlistBtn();
+        window.ChorbajarApp.showToast('Wishlist updated!', 'success');
+      };
+
+      // Specs Table
+      const specsTable = document.querySelector('#specs-table tbody');
+      const specs = {
+        'Brand': product.brand,
+        'Category': product.category,
+        'SKU': `CHOR-SKU-${product.id}`,
+        'Stock Availability': `${product.stock} units in warehouse`,
+        'Model': `${product.name} (2026 Edition)`,
+        'Warranty': '1 Year Full Manufacturer Warranty',
+        'Box Contents': `${product.name}, User Manual, Compliance Card`
+      };
+      specsTable.innerHTML = Object.keys(specs).map(k => `
+        <tr>
+          <td>${k}</td>
+          <td>${specs[k]}</td>
+        </tr>
+      `).join('');
+
+      // Reviews Mock Data
+      const defaultReviews = [
+        { name: 'Amit Verma', rating: 5, date: '15 Nov 2026', comment: 'Superb quality! Exceeded my expectations. Delivery was very fast.' },
+        { name: 'Pooja Iyer', rating: 4, date: '02 Nov 2026', comment: 'Worth the money. Exactly matches the pictures and description.' }
+      ];
+
+      function renderReviews() {
+        const rContainer = document.getElementById('product-reviews-list');
+        rContainer.innerHTML = defaultReviews.map(r => `
+          <div class="review-item" data-testid="review-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <strong>${r.name}</strong>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">${r.date}</span>
+            </div>
+            <div style="margin-bottom: 6px;">${window.ChorbajarApp.renderStars(r.rating)}</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">${r.comment}</p>
+          </div>
+        `).join('');
+      }
+      renderReviews();
+
+      // Write Review Toggle
+      document.getElementById('btn-write-review').onclick = () => {
+        const box = document.getElementById('write-review-form-box');
+        box.style.display = box.style.display === 'none' ? 'block' : 'none';
+      };
+
+      window.submitNewReview = () => {
+        const name = document.getElementById('review-user-name').value;
+        const rating = Number(document.getElementById('review-rating-select').value);
+        const comment = document.getElementById('review-comment').value;
+
+        defaultReviews.unshift({
+          name: name,
+          rating: rating,
+          date: 'Just now',
+          comment: comment
+        });
+
+        renderReviews();
+        document.getElementById('write-review-form-box').style.display = 'none';
+        document.getElementById('review-form').reset();
+        window.ChorbajarApp.showToast('Your review has been submitted!', 'success');
+      };
+
+      // Related Products (products from same category)
+      const allProducts = window.ChorbajarStorage.getProducts();
+      const related = allProducts.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+      document.getElementById('related-products-grid').innerHTML = related.map(p => window.ChorbajarApp.renderProductCard(p)).join('');
+    });
+  </script>
+</body>
+</html>

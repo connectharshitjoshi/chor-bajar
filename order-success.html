@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <style>
+    .success-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      max-width: 720px;
+      margin: 2rem auto 4rem;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+    .success-icon-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: var(--radius-full);
+      background: var(--success-bg);
+      border: 2px solid var(--success-border);
+      color: var(--success);
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+    .order-details-box {
+      background: var(--bg-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    @media print {
+      .site-header, .site-footer, .breadcrumbs, .qa-banner, .btn-no-print {
+        display: none !important;
+      }
+      .success-card {
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="success-card" data-testid="order-success-card">
+      <div class="success-icon-wrap">✓</div>
+      <h1 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">Order Placed Successfully!</h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+        Thank you for shopping at Chorbajar. Your simulated order has been registered in local browser storage.
+      </p>
+
+      <div style="display: inline-block; background: var(--primary-light); color: var(--primary); padding: 8px 18px; border-radius: var(--radius-full); font-weight: 700; font-size: 0.95rem; margin-bottom: 1.5rem;" data-testid="order-id-badge">
+        Order ID: <span id="display-order-id" data-testid="order-id"></span>
+      </div>
+
+      <!-- Order Details Summary -->
+      <div class="order-details-box" id="order-details-container" data-testid="order-details-summary">
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 12px; font-size: 0.85rem;">
+          <div>
+            <strong>Status:</strong> <span class="status-pill status-placed" id="order-status-pill">Order Placed</span>
+          </div>
+          <div>
+            <strong>Estimated Delivery:</strong> <span id="order-delivery-date" style="color: var(--primary); font-weight: 600;"></span>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 10px;">Purchased Items:</h4>
+        <div id="order-items-list" style="margin-bottom: 1.25rem;"></div>
+
+        <div style="border-top: 1px dashed var(--border); padding-top: 10px; font-size: 0.9rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span>Subtotal:</span>
+            <span id="order-subtotal"></span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;" id="order-discount-row">
+            <span>Discount:</span>
+            <span id="order-discount" style="color: var(--success);"></span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span>Delivery:</span>
+            <span id="order-delivery"></span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 1.1rem; margin-top: 8px; border-top: 1px solid var(--border); padding-top: 8px;">
+            <span>Total Paid:</span>
+            <span id="order-total" data-testid="order-total-amount"></span>
+          </div>
+        </div>
+
+        <!-- Shipping Destination -->
+        <div style="margin-top: 1.25rem; padding-top: 12px; border-top: 1px solid var(--border); font-size: 0.85rem;">
+          <strong>Shipping To:</strong>
+          <div id="order-shipping-dest" style="color: var(--text-secondary); margin-top: 4px;"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;" class="btn-no-print">
+        <a href="products.html" class="btn btn-primary" data-testid="continue-shopping-btn">
+          Continue Shopping &rarr;
+        </a>
+        <a href="account-orders.html" class="btn btn-secondary" data-testid="view-orders-btn">
+          View My Orders
+        </a>
+        <button type="button" class="btn btn-secondary" onclick="window.print();" data-testid="print-invoice-btn">
+          🖨️ Print Invoice
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const orderId = window.ChorbajarApp.getUrlParam('orderId');
+      const order = window.ChorbajarStorage.getOrderById(orderId);
+
+      if (!order) {
+        window.location.href = 'index.html';
+        return;
+      }
+
+      document.getElementById('display-order-id').textContent = order.id;
+
+      // Delivery date estimation: 3 business days later
+      const d = new Date();
+      d.setDate(d.getDate() + 3);
+      document.getElementById('order-delivery-date').textContent = d.toLocaleDateString('en-IN', {
+        weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'
+      });
+
+      // Items list
+      document.getElementById('order-items-list').innerHTML = (order.items || []).map(i => `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.85rem;">
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <img src="${i.image}" alt="${i.name}" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
+            <div>
+              <div style="font-weight: 600;">${i.name}</div>
+              <div style="color: var(--text-muted); font-size: 0.75rem;">Qty: ${i.quantity} ${i.variant ? '• Variant: ' + i.variant : ''}</div>
+            </div>
+          </div>
+          <div style="font-weight: 700;">${window.ChorbajarApp.formatPrice(i.price * i.quantity)}</div>
+        </div>
+      `).join('');
+
+      document.getElementById('order-subtotal').textContent = window.ChorbajarApp.formatPrice(order.subtotal);
+      if (order.discount && order.discount > 0) {
+        document.getElementById('order-discount').textContent = `- ${window.ChorbajarApp.formatPrice(order.discount)}`;
+      } else {
+        document.getElementById('order-discount-row').style.display = 'none';
+      }
+      document.getElementById('order-delivery').textContent = order.deliveryFee === 0 ? 'FREE' : window.ChorbajarApp.formatPrice(order.deliveryFee);
+      document.getElementById('order-total').textContent = window.ChorbajarApp.formatPrice(order.total);
+
+      // Shipping Destination
+      if (order.shippingAddress) {
+        const a = order.shippingAddress;
+        document.getElementById('order-shipping-dest').textContent = 
+          `${a.fullName}, ${a.addressLine1}, ${a.city}, ${a.state} - ${a.pincode} (Phone: ${a.phone})`;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span>Search Results</span>
+    </div>
+
+    <!-- Search Header -->
+    <div style="margin-bottom: 2rem;">
+      <h1 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 6px;">
+        Search results for: "<span id="search-keyword-display" data-testid="search-keyword" style="color: var(--primary);"></span>"
+      </h1>
+      <p style="color: var(--text-muted); font-size: 0.9rem;" id="search-meta-count">
+        Found <strong id="search-count" data-testid="search-count">0</strong> matching products
+      </p>
+    </div>
+
+    <!-- Results Grid -->
+    <div class="products-grid" id="search-results-grid" data-testid="search-results-grid"></div>
+
+    <!-- Empty State with Suggestions -->
+    <div class="empty-state" id="search-empty-state" style="display: none;" data-testid="search-empty-state">
+      <div class="empty-state-icon">🔍</div>
+      <h3 class="empty-state-title">No matching products found</h3>
+      <p class="empty-state-desc">We couldn't find any items matching your search term. Check for typos or try one of our suggested popular searches below:</p>
+      
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;" data-testid="search-suggestions">
+        <a href="search.html?q=Headphones" class="btn btn-secondary btn-sm">Headphones</a>
+        <a href="search.html?q=Smartphone" class="btn btn-secondary btn-sm">Smartphone</a>
+        <a href="search.html?q=Watch" class="btn btn-secondary btn-sm">Watch</a>
+        <a href="search.html?q=Shoes" class="btn btn-secondary btn-sm">Shoes</a>
+        <a href="search.html?q=Laptop" class="btn btn-secondary btn-sm">Laptop</a>
+        <a href="search.html?q=Jacket" class="btn btn-secondary btn-sm">Jacket</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const query = window.ChorbajarApp.getUrlParam('q') || '';
+      document.getElementById('search-keyword-display').textContent = query;
+      document.title = `Search: "${query}" | Chorbajar`;
+
+      const allProducts = window.ChorbajarStorage.getProducts();
+      const q = query.trim().toLowerCase();
+
+      const matched = allProducts.filter(p => {
+        if (!q) return true;
+        return (
+          p.name.toLowerCase().includes(q) ||
+          p.brand.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          (p.description && p.description.toLowerCase().includes(q))
+        );
+      });
+
+      document.getElementById('search-count').textContent = matched.length;
+
+      const gridElem = document.getElementById('search-results-grid');
+      const emptyElem = document.getElementById('search-empty-state');
+
+      if (matched.length === 0) {
+        gridElem.style.display = 'none';
+        emptyElem.style.display = 'block';
+      } else {
+        gridElem.style.display = 'grid';
+        emptyElem.style.display = 'none';
+        gridElem.innerHTML = matched.map(p => window.ChorbajarApp.renderProductCard(p)).join('');
+      }
+    });
+  </script>
+</body>
+</html>

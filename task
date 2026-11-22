@@ -1,0 +1,583 @@
+# Project Task: Build ShopSphere – Frontend-Only E-commerce Application
+
+## 1. Project Overview
+
+Develop a modern, professional, fully responsive e-commerce website named **ShopSphere**.
+
+The primary purpose of this application is to serve as a real-world practice environment for Software QA, Manual Testing, Playwright Automation, Cross-Browser Testing and CI/CD implementation.
+
+**Important: This is a frontend-only project. Do not develop any backend, database, server-side authentication or actual API integrations.**
+
+The website should behave like a functional e-commerce application using JavaScript, predefined JSON/mock data, localStorage and sessionStorage.
+
+Every interactive element must work properly so that it can be tested through automated browser tests.
+
+## 2. Technology Stack
+
+Use the following technologies:
+
+- React.js
+- Vite
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- React Router DOM
+- Bootstrap or custom CSS
+- Lucide React icons
+- localStorage and sessionStorage
+- JSON files for mock data
+
+Avoid unnecessary dependencies.
+
+Do not use TypeScript unless absolutely necessary.
+
+## 3. UI/UX Design Requirements
+
+Create a professional e-commerce interface inspired by modern shopping platforms like Amazon, Flipkart and Myntra, but with original branding and layout.
+
+Design requirements:
+
+- Clean, modern and professional UI.
+- Consistent typography and spacing.
+- Responsive design.
+- Desktop-first design with mobile and tablet support.
+- Professional navigation bar.
+- Product cards with images, ratings, prices and discounts.
+- Proper loading, empty and error states.
+- Consistent buttons, forms, modals and notifications.
+- Toast notifications for user actions.
+- Skeleton loaders where appropriate.
+- Confirmation dialogs for destructive actions.
+
+Use a modern neutral colour palette with white, light grey, charcoal and a subtle accent colour.
+
+Do not make the website look like a basic student project.
+
+## 4. Application Pages and Modules
+
+### A. Customer-facing pages
+
+Create the following pages:
+
+1. Home Page (`/`)
+   - Hero banners
+   - Featured products
+   - Trending products
+   - Categories
+   - Promotional sections
+   - Newsletter subscription UI
+   - Navigation and footer
+
+2. Product Listing (`/products`)
+   - Product grid
+   - Category filters
+   - Brand filters
+   - Price range filter
+   - Rating filter
+   - Sorting options
+   - Pagination
+   - Product availability
+
+3. Product Details (`/products/:id`)
+   - Product image gallery
+   - Product name and description
+   - Price and discount
+   - Ratings and reviews
+   - Product variants
+   - Quantity selector
+   - Add to cart
+   - Add to wishlist
+   - Stock availability
+
+4. Search Results (`/search`)
+   - Search query
+   - Matching products
+   - No-results state
+   - Search suggestions
+
+5. Category Page (`/category/:name`)
+   - Category-specific products
+   - Filters and sorting
+
+6. Wishlist (`/wishlist`)
+   - Saved products
+   - Remove from wishlist
+   - Move to cart
+   - Empty wishlist state
+
+7. Shopping Cart (`/cart`)
+   - Cart products
+   - Quantity controls
+   - Remove product
+   - Subtotal
+   - Coupon application
+   - Discount calculation
+   - Delivery charges
+   - Grand total
+   - Empty cart state
+
+8. Checkout (`/checkout`)
+   - Customer information
+   - Address selection
+   - Add new address
+   - PIN code validation
+   - Phone number validation
+   - Order summary
+   - Payment method selection
+   - Coupon summary
+   - Place order button
+
+9. Order Success (`/order-success`)
+   - Order confirmation
+   - Generated order ID
+   - Purchased items
+   - Total amount
+   - Continue shopping option
+
+### B. Authentication and verification pages
+
+10. Login (`/login`)
+    - Email and password
+    - Show/hide password
+    - Remember me
+    - Form validation
+    - Login error messages
+    - Forgot password link
+
+11. Registration (`/register`)
+    - Full name
+    - Email
+    - Phone number
+    - Password
+    - Confirm password
+    - Terms and conditions checkbox
+    - Validation messages
+
+12. Forgot Password (`/forgot-password`)
+    - Email input
+    - Validation
+    - Simulated reset request
+
+13. Email Verification (`/verify-email`)
+    - Verification status
+    - Resend verification simulation
+
+14. OTP Verification (`/verify-otp`)
+    - Six-digit OTP input
+    - Verify button
+    - Resend OTP
+    - Countdown timer
+    - Invalid OTP message
+    - Expired OTP message
+
+15. Reset Password (`/reset-password`)
+    - New password
+    - Confirm password
+    - Password strength indicator
+    - Validation
+
+### C. Customer account pages
+
+16. Profile (`/account/profile`)
+    - View and edit profile
+    - Name, email and phone
+    - Profile picture upload simulation
+
+17. Orders (`/account/orders`)
+    - Order history
+    - Order status
+    - Order search and filtering
+
+18. Order Details (`/account/orders/:id`)
+    - Order information
+    - Products
+    - Payment method
+    - Order status timeline
+    - Download invoice
+
+19. Address Management (`/account/addresses`)
+    - Add address
+    - Edit address
+    - Delete address
+    - Set default address
+
+20. Settings (`/account/settings`)
+    - Change password simulation
+    - Notification preferences
+    - Account preferences
+
+### D. Admin module
+
+Create a separate admin interface.
+
+21. Admin Dashboard (`/admin/dashboard`)
+    - Total products
+    - Total users
+    - Total orders
+    - Revenue statistics
+    - Recent orders
+    - Charts and summary cards
+
+22. Product Management (`/admin/products`)
+    - Product listing
+    - Search and filtering
+    - Add products
+    - Edit products
+    - Delete products
+    - Stock management
+
+23. Add/Edit Product (`/admin/products/add`)
+    - Product name
+    - Category
+    - Brand
+    - Description
+    - Price
+    - Discount
+    - Stock
+    - Image URL
+
+24. Order Management (`/admin/orders`)
+    - Order listing
+    - Order details
+    - Update simulated order status
+
+25. User Management (`/admin/users`)
+    - User listing
+    - Search users
+    - View user information
+    - Simulated account status management
+
+26. Admin Settings (`/admin/settings`)
+    - Store information
+    - Display preferences
+    - Basic settings
+
+## 5. Frontend Functional Requirements
+
+All pages must have working functionality.
+
+### Product management
+- Load products from mock JSON.
+- Search products.
+- Filter products.
+- Sort products.
+- Navigate to product details.
+- Handle invalid product IDs.
+
+### Shopping cart
+- Add products.
+- Remove products.
+- Increase/decrease quantity.
+- Prevent invalid quantities.
+- Calculate totals dynamically.
+- Persist cart after page refresh.
+
+### Wishlist
+- Add/remove products.
+- Persist wishlist.
+- Move products to cart.
+
+### Coupons
+
+Create predefined coupon codes:
+
+- WELCOME10 – 10% discount.
+- SAVE200 – ₹200 discount.
+- INVALID – Invalid coupon.
+
+Implement validation, minimum purchase conditions and discount calculations.
+
+### Checkout
+- Validate all mandatory fields.
+- Validate Indian PIN codes.
+- Validate phone numbers.
+- Select payment method.
+- Display correct order summary.
+- Simulate order placement.
+- Generate a unique demo order ID.
+- Prevent accidental duplicate submission.
+- Store order information locally.
+
+### Authentication
+
+Use predefined demo accounts:
+
+Customer:
+- Email: user@test.com
+- Password: Test@123
+
+Admin:
+- Email: admin@test.com
+- Password: Admin@123
+
+Implement:
+
+- Login and logout.
+- Registration simulation.
+- Password validation.
+- Forgot password flow.
+- OTP verification simulation.
+- Email verification simulation.
+- Session persistence.
+- Customer/admin role-based UI.
+- Protected frontend routes.
+- Session expiration simulation.
+
+**Security limitation:** Clearly document that all authentication and authorization are frontend demonstrations, not production security. Never represent localStorage-based authentication as secure.
+
+## 6. Mock Data Requirements
+
+Create realistic mock data.
+
+Products should include:
+
+- Product ID
+- Product name
+- Category
+- Brand
+- Description
+- Price
+- Discount
+- Rating
+- Reviews count
+- Stock quantity
+- Product images
+- Available sizes/colours
+
+Create at least 40–50 products across these categories:
+
+1. Electronics
+2. Fashion
+3. Home & Kitchen
+4. Beauty
+5. Sports
+6. Books
+
+Also create mock:
+
+- Customer accounts
+- Admin account
+- Orders
+- Addresses
+- Coupons
+- Product reviews
+- Categories
+
+Use localStorage for user-generated changes and sessionStorage where appropriate for temporary session information.
+
+Seed the demo data on first application load. Do not overwrite user changes on every refresh.
+
+## 7. Testing-Friendly Requirements
+
+This project is specifically designed for Playwright automation.
+
+Make the application automation-friendly.
+
+### Stable selectors
+
+Use meaningful and unique `data-testid` attributes for important elements.
+
+Examples:
+
+- `data-testid="login-email"`
+- `data-testid="login-password"`
+- `data-testid="login-submit"`
+- `data-testid="product-card"`
+- `data-testid="add-to-cart"`
+- `data-testid="cart-count"`
+- `data-testid="cart-total"`
+- `data-testid="checkout-submit"`
+- `data-testid="otp-input"`
+- `data-testid="verify-otp"`
+- `data-testid="admin-dashboard"`
+
+Add appropriate selectors to:
+
+- Forms
+- Inputs
+- Buttons
+- Product cards
+- Filters
+- Dropdowns
+- Modals
+- Tables
+- Notifications
+- Pagination
+- Navigation elements
+
+### Testability
+
+Ensure:
+
+- No random delays in application logic.
+- Deterministic mock data.
+- Predictable demo credentials.
+- Consistent validation messages.
+- Predictable coupon behaviour.
+- Reliable page navigation.
+- Clear success and error messages.
+- No unnecessary animations that interfere with automation.
+- All interactive controls are accessible through keyboard and Playwright locators.
+
+Add a dedicated demo reset option to restore the original mock data and application state.
+
+## 8. Error and Edge Cases
+
+Implement appropriate frontend handling for:
+
+- Empty product lists.
+- Invalid product URLs.
+- Invalid login credentials.
+- Empty mandatory fields.
+- Invalid email.
+- Weak passwords.
+- Password mismatch.
+- Invalid OTP.
+- Expired OTP.
+- Invalid coupon.
+- Out-of-stock products.
+- Empty cart.
+- Empty wishlist.
+- Invalid PIN code.
+- Invalid phone number.
+- Duplicate registration email.
+- Missing order.
+- Unauthorized frontend routes.
+- Missing product images.
+- Invalid form submissions.
+
+## 9. Non-Functional Requirements
+
+- Fully responsive across mobile, tablet and desktop.
+- Clean component architecture.
+- Reusable React components.
+- Centralized mock data.
+- Reusable validation functions.
+- Proper routing.
+- No broken links.
+- No console errors.
+- No missing assets.
+- Reasonable frontend performance.
+- Semantic HTML.
+- Accessible form labels.
+- Proper error and success states.
+
+## 10. Suggested Folder Structure
+
+```text
+shopsphere/
+│
+├── public/
+│   └── assets/
+│
+├── src/
+│   ├── components/
+│   │   ├── common/
+│   │   ├── layout/
+│   │   ├── products/
+│   │   ├── cart/
+│   │   ├── forms/
+│   │   └── admin/
+│   │
+│   ├── pages/
+│   │   ├── home/
+│   │   ├── products/
+│   │   ├── cart/
+│   │   ├── checkout/
+│   │   ├── auth/
+│   │   ├── account/
+│   │   └── admin/
+│   │
+│   ├── data/
+│   │   ├── products.json
+│   │   ├── users.json
+│   │   ├── orders.json
+│   │   └── categories.json
+│   │
+│   ├── context/
+│   ├── hooks/
+│   ├── utils/
+│   ├── services/
+│   ├── routes/
+│   ├── styles/
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── index.html
+├── package.json
+└── README.md
+```
+
+## 11. Explicitly Out of Scope
+
+Do NOT implement:
+
+- Node.js backend
+- PHP backend
+- MySQL or MongoDB
+- Real REST APIs
+- Real email delivery
+- Real SMS or OTP gateway
+- Real payment gateway
+- Actual payment processing
+- Server-side authentication
+- Server-side authorization
+- Real inventory synchronization
+
+All functionality must be implemented on the frontend using mock data and browser storage.
+
+## 12. Final Deliverables
+
+The AI development agent must deliver:
+
+1. Complete working React frontend.
+2. All specified pages and routes.
+3. Responsive UI.
+4. Functional shopping experience.
+5. Simulated customer/admin authentication.
+6. Simulated verification flows.
+7. Working cart, wishlist and checkout.
+8. Admin dashboard.
+9. Realistic mock data.
+10. Stable `data-testid` selectors.
+11. README with installation and execution instructions.
+12. Demo credentials.
+13. Documentation of frontend-only limitations.
+
+## 13. Acceptance Criteria
+
+The project will be considered complete only when:
+
+- All specified routes load correctly.
+- Every navigation link works.
+- All important buttons perform their intended actions.
+- Product search, filtering and sorting work.
+- Cart and wishlist persist after refresh.
+- Checkout validations work.
+- Simulated authentication works.
+- OTP verification works.
+- Customer/admin route behaviour works.
+- Orders can be created and viewed locally.
+- Admin product management works.
+- No major console errors exist.
+- Website works on desktop, tablet and mobile.
+- Application can be started using `npm install` and `npm run dev`.
+
+## 14. Development Instructions for the AI Agent
+
+Follow these instructions strictly:
+
+1. First inspect the requirements and create a development plan.
+2. Set up the React + Vite application.
+3. Build reusable components instead of duplicating code.
+4. Develop the application module by module.
+5. Ensure every page is functional before moving to the next module.
+6. Use realistic mock data and local browser storage.
+7. Do not introduce backend dependencies.
+8. Do not leave buttons or links as placeholders.
+9. Test all major user journeys manually before declaring completion.
+10. Maintain clean, readable and beginner-friendly code.
+
+**Most important:** Prioritize functional behaviour and automation testability over unnecessary visual effects. The application must act like a realistic e-commerce website even though it has no backend.
+
+At the end, provide a summary of completed pages, implemented features, demo credentials, known limitations and instructions to run the project locally.

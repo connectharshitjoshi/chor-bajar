@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <style>
+    .order-history-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+    .order-history-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow-sm);
+    }
+    .order-card-header {
+      background: var(--bg-subtle);
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .order-card-body {
+      padding: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="account-profile.html">Account</a>
+      <span class="separator">/</span>
+      <span>My Orders</span>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- Account Sidebar -->
+      <aside class="sidebar-nav" data-testid="account-sidebar">
+        <a href="account-profile.html" class="sidebar-link" data-testid="sidebar-profile">👤 Personal Information</a>
+        <a href="account-orders.html" class="sidebar-link active" data-testid="sidebar-orders">📦 My Orders & Tracking</a>
+        <a href="account-addresses.html" class="sidebar-link" data-testid="sidebar-addresses">📍 Saved Delivery Addresses</a>
+        <a href="account-settings.html" class="sidebar-link" data-testid="sidebar-settings">⚙️ Account Settings</a>
+      </aside>
+
+      <!-- Orders Content -->
+      <section class="dashboard-content-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <h2 style="font-size: 1.35rem; font-weight: 800;">My Order History</h2>
+
+          <!-- Filters & Search -->
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <input 
+              type="text" 
+              id="order-search-input" 
+              class="form-control" 
+              placeholder="Search by Order ID..." 
+              style="width: 200px; padding: 6px 12px; font-size: 0.85rem;" 
+              data-testid="order-search-input"
+            />
+            <select id="order-status-filter" class="form-control" style="width: auto; padding: 6px 12px; font-size: 0.85rem;" data-testid="order-status-filter">
+              <option value="ALL">All Statuses</option>
+              <option value="Order Placed">Order Placed</option>
+              <option value="Shipped">Shipped</option>
+              <option value="Delivered">Delivered</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Orders List Container -->
+        <div id="orders-list-container" data-testid="orders-list"></div>
+
+        <!-- Empty Orders State -->
+        <div class="empty-state" id="orders-empty-state" style="display: none;" data-testid="orders-empty-state">
+          <div class="empty-state-icon">📦</div>
+          <h3 class="empty-state-title">No orders found</h3>
+          <p class="empty-state-desc">You have not placed any orders matching this criteria.</p>
+          <a href="products.html" class="btn btn-primary btn-sm">Start Shopping</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.ChorbajarApp.requireAuth()) return;
+
+      const user = window.ChorbajarStorage.getCurrentUser();
+      const allOrders = window.ChorbajarStorage.getOrders(user.id);
+
+      const listContainer = document.getElementById('orders-list-container');
+      const emptyState = document.getElementById('orders-empty-state');
+      const searchInput = document.getElementById('order-search-input');
+      const filterSelect = document.getElementById('order-status-filter');
+
+      function getStatusClass(status) {
+        if (status === 'Delivered') return 'status-delivered';
+        if (status === 'Shipped') return 'status-shipped';
+        if (status === 'Cancelled') return 'status-cancelled';
+        return 'status-placed';
+      }
+
+      function renderOrders() {
+        const query = searchInput.value.trim().toLowerCase();
+        const statusFilter = filterSelect.value;
+
+        const filtered = allOrders.filter(o => {
+          if (statusFilter !== 'ALL' && o.status !== statusFilter) return false;
+          if (query && !o.id.toLowerCase().includes(query)) return false;
+          return true;
+        });
+
+        if (filtered.length === 0) {
+          listContainer.style.display = 'none';
+          emptyState.style.display = 'block';
+          return;
+        }
+
+        listContainer.style.display = 'block';
+        emptyState.style.display = 'none';
+
+        listContainer.innerHTML = filtered.map(order => `
+          <div class="order-history-card" data-testid="order-card-${order.id}">
+            <div class="order-card-header">
+              <div>
+                <strong>Order ID:</strong> <span style="font-family: var(--font-mono); color: var(--primary);">${order.id}</span>
+                <span style="color: var(--text-muted); margin-left: 12px;">Placed on: ${new Date(order.orderDate).toLocaleDateString()}</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="status-pill ${getStatusClass(order.status)}" data-testid="order-status-pill">${order.status}</span>
+                <strong>${window.ChorbajarApp.formatPrice(order.total)}</strong>
+              </div>
+            </div>
+
+            <div class="order-card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div style="display: flex; gap: 12px; align-items: center;">
+                  ${(order.items || []).slice(0, 3).map(item => `
+                    <img src="${item.image}" alt="${item.name}" title="${item.name}" style="width: 50px; height: 50px; border-radius: 4px; object-fit: cover; border: 1px solid var(--border);">
+                  `).join('')}
+                  <div>
+                    <div style="font-weight: 600; font-size: 0.9rem;">${(order.items || []).length} Item(s)</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Payment: ${order.paymentMethod || 'Simulated'}</div>
+                  </div>
+                </div>
+
+                <div>
+                  <a href="account-order-details.html?id=${order.id}" class="btn btn-outline-primary btn-sm" data-testid="view-order-details-${order.id}">
+                    View Order Details &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      searchInput.oninput = renderOrders;
+      filterSelect.onchange = renderOrders;
+
+      renderOrders();
+    });
+  </script>
+</body>
+</html>

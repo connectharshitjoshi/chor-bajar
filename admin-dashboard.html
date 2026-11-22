@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="admin-dashboard.html">Admin</a>
+      <span class="separator">/</span>
+      <span>Dashboard</span>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- Admin Sidebar -->
+      <aside class="sidebar-nav" data-testid="admin-sidebar">
+        <div style="padding: 1.25rem; background: #0f172a; color: #ffffff;">
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.5px;">Control Panel</div>
+          <h4 style="font-size: 1rem; font-weight: 800;">Chorbajar Admin</h4>
+        </div>
+        <a href="admin-dashboard.html" class="sidebar-link active" data-testid="admin-nav-dashboard">📊 Dashboard Analytics</a>
+        <a href="admin-products.html" class="sidebar-link" data-testid="admin-nav-products">📦 Product Catalog (180+)</a>
+        <a href="admin-product-add.html" class="sidebar-link" data-testid="admin-nav-add-product">➕ Add New Product</a>
+        <a href="admin-orders.html" class="sidebar-link" data-testid="admin-nav-orders">📑 Order Management</a>
+        <a href="admin-users.html" class="sidebar-link" data-testid="admin-nav-users">👥 Customer Directory</a>
+        <a href="admin-settings.html" class="sidebar-link" data-testid="admin-nav-settings">⚙️ Store Settings</a>
+      </aside>
+
+      <!-- Dashboard Main -->
+      <section class="dashboard-content-card" data-testid="admin-dashboard">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <div>
+            <h2 style="font-size: 1.4rem; font-weight: 800;">Overview Analytics</h2>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Real-time performance indicators & simulated store metrics</div>
+          </div>
+          <a href="admin-product-add.html" class="btn btn-primary btn-sm" data-testid="btn-quick-add-product">+ Add Product</a>
+        </div>
+
+        <!-- KPI Metric Cards -->
+        <div class="stats-grid">
+          <!-- Total Products -->
+          <div class="stat-card" data-testid="stat-card-products">
+            <div class="stat-icon-wrap" style="background: #eff6ff; color: #2563eb;">📦</div>
+            <div>
+              <div class="stat-val" id="stat-products" data-testid="admin-total-products">0</div>
+              <div class="stat-lbl">Active Products</div>
+            </div>
+          </div>
+
+          <!-- Total Orders -->
+          <div class="stat-card" data-testid="stat-card-orders">
+            <div class="stat-icon-wrap" style="background: #f0fdf4; color: #16a34a;">📑</div>
+            <div>
+              <div class="stat-val" id="stat-orders" data-testid="admin-total-orders">0</div>
+              <div class="stat-lbl">Total Orders Placed</div>
+            </div>
+          </div>
+
+          <!-- Total Revenue -->
+          <div class="stat-card" data-testid="stat-card-revenue">
+            <div class="stat-icon-wrap" style="background: #fffbeb; color: #d97706;">💰</div>
+            <div>
+              <div class="stat-val" id="stat-revenue" data-testid="admin-total-revenue">₹ 0</div>
+              <div class="stat-lbl">Simulated Revenue</div>
+            </div>
+          </div>
+
+          <!-- Total Users -->
+          <div class="stat-card" data-testid="stat-card-users">
+            <div class="stat-icon-wrap" style="background: #fdf2f8; color: #db2777;">👥</div>
+            <div>
+              <div class="stat-val" id="stat-users" data-testid="admin-total-users">0</div>
+              <div class="stat-lbl">Registered Accounts</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Distribution Progress Summary -->
+        <div style="background: var(--bg-subtle); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem; border: 1px solid var(--border);">
+          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">Inventory Category Distribution</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px;" id="admin-category-stats">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <!-- Recent Orders Table -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h3 style="font-size: 1.1rem; font-weight: 700;">Recent Orders</h3>
+          <a href="admin-orders.html" class="section-link" style="font-size: 0.85rem;" data-testid="view-all-admin-orders">View All Orders &rarr;</a>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table" data-testid="recent-orders-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th style="text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="recent-orders-tbody">
+              <!-- Injected via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.ChorbajarApp.requireAuth('admin')) return;
+
+      const products = window.ChorbajarStorage.getProducts();
+      const orders = window.ChorbajarStorage.getOrders();
+      const users = window.ChorbajarStorage.getUsers();
+
+      // Stats
+      document.getElementById('stat-products').textContent = products.length;
+      document.getElementById('stat-orders').textContent = orders.length;
+
+      const totalRevenue = orders.reduce((sum, o) => sum + (o.total || 0), 0);
+      document.getElementById('stat-revenue').textContent = window.ChorbajarApp.formatPrice(totalRevenue);
+
+      document.getElementById('stat-users').textContent = users.length;
+
+      // Category breakdown
+      const catCounts = {};
+      products.forEach(p => {
+        catCounts[p.category] = (catCounts[p.category] || 0) + 1;
+      });
+
+      document.getElementById('admin-category-stats').innerHTML = Object.keys(catCounts).map(catName => `
+        <div style="background: #ffffff; padding: 10px; border-radius: 6px; border: 1px solid var(--border); font-size: 0.8rem;">
+          <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">${catName}</div>
+          <div style="color: var(--primary); font-weight: 800; font-size: 1rem;">${catCounts[catName]} items</div>
+        </div>
+      `).join('');
+
+      // Recent Orders (up to 5)
+      function getStatusClass(status) {
+        if (status === 'Delivered') return 'status-delivered';
+        if (status === 'Shipped') return 'status-shipped';
+        if (status === 'Cancelled') return 'status-cancelled';
+        return 'status-placed';
+      }
+
+      const tbody = document.getElementById('recent-orders-tbody');
+      tbody.innerHTML = orders.slice(0, 5).map(order => `
+        <tr data-testid="admin-recent-order-${order.id}">
+          <td style="font-family: var(--font-mono); font-weight: 700; color: var(--primary);">${order.id}</td>
+          <td>${order.customerName || (order.shippingAddress ? order.shippingAddress.fullName : 'Customer')}</td>
+          <td>${new Date(order.orderDate).toLocaleDateString()}</td>
+          <td><span class="status-pill ${getStatusClass(order.status)}">${order.status}</span></td>
+          <td style="font-weight: 700;">${window.ChorbajarApp.formatPrice(order.total)}</td>
+          <td style="text-align: right;">
+            <a href="admin-orders.html?highlight=${order.id}" class="btn btn-secondary btn-sm" data-testid="manage-order-btn-${order.id}">
+              Manage
+            </a>
+          </td>
+        </tr>
+      `).join('');
+    });
+  </script>
+</body>
+</html>

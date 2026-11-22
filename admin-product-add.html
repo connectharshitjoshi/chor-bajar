@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add / Edit Product | Chorbajar Admin</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="admin-dashboard.html">Admin</a>
+      <span class="separator">/</span>
+      <a href="admin-products.html">Products</a>
+      <span class="separator">/</span>
+      <span id="breadcrumb-action-title">Add Product</span>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- Admin Sidebar -->
+      <aside class="sidebar-nav" data-testid="admin-sidebar">
+        <div style="padding: 1.25rem; background: #0f172a; color: #ffffff;">
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.5px;">Control Panel</div>
+          <h4 style="font-size: 1rem; font-weight: 800;">Chorbajar Admin</h4>
+        </div>
+        <a href="admin-dashboard.html" class="sidebar-link" data-testid="admin-nav-dashboard">📊 Dashboard Analytics</a>
+        <a href="admin-products.html" class="sidebar-link" data-testid="admin-nav-products">📦 Product Catalog (180+)</a>
+        <a href="admin-product-add.html" class="sidebar-link active" data-testid="admin-nav-add-product">➕ Add New Product</a>
+        <a href="admin-orders.html" class="sidebar-link" data-testid="admin-nav-orders">📑 Order Management</a>
+        <a href="admin-users.html" class="sidebar-link" data-testid="admin-nav-users">👥 Customer Directory</a>
+        <a href="admin-settings.html" class="sidebar-link" data-testid="admin-nav-settings">⚙️ Store Settings</a>
+      </aside>
+
+      <!-- Add/Edit Form Card -->
+      <section class="dashboard-content-card" data-testid="admin-product-form-card">
+        <div style="border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <h2 style="font-size: 1.4rem; font-weight: 800;" id="page-heading">Add New Product</h2>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Fill in the product specifications to list it in the Chorbajar catalog.</div>
+        </div>
+
+        <form id="product-crud-form" data-testid="product-crud-form">
+          <input type="hidden" id="edit-id">
+
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
+            <!-- Left inputs -->
+            <div>
+              <div class="form-group">
+                <label class="form-label" for="prod-name">Product Title *</label>
+                <input type="text" id="prod-name" class="form-control" required placeholder="e.g. Wireless Noise-Cancelling Headphones" data-testid="admin-input-name">
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="prod-category">Category *</label>
+                  <select id="prod-category" class="form-control" required data-testid="admin-input-category">
+                    <!-- Populated via JS -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="prod-brand">Brand Name *</label>
+                  <input type="text" id="prod-brand" class="form-control" required placeholder="e.g. SoundMax" data-testid="admin-input-brand">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prod-description">Full Description *</label>
+                <textarea id="prod-description" class="form-control" rows="4" required placeholder="Enter key features, material details, and specifications..." data-testid="admin-input-description"></textarea>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="prod-price">Selling Price (₹) *</label>
+                  <input type="number" id="prod-price" class="form-control" min="1" required placeholder="1499" data-testid="admin-input-price">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="prod-discount">Discount (%)</label>
+                  <input type="number" id="prod-discount" class="form-control" min="0" max="90" value="20" data-testid="admin-input-discount">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="prod-stock">Available Stock *</label>
+                  <input type="number" id="prod-stock" class="form-control" min="0" required value="25" data-testid="admin-input-stock">
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Image Preview -->
+            <div>
+              <div class="form-group">
+                <label class="form-label" for="prod-image">Image URL / Path *</label>
+                <input type="text" id="prod-image" class="form-control" required placeholder="ecommerce-products/electronics/..." data-testid="admin-input-image">
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Use relative local dataset path or external URL</span>
+              </div>
+
+              <div style="margin-top: 1rem; border: 1px dashed var(--border); border-radius: var(--radius-md); padding: 10px; text-align: center; background: var(--bg-subtle);">
+                <div style="font-size: 0.8rem; font-weight: 600; margin-bottom: 6px;">Image Preview:</div>
+                <img id="image-preview" src="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg" alt="Preview" style="max-height: 200px; margin: 0 auto; object-fit: contain; border-radius: 4px;">
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1.25rem;">
+            <button type="submit" class="btn btn-primary" id="btn-submit-product" data-testid="admin-submit-product">
+              Save Product
+            </button>
+            <a href="admin-products.html" class="btn btn-secondary" data-testid="admin-cancel-product">Cancel</a>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.ChorbajarApp.requireAuth('admin')) return;
+
+      const categories = window.CHORBAJAR_CATEGORIES || [];
+      const catSelect = document.getElementById('prod-category');
+      catSelect.innerHTML = categories.map(c => `<option value="${c.name}">${c.name}</option>`).join('');
+
+      const editId = window.ChorbajarApp.getUrlParam('editId');
+      const imgInput = document.getElementById('prod-image');
+      const previewImg = document.getElementById('image-preview');
+
+      imgInput.oninput = () => {
+        if (imgInput.value.trim()) {
+          previewImg.src = imgInput.value.trim();
+        }
+      };
+
+      if (editId) {
+        const product = window.ChorbajarStorage.getProductById(editId);
+        if (product) {
+          document.title = `Edit: ${product.name} | Chorbajar Admin`;
+          document.getElementById('breadcrumb-action-title').textContent = 'Edit Product';
+          document.getElementById('page-heading').textContent = `Edit Product #${product.id}`;
+          document.getElementById('edit-id').value = product.id;
+
+          document.getElementById('prod-name').value = product.name;
+          document.getElementById('prod-category').value = product.category;
+          document.getElementById('prod-brand').value = product.brand;
+          document.getElementById('prod-description').value = product.description;
+          document.getElementById('prod-price').value = product.price;
+          document.getElementById('prod-discount').value = product.discount || 0;
+          document.getElementById('prod-stock').value = product.stock;
+          document.getElementById('prod-image').value = product.image;
+          previewImg.src = product.image;
+        }
+      }
+
+      // Handle Submit
+      document.getElementById('product-crud-form').onsubmit = (e) => {
+        e.preventDefault();
+
+        const id = document.getElementById('edit-id').value;
+        const name = document.getElementById('prod-name').value.trim();
+        const category = document.getElementById('prod-category').value;
+        const brand = document.getElementById('prod-brand').value.trim();
+        const description = document.getElementById('prod-description').value.trim();
+        const price = Number(document.getElementById('prod-price').value);
+        const discount = Number(document.getElementById('prod-discount').value) || 0;
+        const stock = Number(document.getElementById('prod-stock').value);
+        const image = document.getElementById('prod-image').value.trim();
+
+        const catObj = categories.find(c => c.name === category);
+        const catSlug = catObj ? catObj.slug : 'electronics';
+        const originalPrice = Math.round(price / (1 - discount / 100));
+
+        if (id) {
+          // Update
+          window.ChorbajarStorage.updateProduct(id, {
+            name,
+            category,
+            categorySlug: catSlug,
+            brand,
+            description,
+            price,
+            discount,
+            originalPrice,
+            stock,
+            image,
+            images: [image, image]
+          });
+          window.ChorbajarApp.showToast('Product updated successfully!', 'success');
+        } else {
+          // Add New
+          window.ChorbajarStorage.addProduct({
+            name,
+            category,
+            categorySlug: catSlug,
+            brand,
+            description,
+            price,
+            discount,
+            originalPrice,
+            stock,
+            image,
+            images: [image, image]
+          });
+          window.ChorbajarApp.showToast('New product added to catalog!', 'success');
+        }
+
+        setTimeout(() => {
+          window.location.href = 'admin-products.html';
+        }, 500);
+      };
+    });
+  </script>
+</body>
+</html>

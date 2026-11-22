@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Store Settings | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="admin-dashboard.html">Admin</a>
+      <span class="separator">/</span>
+      <span>Settings</span>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- Admin Sidebar -->
+      <aside class="sidebar-nav" data-testid="admin-sidebar">
+        <div style="padding: 1.25rem; background: #0f172a; color: #ffffff;">
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.5px;">Control Panel</div>
+          <h4 style="font-size: 1rem; font-weight: 800;">Chorbajar Admin</h4>
+        </div>
+        <a href="admin-dashboard.html" class="sidebar-link" data-testid="admin-nav-dashboard">📊 Dashboard Analytics</a>
+        <a href="admin-products.html" class="sidebar-link" data-testid="admin-nav-products">📦 Product Catalog (180+)</a>
+        <a href="admin-product-add.html" class="sidebar-link" data-testid="admin-nav-add-product">➕ Add New Product</a>
+        <a href="admin-orders.html" class="sidebar-link" data-testid="admin-nav-orders">📑 Order Management</a>
+        <a href="admin-users.html" class="sidebar-link" data-testid="admin-nav-users">👥 Customer Directory</a>
+        <a href="admin-settings.html" class="sidebar-link active" data-testid="admin-nav-settings">⚙️ Store Settings</a>
+      </aside>
+
+      <!-- Store Settings Card -->
+      <section class="dashboard-content-card" data-testid="admin-settings-manager">
+        <div style="border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <h2 style="font-size: 1.4rem; font-weight: 800;">Store Configuration</h2>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Configure marketplace details, currency, shipping fees, and automated rules.</div>
+        </div>
+
+        <form id="store-settings-form" data-testid="store-settings-form">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+            <!-- General Settings -->
+            <div>
+              <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">General Store Information</h3>
+
+              <div class="form-group">
+                <label class="form-label" for="setting-store-name">Store Name</label>
+                <input type="text" id="setting-store-name" class="form-control" required data-testid="setting-store-name">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="setting-store-email">Support Email</label>
+                <input type="email" id="setting-store-email" class="form-control" required data-testid="setting-store-email">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="setting-store-phone">Customer Helpline</label>
+                <input type="text" id="setting-store-phone" class="form-control" required data-testid="setting-store-phone">
+              </div>
+            </div>
+
+            <!-- Pricing & Logistics -->
+            <div>
+              <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">Shipping & Delivery Rules</h3>
+
+              <div class="form-group">
+                <label class="form-label" for="setting-shipping-fee">Standard Shipping Fee (₹)</label>
+                <input type="number" id="setting-shipping-fee" class="form-control" min="0" required data-testid="setting-shipping-fee">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="setting-free-threshold">Free Delivery Min. Threshold (₹)</label>
+                <input type="number" id="setting-free-threshold" class="form-control" min="0" required data-testid="setting-free-threshold">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="setting-currency">Currency Symbol</label>
+                <input type="text" id="setting-currency" class="form-control" required readonly value="₹ (INR)" data-testid="setting-currency">
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; border-top: 1px solid var(--border); padding-top: 1.25rem;">
+            <button type="submit" class="btn btn-primary" data-testid="admin-save-settings">Save Store Settings</button>
+          </div>
+        </form>
+
+        <!-- Danger Demo Reset Zone -->
+        <div style="margin-top: 3rem; background: var(--danger-bg); border: 1px solid var(--danger-border); border-radius: var(--radius-md); padding: 1.5rem;">
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--danger); margin-bottom: 6px;">
+            ⚠️ Reset All Demo & Automation Data
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            Resetting the store will purge all user-generated modifications and reinstate the factory mock database (180 products, default demo users, coupons, and orders).
+          </p>
+          <button type="button" class="btn btn-danger btn-sm" id="btn-admin-reset-all" data-testid="admin-reset-store-btn">
+            Purge & Reset All Store Data
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.ChorbajarApp.requireAuth('admin')) return;
+
+      const settings = window.ChorbajarStorage.getSettings();
+
+      document.getElementById('setting-store-name').value = settings.storeName || 'Chorbajar';
+      document.getElementById('setting-store-email').value = settings.storeEmail || 'support@chorbajar.in';
+      document.getElementById('setting-store-phone').value = settings.storePhone || '+91 1800-CHORBAJAR';
+      document.getElementById('setting-shipping-fee').value = settings.shippingFee !== undefined ? settings.shippingFee : 49;
+      document.getElementById('setting-free-threshold').value = settings.freeShippingThreshold !== undefined ? settings.freeShippingThreshold : 500;
+
+      // Handle Submit
+      document.getElementById('store-settings-form').onsubmit = (e) => {
+        e.preventDefault();
+        const updated = {
+          storeName: document.getElementById('setting-store-name').value.trim(),
+          storeEmail: document.getElementById('setting-store-email').value.trim(),
+          storePhone: document.getElementById('setting-store-phone').value.trim(),
+          shippingFee: Number(document.getElementById('setting-shipping-fee').value),
+          freeShippingThreshold: Number(document.getElementById('setting-free-threshold').value),
+          currency: '₹'
+        };
+
+        window.ChorbajarStorage.saveSettings(updated);
+        window.ChorbajarApp.showToast('Store settings updated successfully!', 'success');
+      };
+
+      // Reset Store
+      document.getElementById('btn-admin-reset-all').onclick = () => {
+        window.ChorbajarApp.showConfirmModal(
+          'Confirm Factory Reset?',
+          'This will purge all custom products, modified orders, and user carts, restoring factory defaults.',
+          () => {
+            window.ChorbajarStorage.resetToDefaults();
+            window.ChorbajarApp.showToast('Store reset to factory defaults!', 'success');
+            setTimeout(() => window.location.href = 'index.html', 600);
+          }
+        );
+      };
+    });
+  </script>
+</body>
+</html>

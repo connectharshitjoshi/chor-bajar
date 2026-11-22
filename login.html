@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="auth-page-wrap">
+    <div class="auth-card" data-testid="login-card">
+      <div class="auth-header">
+        <h1 class="auth-title">Welcome Back</h1>
+        <p class="auth-subtitle">Sign in to your Chorbajar customer or admin account</p>
+      </div>
+
+      <!-- Quick Fill QA Helper -->
+      <div class="auth-quick-creds" data-testid="quick-creds-box">
+        <span style="font-weight: 700;">⚡ Quick Demo Accounts (Click to Auto-Fill):</span>
+        <button type="button" id="btn-fill-customer" data-testid="quick-login-customer">
+          👤 Customer: user@test.com / Test@123
+        </button>
+        <button type="button" id="btn-fill-admin" data-testid="quick-login-admin">
+          🛡️ Admin: admin@test.com / Admin@123
+        </button>
+      </div>
+
+      <!-- Error Alert -->
+      <div id="login-error-alert" style="display: none; background: var(--danger-bg); border: 1px solid var(--danger-border); color: var(--danger); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.85rem; margin-bottom: 1.25rem;" data-testid="login-error">
+      </div>
+
+      <form id="login-form" data-testid="login-form">
+        <div class="form-group">
+          <label class="form-label" for="login-email">Email Address</label>
+          <input 
+            type="email" 
+            id="login-email" 
+            class="form-control" 
+            placeholder="name@example.com" 
+            required 
+            data-testid="login-email"
+          />
+        </div>
+
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label class="form-label" for="login-password" style="margin-bottom: 0;">Password</label>
+            <a href="forgot-password.html" style="font-size: 0.8rem; color: var(--primary);" data-testid="forgot-password-link">Forgot Password?</a>
+          </div>
+          <div style="position: relative;">
+            <input 
+              type="password" 
+              id="login-password" 
+              class="form-control" 
+              placeholder="••••••••" 
+              required 
+              data-testid="login-password"
+            />
+            <button 
+              type="button" 
+              id="btn-toggle-pwd" 
+              style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem;"
+              data-testid="toggle-password"
+            >
+              Show
+            </button>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <label class="filter-checkbox-item">
+            <input type="checkbox" id="login-remember" checked data-testid="remember-me" />
+            <span style="font-size: 0.85rem;">Remember Me</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="btn-login-submit" data-testid="login-submit">
+          Sign In
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+        Don't have an account? <a href="register.html" style="color: var(--primary); font-weight: 600;" data-testid="register-link">Create Account</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const emailInput = document.getElementById('login-email');
+      const pwdInput = document.getElementById('login-password');
+      const rememberInput = document.getElementById('login-remember');
+      const errorAlert = document.getElementById('login-error-alert');
+
+      // Quick Creds Fill
+      document.getElementById('btn-fill-customer').onclick = () => {
+        emailInput.value = 'user@test.com';
+        pwdInput.value = 'Test@123';
+        errorAlert.style.display = 'none';
+      };
+
+      document.getElementById('btn-fill-admin').onclick = () => {
+        emailInput.value = 'admin@test.com';
+        pwdInput.value = 'Admin@123';
+        errorAlert.style.display = 'none';
+      };
+
+      // Toggle Password Visibility
+      const toggleBtn = document.getElementById('btn-toggle-pwd');
+      toggleBtn.onclick = () => {
+        const isPwd = pwdInput.type === 'password';
+        pwdInput.type = isPwd ? 'text' : 'password';
+        toggleBtn.textContent = isPwd ? 'Hide' : 'Show';
+      };
+
+      // Form Submit
+      document.getElementById('login-form').onsubmit = (e) => {
+        e.preventDefault();
+        errorAlert.style.display = 'none';
+
+        const email = emailInput.value.trim();
+        const pwd = pwdInput.value;
+        const remember = rememberInput.checked;
+
+        const res = window.ChorbajarStorage.login(email, pwd, remember);
+
+        if (res.success) {
+          window.ChorbajarApp.showToast(`Welcome back, ${res.user.name}!`, 'success');
+          const returnUrl = window.ChorbajarApp.getUrlParam('returnUrl');
+          setTimeout(() => {
+            if (returnUrl) {
+              window.location.href = decodeURIComponent(returnUrl);
+            } else if (res.user.role === 'admin') {
+              window.location.href = 'admin-dashboard.html';
+            } else {
+              window.location.href = 'index.html';
+            }
+          }, 400);
+        } else {
+          errorAlert.textContent = res.message;
+          errorAlert.style.display = 'block';
+          window.ChorbajarApp.showToast(res.message, 'danger');
+        }
+      };
+    });
+  </script>
+</body>
+</html>

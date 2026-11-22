@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chorbajar | Authentic E-Commerce Testing Playground</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <!-- Dynamic Header Container -->
+  <div id="site-header-container"></div>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Hero Banner -->
+    <section class="hero-slider" data-testid="hero-section">
+      <div class="hero-content">
+        <span class="hero-tag" data-testid="hero-tag">Grand Launch Deals</span>
+        <h1 class="hero-title">Experience Verified Products at Unbeatable Prices</h1>
+        <p class="hero-desc">
+          Explore over 180 curated products across Electronics, Fashion, Home & Kitchen, Watches, Books, and Sports. Tested for peak reliability.
+        </p>
+        <div class="hero-actions">
+          <a href="products.html" class="btn-hero" data-testid="hero-shop-btn">
+            Shop Catalog &rarr;
+          </a>
+          <a href="products.html?sort=discount" class="btn btn-outline-primary" style="color: #ffffff; border-color: rgba(255,255,255,0.4);" data-testid="hero-deals-btn">
+            Top Deals (Up to 50% Off)
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg" alt="Featured Electronics Hero" style="width: 320px; height: 320px; object-fit: cover;">
+      </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="categories-section" style="margin-bottom: 3rem;">
+      <div class="section-header">
+        <h2 class="section-title">Shop by Category</h2>
+        <a href="products.html" class="section-link" data-testid="view-all-categories">View All Categories &rarr;</a>
+      </div>
+      <div class="category-cards-grid" id="home-categories-grid" data-testid="home-categories-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products-section" style="margin-bottom: 3rem;">
+      <div class="section-header">
+        <h2 class="section-title">Featured Picks for You</h2>
+        <a href="products.html?filter=featured" class="section-link" data-testid="view-all-featured">Explore All &rarr;</a>
+      </div>
+      <div class="products-grid" id="featured-products-grid" data-testid="featured-products-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- Promotional Strip -->
+    <section class="promo-strip" data-testid="promo-features">
+      <div class="promo-feature">
+        <div class="promo-icon">🚚</div>
+        <div>
+          <h4>Free Express Delivery</h4>
+          <p>On all orders over ₹500 across India</p>
+        </div>
+      </div>
+      <div class="promo-feature">
+        <div class="promo-icon">🛡️</div>
+        <div>
+          <h4>100% Genuine Products</h4>
+          <p>Directly sourced and quality tested</p>
+        </div>
+      </div>
+      <div class="promo-feature">
+        <div class="promo-icon">🔄</div>
+        <div>
+          <h4>7-Day Easy Returns</h4>
+          <p>Hassle-free instant refund policy</p>
+        </div>
+      </div>
+      <div class="promo-feature">
+        <div class="promo-icon">💳</div>
+        <div>
+          <h4>Secure Simulated Checkout</h4>
+          <p>UPI, Cards, NetBanking & COD</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Products -->
+    <section class="trending-products-section" style="margin-bottom: 3.5rem;">
+      <div class="section-header">
+        <h2 class="section-title">Trending This Week</h2>
+        <a href="products.html?sort=rating" class="section-link" data-testid="view-all-trending">Browse Trending &rarr;</a>
+      </div>
+      <div class="products-grid" id="trending-products-grid" data-testid="trending-products-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section" data-testid="newsletter-section">
+      <div class="newsletter-content">
+        <h3>Stay in the Loop with Chorbajar</h3>
+        <p>Subscribe to receive exclusive secret coupon drops, weekly sales alerts, and new arrivals directly to your inbox.</p>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault(); window.ChorbajarApp.showToast('Thank you for subscribing to Chorbajar deals!', 'success'); this.reset();">
+          <input 
+            type="email" 
+            class="newsletter-input" 
+            placeholder="Enter your email address" 
+            required 
+            data-testid="newsletter-input"
+          />
+          <button type="submit" class="newsletter-btn" data-testid="newsletter-submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Dynamic Footer Container -->
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Render Category Cards
+      const catContainer = document.getElementById('home-categories-grid');
+      if (catContainer && window.CHORBAJAR_CATEGORIES) {
+        catContainer.innerHTML = window.CHORBAJAR_CATEGORIES.map(cat => `
+          <a href="category.html?name=${encodeURIComponent(cat.slug)}" class="category-card" data-testid="category-card-${cat.slug}">
+            <div class="category-img-wrap">
+              <img src="${cat.image}" alt="${cat.name}" loading="lazy">
+            </div>
+            <div class="category-name">${cat.name}</div>
+            <div class="category-count">${cat.count} Items</div>
+          </a>
+        `).join('');
+      }
+
+      // Render Featured Products (first 8)
+      const allProducts = window.ChorbajarStorage.getProducts();
+      const featuredContainer = document.getElementById('featured-products-grid');
+      if (featuredContainer) {
+        const featured = allProducts.filter(p => p.featured).slice(0, 8);
+        featuredContainer.innerHTML = featured.map(p => window.ChorbajarApp.renderProductCard(p)).join('');
+      }
+
+      // Render Trending Products (first 8)
+      const trendingContainer = document.getElementById('trending-products-grid');
+      if (trendingContainer) {
+        const trending = allProducts.filter(p => p.trending).slice(0, 8);
+        trendingContainer.innerHTML = trending.map(p => window.ChorbajarApp.renderProductCard(p)).join('');
+      }
+    });
+  </script>
+</body>
+</html>

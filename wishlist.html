@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Wishlist | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span>My Wishlist</span>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem;">
+      <h1 style="font-size: 1.6rem; font-weight: 800;">
+        My Wishlist (<span id="wishlist-total-count" data-testid="wishlist-total-count">0</span>)
+      </h1>
+      <button class="btn btn-secondary btn-sm" id="btn-clear-wishlist" data-testid="btn-clear-wishlist">Clear Wishlist</button>
+    </div>
+
+    <!-- Wishlist Grid -->
+    <div class="products-grid" id="wishlist-products-grid" data-testid="wishlist-products-grid"></div>
+
+    <!-- Empty Wishlist State -->
+    <div class="empty-state" id="wishlist-empty-state" style="display: none;" data-testid="wishlist-empty-state">
+      <div class="empty-state-icon">💔</div>
+      <h3 class="empty-state-title">Your Wishlist is Empty</h3>
+      <p class="empty-state-desc">You haven't saved any items yet. Explore our curated collections and tap the heart icon to save items for later.</p>
+      <a href="products.html" class="btn btn-primary" data-testid="explore-products-btn">Explore Products</a>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function renderWishlist() {
+        const wishlistIds = window.ChorbajarStorage.getWishlist();
+        const allProducts = window.ChorbajarStorage.getProducts();
+        const wishlistProducts = allProducts.filter(p => wishlistIds.includes(p.id));
+
+        document.getElementById('wishlist-total-count').textContent = wishlistProducts.length;
+
+        const gridElem = document.getElementById('wishlist-products-grid');
+        const emptyElem = document.getElementById('wishlist-empty-state');
+        const clearBtn = document.getElementById('btn-clear-wishlist');
+
+        if (wishlistProducts.length === 0) {
+          gridElem.style.display = 'none';
+          emptyElem.style.display = 'block';
+          clearBtn.style.display = 'none';
+        } else {
+          gridElem.style.display = 'grid';
+          emptyElem.style.display = 'none';
+          clearBtn.style.display = 'inline-flex';
+
+          gridElem.innerHTML = wishlistProducts.map(p => `
+            <div class="product-card" data-testid="wishlist-card-${p.id}">
+              <div class="product-card-img-wrap">
+                <span class="product-badge-discount">-${p.discount}%</span>
+                <button 
+                  class="product-wishlist-btn active" 
+                  title="Remove from Wishlist"
+                  data-testid="remove-wishlist-item"
+                  onclick="window.removeItemFromWishlist(${p.id})"
+                >
+                  &times;
+                </button>
+                <a href="product-details.html?id=${p.id}">
+                  <img src="${p.image}" alt="${p.name}">
+                </a>
+              </div>
+              <div class="product-card-body">
+                <div class="product-card-brand">${p.brand}</div>
+                <h3 class="product-card-title">
+                  <a href="product-details.html?id=${p.id}">${p.name}</a>
+                </h3>
+                <div class="product-card-pricing">
+                  <span class="price-current">${window.ChorbajarApp.formatPrice(p.price)}</span>
+                  <span class="price-original">${window.ChorbajarApp.formatPrice(p.originalPrice)}</span>
+                </div>
+                <div style="display: flex; gap: 8px; margin-top: 10px;">
+                  <button 
+                    class="btn btn-primary btn-sm btn-block" 
+                    data-testid="move-to-cart-btn"
+                    onclick="window.moveToCart(${p.id})"
+                  >
+                    Move to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+      }
+
+      window.removeItemFromWishlist = (id) => {
+        window.ChorbajarStorage.toggleWishlist(id);
+        window.ChorbajarApp.showToast('Item removed from Wishlist.', 'info');
+        renderWishlist();
+      };
+
+      window.moveToCart = (id) => {
+        const res = window.ChorbajarStorage.addToCart(id, 1);
+        if (res.success) {
+          window.ChorbajarStorage.toggleWishlist(id);
+          window.ChorbajarApp.showToast('Item moved to cart successfully!', 'success');
+          renderWishlist();
+        } else {
+          window.ChorbajarApp.showToast(res.message, 'warning');
+        }
+      };
+
+      document.getElementById('btn-clear-wishlist').onclick = () => {
+        window.ChorbajarApp.showConfirmModal(
+          'Clear Wishlist?',
+          'Are you sure you want to remove all saved items from your wishlist?',
+          () => {
+            window.ChorbajarStorage.saveWishlist([]);
+            window.ChorbajarApp.showToast('Wishlist cleared.', 'info');
+            renderWishlist();
+          }
+        );
+      };
+
+      renderWishlist();
+    });
+  </script>
+</body>
+</html>

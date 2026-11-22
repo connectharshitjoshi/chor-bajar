@@ -1,0 +1,20 @@
+{
+  "name": "chorbajar",
+  "version": "1.0.0",
+  "description": "Chorbajar - Frontend-Only E-Commerce Platform for QA & Automation Testing",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "serve": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "ecommerce",
+    "testing",
+    "qa",
+    "playwright",
+    "automation",
+    "vanilla-js"
+  ],
+  "author": "Chorbajar Team",
+  "license": "MIT"
+}

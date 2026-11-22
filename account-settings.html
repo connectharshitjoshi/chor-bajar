@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Settings | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="account-profile.html">Account</a>
+      <span class="separator">/</span>
+      <span>Settings</span>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- Account Sidebar -->
+      <aside class="sidebar-nav" data-testid="account-sidebar">
+        <a href="account-profile.html" class="sidebar-link" data-testid="sidebar-profile">👤 Personal Information</a>
+        <a href="account-orders.html" class="sidebar-link" data-testid="sidebar-orders">📦 My Orders & Tracking</a>
+        <a href="account-addresses.html" class="sidebar-link" data-testid="sidebar-addresses">📍 Saved Delivery Addresses</a>
+        <a href="account-settings.html" class="sidebar-link active" data-testid="sidebar-settings">⚙️ Account Settings</a>
+      </aside>
+
+      <!-- Settings Content -->
+      <section class="dashboard-content-card" data-testid="account-settings-card">
+        <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+          Account Security & Preferences
+        </h2>
+
+        <!-- Password Change -->
+        <div style="margin-bottom: 2.5rem;">
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">Change Account Password</h3>
+          <form id="change-pwd-form" style="max-width: 440px;" data-testid="change-password-form">
+            <div class="form-group">
+              <label class="form-label" for="current-pwd">Current Password</label>
+              <input type="password" id="current-pwd" class="form-control" required placeholder="Enter current password" data-testid="current-password">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="new-pwd">New Password</label>
+              <input type="password" id="new-pwd" class="form-control" required placeholder="Min 6 characters" data-testid="new-password">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="confirm-pwd">Confirm New Password</label>
+              <input type="password" id="confirm-pwd" class="form-control" required placeholder="Re-enter new password" data-testid="confirm-password">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-sm" data-testid="btn-update-password">Update Password</button>
+          </form>
+        </div>
+
+        <!-- Notification Preferences -->
+        <div style="margin-bottom: 2.5rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">Notification Preferences</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;" data-testid="notification-preferences">
+            <label class="filter-checkbox-item">
+              <input type="checkbox" id="notif-orders" checked data-testid="notif-order-updates">
+              <span><strong>Order Status Alerts</strong> (Receive simulated SMS and Email updates on shipments)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" id="notif-promo" checked data-testid="notif-promo-offers">
+              <span><strong>Promotional Deals & Flash Sales</strong> (Get notified of weekend discounts)</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="checkbox" id="notif-whatsapp" data-testid="notif-whatsapp-updates">
+              <span><strong>WhatsApp Updates</strong> (Track deliveries via WhatsApp notifications)</span>
+            </label>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" style="margin-top: 12px;" onclick="window.ChorbajarApp.showToast('Notification preferences saved!', 'success');" data-testid="save-notifications-btn">
+            Save Preferences
+          </button>
+        </div>
+
+        <!-- Danger Zone -->
+        <div style="border-top: 1px solid var(--danger-border); padding-top: 1.5rem; background: var(--danger-bg); padding: 1.25rem; border-radius: var(--radius-md);">
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--danger); margin-bottom: 6px;">Danger Zone</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">
+            Deactivating your account will disable your active sessions and order access.
+          </p>
+          <button type="button" class="btn btn-danger btn-sm" id="btn-deactivate" data-testid="btn-deactivate-account">
+            Deactivate Simulated Account
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.ChorbajarApp.requireAuth()) return;
+
+      const user = window.ChorbajarStorage.getCurrentUser();
+
+      // Change Password form
+      document.getElementById('change-pwd-form').onsubmit = (e) => {
+        e.preventDefault();
+        const cur = document.getElementById('current-pwd').value;
+        const nxt = document.getElementById('new-pwd').value;
+        const cnf = document.getElementById('confirm-pwd').value;
+
+        if (cur !== user.password) {
+          window.ChorbajarApp.showToast('Current password does not match.', 'danger');
+          return;
+        }
+
+        if (nxt.length < 6) {
+          window.ChorbajarApp.showToast('New password must be at least 6 characters.', 'danger');
+          return;
+        }
+
+        if (nxt !== cnf) {
+          window.ChorbajarApp.showToast('New passwords do not match.', 'danger');
+          return;
+        }
+
+        window.ChorbajarStorage.updateUserProfile({ password: nxt });
+        window.ChorbajarApp.showToast('Password updated successfully!', 'success');
+        document.getElementById('change-pwd-form').reset();
+      };
+
+      // Deactivate account
+      document.getElementById('btn-deactivate').onclick = () => {
+        window.ChorbajarApp.showConfirmModal(
+          'Deactivate Account?',
+          'Are you sure you want to deactivate your account? You will be signed out immediately.',
+          () => {
+            window.ChorbajarStorage.updateUserProfile({ status: 'Blocked' });
+            window.ChorbajarStorage.logout();
+            window.ChorbajarApp.showToast('Account deactivated.', 'info');
+            setTimeout(() => window.location.href = 'index.html', 500);
+          }
+        );
+      };
+    });
+  </script>
+</body>
+</html>

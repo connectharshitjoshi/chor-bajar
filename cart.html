@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span>Shopping Cart</span>
+    </div>
+
+    <h1 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 1.5rem;">
+      Shopping Cart (<span id="cart-items-header-count" data-testid="cart-header-count">0</span>)
+    </h1>
+
+    <!-- Empty Cart State -->
+    <div class="empty-state" id="cart-empty-state" style="display: none;" data-testid="cart-empty-state">
+      <div class="empty-state-icon">🛒</div>
+      <h3 class="empty-state-title">Your Cart is Currently Empty</h3>
+      <p class="empty-state-desc">Looks like you haven't added anything to your cart yet. Browse our top categories or trending collections to find something you love!</p>
+      <a href="products.html" class="btn btn-primary" data-testid="start-shopping-btn">Explore Products</a>
+    </div>
+
+    <!-- Active Cart Layout -->
+    <div class="cart-layout" id="cart-active-layout" style="display: none;" data-testid="cart-layout">
+      <!-- Cart Items List -->
+      <div class="cart-items-table" id="cart-items-container" data-testid="cart-items-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Order Summary Card -->
+      <div class="order-summary-card" data-testid="order-summary-card">
+        <h3 class="order-summary-title">Order Summary</h3>
+
+        <div class="summary-line">
+          <span>Items Subtotal</span>
+          <span id="summary-subtotal" data-testid="summary-subtotal" style="font-weight: 600;">₹ 0</span>
+        </div>
+
+        <div class="summary-line" id="summary-discount-row" style="display: none; color: var(--success);">
+          <span>Coupon Discount (<span id="summary-coupon-code"></span>)</span>
+          <span id="summary-discount" data-testid="summary-discount" style="font-weight: 600;">-₹ 0</span>
+        </div>
+
+        <div class="summary-line">
+          <span>Shipping & Delivery</span>
+          <span id="summary-shipping" data-testid="summary-shipping">₹ 0</span>
+        </div>
+
+        <div id="free-shipping-progress" style="background: var(--bg-subtle); padding: 8px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; margin-bottom: 1rem; color: var(--text-secondary);">
+          <!-- Injected JS -->
+        </div>
+
+        <div class="summary-line total">
+          <span>Grand Total</span>
+          <span id="summary-grand-total" data-testid="cart-total">₹ 0</span>
+        </div>
+
+        <!-- Coupon Section -->
+        <div class="coupon-box" data-testid="coupon-section">
+          <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 6px;">
+            Have a Promo Code?
+          </label>
+          <div class="coupon-form">
+            <input 
+              type="text" 
+              id="coupon-input" 
+              class="form-control" 
+              placeholder="e.g. WELCOME10, SAVE200" 
+              style="text-transform: uppercase;"
+              data-testid="coupon-input"
+            />
+            <button type="button" class="btn btn-secondary btn-sm" id="btn-apply-coupon" data-testid="apply-coupon-btn">
+              Apply
+            </button>
+          </div>
+          <div id="coupon-message" style="font-size: 0.75rem; margin-top: 6px; font-weight: 600; display: none;" data-testid="coupon-message"></div>
+          <div id="applied-coupon-pill" style="display: none; margin-top: 8px; justify-content: space-between; align-items: center; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; color: #065f46;">
+            <span>✓ <strong id="applied-code-name"></strong> active</span>
+            <button type="button" id="btn-remove-coupon" style="color: #dc2626; font-weight: 700;" data-testid="remove-coupon-btn">Remove</button>
+          </div>
+        </div>
+
+        <a href="checkout.html" class="btn btn-primary btn-block btn-lg" id="btn-proceed-checkout" data-testid="proceed-to-checkout">
+          Proceed to Checkout &rarr;
+        </a>
+
+        <div style="margin-top: 1.25rem; font-size: 0.75rem; color: var(--text-muted); text-align: center;">
+          🔒 Safe & Secure Simulated Checkout Experience
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let appliedCoupon = null;
+      let couponDiscount = 0;
+
+      // Check sessionStorage for active coupon
+      try {
+        const storedCoupon = sessionStorage.getItem('chorbajar_applied_coupon');
+        if (storedCoupon) appliedCoupon = JSON.parse(storedCoupon);
+      } catch (e) {}
+
+      function calculateAndRender() {
+        const cart = window.ChorbajarStorage.getCart();
+        const emptyElem = document.getElementById('cart-empty-state');
+        const activeElem = document.getElementById('cart-active-layout');
+        const itemsCountElem = document.getElementById('cart-items-header-count');
+
+        itemsCountElem.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+        if (cart.length === 0) {
+          emptyElem.style.display = 'block';
+          activeElem.style.display = 'none';
+          sessionStorage.removeItem('chorbajar_applied_coupon');
+          return;
+        }
+
+        emptyElem.style.display = 'none';
+        activeElem.style.display = 'grid';
+
+        // Render Cart Items
+        const container = document.getElementById('cart-items-container');
+        container.innerHTML = cart.map(item => `
+          <div class="cart-item-row" data-testid="cart-item-${item.productId}">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+            <div class="cart-item-details">
+              <div class="product-card-brand">${item.brand}</div>
+              <h4><a href="product-details.html?id=${item.productId}">${item.name}</a></h4>
+              <div class="cart-item-meta">
+                ${item.variant ? `<span class="badge" style="background: #e2e8f0; padding: 2px 6px; border-radius: 4px;">Variant: ${item.variant}</span>` : ''}
+                <span>Unit Price: ${window.ChorbajarApp.formatPrice(item.price)}</span>
+              </div>
+              <div class="cart-item-price">${window.ChorbajarApp.formatPrice(item.price * item.quantity)}</div>
+            </div>
+
+            <!-- Quantity Stepper -->
+            <div class="qty-stepper" data-testid="cart-qty-stepper">
+              <button class="qty-btn" onclick="window.changeItemQty(${item.productId}, ${item.quantity - 1}, '${item.variant || ''}')" data-testid="cart-qty-minus">-</button>
+              <input type="text" class="qty-input" value="${item.quantity}" readonly data-testid="cart-qty-val">
+              <button class="qty-btn" onclick="window.changeItemQty(${item.productId}, ${item.quantity + 1}, '${item.variant || ''}')" data-testid="cart-qty-plus">+</button>
+            </div>
+
+            <!-- Remove Button -->
+            <button 
+              class="btn btn-secondary btn-sm" 
+              style="color: var(--danger); border-color: var(--border);" 
+              title="Remove from Cart"
+              data-testid="cart-remove-item"
+              onclick="window.promptRemoveItem(${item.productId}, '${item.variant || ''}', '${item.name.replace(/'/g, "\\'")}')"
+            >
+              ${window.ChorbajarApp.icons.trash}
+            </button>
+          </div>
+        `).join('');
+
+        // Calculate Totals
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const settings = window.ChorbajarStorage.getSettings();
+        const freeShippingThreshold = settings.freeShippingThreshold || 500;
+        const baseShippingFee = settings.shippingFee || 49;
+        const shippingFee = subtotal >= freeShippingThreshold ? 0 : baseShippingFee;
+
+        // Verify applied coupon against current subtotal
+        if (appliedCoupon) {
+          const couponRes = window.ChorbajarStorage.validateCoupon(appliedCoupon.code, subtotal);
+          if (couponRes.valid) {
+            couponDiscount = couponRes.discountAmount;
+            document.getElementById('summary-discount-row').style.display = 'flex';
+            document.getElementById('summary-coupon-code').textContent = appliedCoupon.code;
+            document.getElementById('summary-discount').textContent = `- ${window.ChorbajarApp.formatPrice(couponDiscount)}`;
+            document.getElementById('applied-coupon-pill').style.display = 'flex';
+            document.getElementById('applied-code-name').textContent = appliedCoupon.code;
+            document.getElementById('coupon-input').value = appliedCoupon.code;
+          } else {
+            // Coupon no longer meets minimum criteria
+            appliedCoupon = null;
+            couponDiscount = 0;
+            sessionStorage.removeItem('chorbajar_applied_coupon');
+            document.getElementById('summary-discount-row').style.display = 'none';
+            document.getElementById('applied-coupon-pill').style.display = 'none';
+            window.ChorbajarApp.showToast('Coupon removed: ' + couponRes.message, 'warning');
+          }
+        } else {
+          document.getElementById('summary-discount-row').style.display = 'none';
+          document.getElementById('applied-coupon-pill').style.display = 'none';
+        }
+
+        const grandTotal = Math.max(0, subtotal - couponDiscount + shippingFee);
+
+        document.getElementById('summary-subtotal').textContent = window.ChorbajarApp.formatPrice(subtotal);
+        document.getElementById('summary-shipping').textContent = shippingFee === 0 ? 'FREE' : window.ChorbajarApp.formatPrice(shippingFee);
+        document.getElementById('summary-grand-total').textContent = window.ChorbajarApp.formatPrice(grandTotal);
+
+        // Free shipping reminder
+        const progressElem = document.getElementById('free-shipping-progress');
+        if (subtotal >= freeShippingThreshold) {
+          progressElem.innerHTML = '🎉 <strong>Congratulations!</strong> You have unlocked <strong>FREE Express Delivery</strong>!';
+          progressElem.style.background = '#ecfdf5';
+          progressElem.style.color = '#065f46';
+        } else {
+          const diff = freeShippingThreshold - subtotal;
+          progressElem.innerHTML = `🚚 Add <strong>${window.ChorbajarApp.formatPrice(diff)}</strong> more to qualify for <strong>FREE Delivery</strong>!`;
+          progressElem.style.background = '#fffbeb';
+          progressElem.style.color = '#92400e';
+        }
+      }
+
+      window.changeItemQty = (productId, newQty, variant) => {
+        const v = variant === '' ? null : variant;
+        window.ChorbajarStorage.updateCartQty(productId, newQty, v);
+        calculateAndRender();
+      };
+
+      window.promptRemoveItem = (productId, variant, name) => {
+        const v = variant === '' ? null : variant;
+        window.ChorbajarApp.showConfirmModal(
+          'Remove Product?',
+          `Are you sure you want to remove <strong>${name}</strong> from your cart?`,
+          () => {
+            window.ChorbajarStorage.removeFromCart(productId, v);
+            window.ChorbajarApp.showToast('Item removed from cart.', 'info');
+            calculateAndRender();
+          }
+        );
+      };
+
+      // Coupon Application
+      document.getElementById('btn-apply-coupon').onclick = () => {
+        const input = document.getElementById('coupon-input');
+        const code = input.value.trim().toUpperCase();
+        const msgElem = document.getElementById('coupon-message');
+
+        if (!code) {
+          msgElem.textContent = 'Please enter a coupon code.';
+          msgElem.style.color = 'var(--danger)';
+          msgElem.style.display = 'block';
+          return;
+        }
+
+        const cart = window.ChorbajarStorage.getCart();
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const res = window.ChorbajarStorage.validateCoupon(code, subtotal);
+
+        if (res.valid) {
+          appliedCoupon = res.coupon;
+          sessionStorage.setItem('chorbajar_applied_coupon', JSON.stringify(res.coupon));
+          msgElem.textContent = res.message;
+          msgElem.style.color = 'var(--success)';
+          msgElem.style.display = 'block';
+          window.ChorbajarApp.showToast(res.message, 'success');
+          calculateAndRender();
+        } else {
+          msgElem.textContent = res.message;
+          msgElem.style.color = 'var(--danger)';
+          msgElem.style.display = 'block';
+          window.ChorbajarApp.showToast(res.message, 'danger');
+        }
+      };
+
+      // Remove Coupon
+      document.getElementById('btn-remove-coupon').onclick = () => {
+        appliedCoupon = null;
+        couponDiscount = 0;
+        sessionStorage.removeItem('chorbajar_applied_coupon');
+        document.getElementById('coupon-input').value = '';
+        document.getElementById('coupon-message').style.display = 'none';
+        window.ChorbajarApp.showToast('Coupon removed.', 'info');
+        calculateAndRender();
+      };
+
+      calculateAndRender();
+    });
+  </script>
+</body>
+</html>

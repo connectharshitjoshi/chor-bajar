@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verification | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="auth-page-wrap">
+    <div class="auth-card" style="text-align: center;" data-testid="verify-email-card">
+      <div class="empty-state-icon" style="color: var(--primary);">✉️</div>
+      <h1 class="auth-title">Verify Your Email Address</h1>
+      <p class="auth-subtitle" style="margin-bottom: 1.5rem;">
+        A verification link has been simulated for <br>
+        <strong id="verify-email-address" style="color: var(--text-main);">user@test.com</strong>
+      </p>
+
+      <div style="margin-bottom: 1.5rem;">
+        <span class="status-pill status-placed" id="email-verification-badge" data-testid="email-verification-status">
+          Status: Pending Verification
+        </span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; max-width: 320px; margin: 0 auto;">
+        <button type="button" class="btn btn-primary" id="btn-simulate-verify" data-testid="simulate-verify-btn">
+          Simulate Click Verification Link
+        </button>
+
+        <button type="button" class="btn btn-secondary" id="btn-resend-email" data-testid="resend-verification-btn">
+          Resend Verification Email
+        </button>
+
+        <a href="account-profile.html" class="btn btn-outline-primary" style="margin-top: 10px;" data-testid="back-to-account">
+          Back to Account
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const currentUser = window.ChorbajarStorage.getCurrentUser();
+      const email = window.ChorbajarApp.getUrlParam('email') || (currentUser ? currentUser.email : 'user@test.com');
+      document.getElementById('verify-email-address').textContent = email;
+
+      const badge = document.getElementById('email-verification-badge');
+
+      document.getElementById('btn-simulate-verify').onclick = () => {
+        badge.className = 'status-pill status-active';
+        badge.textContent = 'Status: Email Verified ✓';
+        window.ChorbajarApp.showToast('Email verified successfully!', 'success');
+      };
+
+      document.getElementById('btn-resend-email').onclick = () => {
+        window.ChorbajarApp.showToast(`Simulated verification email resent to ${email}`, 'info');
+      };
+    });
+  </script>
+</body>
+</html>

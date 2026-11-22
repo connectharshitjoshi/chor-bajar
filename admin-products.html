@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Products | Chorbajar Admin</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="admin-dashboard.html">Admin</a>
+      <span class="separator">/</span>
+      <span>Products</span>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- Admin Sidebar -->
+      <aside class="sidebar-nav" data-testid="admin-sidebar">
+        <div style="padding: 1.25rem; background: #0f172a; color: #ffffff;">
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.5px;">Control Panel</div>
+          <h4 style="font-size: 1rem; font-weight: 800;">Chorbajar Admin</h4>
+        </div>
+        <a href="admin-dashboard.html" class="sidebar-link" data-testid="admin-nav-dashboard">📊 Dashboard Analytics</a>
+        <a href="admin-products.html" class="sidebar-link active" data-testid="admin-nav-products">📦 Product Catalog (180+)</a>
+        <a href="admin-product-add.html" class="sidebar-link" data-testid="admin-nav-add-product">➕ Add New Product</a>
+        <a href="admin-orders.html" class="sidebar-link" data-testid="admin-nav-orders">📑 Order Management</a>
+        <a href="admin-users.html" class="sidebar-link" data-testid="admin-nav-users">👥 Customer Directory</a>
+        <a href="admin-settings.html" class="sidebar-link" data-testid="admin-nav-settings">⚙️ Store Settings</a>
+      </aside>
+
+      <!-- Products Management Main Card -->
+      <section class="dashboard-content-card" data-testid="admin-products-manager">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2 style="font-size: 1.4rem; font-weight: 800;">Product Management</h2>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">
+              Total: <strong id="admin-product-count">0</strong> products in local database
+            </div>
+          </div>
+          <a href="admin-product-add.html" class="btn btn-primary btn-sm" data-testid="admin-btn-add-product">
+            + Add New Product
+          </a>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div style="display: flex; gap: 12px; margin-bottom: 1.5rem; flex-wrap: wrap;">
+          <input 
+            type="text" 
+            id="admin-search-input" 
+            class="form-control" 
+            placeholder="Search by title, brand, or SKU..." 
+            style="flex: 1; min-width: 200px; padding: 8px 12px; font-size: 0.85rem;" 
+            data-testid="admin-search-products"
+          />
+          <select id="admin-cat-filter" class="form-control" style="width: auto; padding: 8px 12px; font-size: 0.85rem;" data-testid="admin-filter-category">
+            <option value="ALL">All Categories</option>
+            <!-- Injected via JS -->
+          </select>
+        </div>
+
+        <!-- Products Table -->
+        <div class="table-responsive">
+          <table class="data-table" data-testid="admin-products-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">ID</th>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th style="text-align: right;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-products-tbody">
+              <!-- Injected via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="admin-pagination" style="margin-top: 1.5rem;" data-testid="admin-pagination"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.ChorbajarApp.requireAuth('admin')) return;
+
+      const categories = window.CHORBAJAR_CATEGORIES || [];
+      const catSelect = document.getElementById('admin-cat-filter');
+      catSelect.innerHTML += categories.map(c => `<option value="${c.name}">${c.name}</option>`).join('');
+
+      const PAGE_SIZE = 15;
+      let currentPage = 1;
+
+      function renderTable() {
+        const products = window.ChorbajarStorage.getProducts();
+        document.getElementById('admin-product-count').textContent = products.length;
+
+        const query = document.getElementById('admin-search-input').value.trim().toLowerCase();
+        const catVal = catSelect.value;
+
+        const filtered = products.filter(p => {
+          if (catVal !== 'ALL' && p.category !== catVal) return false;
+          if (query) {
+            const mName = p.name.toLowerCase().includes(query);
+            const mBrand = p.brand.toLowerCase().includes(query);
+            const mId = String(p.id) === query;
+            if (!mName && !mBrand && !mId) return false;
+          }
+          return true;
+        });
+
+        const totalPages = Math.ceil(filtered.length / PAGE_SIZE) || 1;
+        if (currentPage > totalPages) currentPage = 1;
+        const startIndex = (currentPage - 1) * PAGE_SIZE;
+        const pageItems = filtered.slice(startIndex, startIndex + PAGE_SIZE);
+
+        const tbody = document.getElementById('admin-products-tbody');
+        tbody.innerHTML = pageItems.map(p => `
+          <tr data-testid="admin-product-row-${p.id}">
+            <td style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.8rem;">#${p.id}</td>
+            <td>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <img src="${p.image}" alt="${p.name}" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover; border: 1px solid var(--border);">
+                <div>
+                  <a href="product-details.html?id=${p.id}" target="_blank" style="font-weight: 600; color: var(--text-main); font-size: 0.85rem;" title="${p.name}">
+                    ${p.name}
+                  </a>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">★ ${p.rating} (${p.reviewsCount} reviews)</div>
+                </div>
+              </div>
+            </td>
+            <td><span class="qa-badge" style="background: #e2e8f0; color: #334155;">${p.category}</span></td>
+            <td><strong>${p.brand}</strong></td>
+            <td style="font-weight: 700;">${window.ChorbajarApp.formatPrice(p.price)}</td>
+            <td>
+              <span class="status-pill ${p.stock > 0 ? 'status-active' : 'status-blocked'}">
+                ${p.stock} in stock
+              </span>
+            </td>
+            <td style="text-align: right;">
+              <div style="display: flex; gap: 6px; justify-content: flex-end;">
+                <a href="admin-product-add.html?editId=${p.id}" class="btn btn-secondary btn-sm" data-testid="admin-edit-${p.id}">
+                  Edit
+                </a>
+                <button type="button" class="btn btn-secondary btn-sm" style="color: var(--danger);" onclick="window.deleteProductPrompt(${p.id}, '${p.name.replace(/'/g, "\\'")}')" data-testid="admin-delete-${p.id}">
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+
+        // Pagination
+        const pag = document.getElementById('admin-pagination');
+        let pagHtml = `<button class="page-btn" ${currentPage === 1 ? 'disabled' : ''} id="admin-prev">&laquo;</button>`;
+        for (let i = 1; i <= Math.min(totalPages, 12); i++) {
+          pagHtml += `<button class="page-btn ${i === currentPage ? 'active' : ''}" data-p="${i}">${i}</button>`;
+        }
+        pagHtml += `<button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} id="admin-next">&raquo;</button>`;
+        pag.innerHTML = pagHtml;
+
+        pag.querySelectorAll('.page-btn[data-p]').forEach(btn => {
+          btn.onclick = () => {
+            currentPage = Number(btn.getAttribute('data-p'));
+            renderTable();
+          };
+        });
+
+        const prev = document.getElementById('admin-prev');
+        if (prev) {
+          prev.onclick = () => {
+            if (currentPage > 1) {
+              currentPage--;
+              renderTable();
+            }
+          };
+        }
+        const next = document.getElementById('admin-next');
+        if (next) {
+          next.onclick = () => {
+            if (currentPage < totalPages) {
+              currentPage++;
+              renderTable();
+            }
+          };
+        }
+      }
+
+      window.deleteProductPrompt = (id, name) => {
+        window.ChorbajarApp.showConfirmModal(
+          'Delete Product?',
+          `Are you sure you want to delete <strong>${name}</strong> from the catalog?`,
+          () => {
+            window.ChorbajarStorage.deleteProduct(id);
+            window.ChorbajarApp.showToast('Product deleted successfully.', 'info');
+            renderTable();
+          }
+        );
+      };
+
+      document.getElementById('admin-search-input').oninput = renderTable;
+      catSelect.onchange = renderTable;
+
+      renderTable();
+    });
+  </script>
+</body>
+</html>

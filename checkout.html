@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <style>
+    .checkout-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+    .checkout-step-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .checkout-step-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .step-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-full);
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .address-card-option {
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-bottom: 12px;
+      cursor: pointer;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: all 0.2s;
+    }
+    .address-card-option.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+    .payment-option-label {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .payment-option-label:hover {
+      background: var(--bg-subtle);
+    }
+    .payment-option-label input:checked + span {
+      color: var(--primary);
+    }
+    @media (max-width: 992px) {
+      .checkout-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="cart.html">Cart</a>
+      <span class="separator">/</span>
+      <span>Checkout</span>
+    </div>
+
+    <h1 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 2rem;">Checkout & Place Order</h1>
+
+    <div class="checkout-layout">
+      <!-- Checkout Steps Forms -->
+      <div class="checkout-forms-column">
+        
+        <!-- Step 1: Customer Contact Information -->
+        <div class="checkout-step-card" data-testid="checkout-step-contact">
+          <div class="checkout-step-title">
+            <span class="step-badge">1</span>
+            <span>Contact Information</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" id="cust-name" class="form-control" required placeholder="e.g. Harshit Joshi" data-testid="checkout-name">
+              <div class="invalid-feedback">Please enter your full name.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" id="cust-email" class="form-control" required placeholder="e.g. user@test.com" data-testid="checkout-email">
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mobile Phone Number (10 Digits) *</label>
+            <input type="tel" id="cust-phone" class="form-control" maxlength="10" placeholder="e.g. 9876543210" data-testid="checkout-phone">
+            <div class="invalid-feedback" id="phone-feedback">Please enter a valid 10-digit Indian phone number (starting with 6-9).</div>
+          </div>
+        </div>
+
+        <!-- Step 2: Delivery Address -->
+        <div class="checkout-step-card" data-testid="checkout-step-address">
+          <div class="checkout-step-title">
+            <span class="step-badge">2</span>
+            <span>Shipping Address</span>
+          </div>
+
+          <!-- Existing Addresses Radios -->
+          <div id="saved-addresses-list" data-testid="saved-addresses-list">
+            <!-- Injected via JS -->
+          </div>
+
+          <div style="margin-top: 1rem;">
+            <button type="button" class="btn btn-secondary btn-sm" id="btn-toggle-new-addr" data-testid="btn-toggle-new-addr">
+              + Deliver to a Different Address
+            </button>
+          </div>
+
+          <!-- New Address Form (Hidden by default unless selected) -->
+          <div id="new-address-form-box" style="display: none; margin-top: 1.25rem; border-top: 1px dashed var(--border); padding-top: 1.25rem;">
+            <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 12px;">Add New Shipping Address</h4>
+            <div class="form-group">
+              <label class="form-label">House / Flat / Block No., Building Name *</label>
+              <input type="text" id="new-addr-line1" class="form-control" placeholder="e.g. Flat 302, Green Avenue" data-testid="new-addr-line1">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Road, Street, Area, Colony</label>
+              <input type="text" id="new-addr-line2" class="form-control" placeholder="e.g. Near City Center Mall" data-testid="new-addr-line2">
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+              <div class="form-group">
+                <label class="form-label">City *</label>
+                <input type="text" id="new-addr-city" class="form-control" placeholder="e.g. Bengaluru" data-testid="new-addr-city">
+              </div>
+              <div class="form-group">
+                <label class="form-label">State *</label>
+                <input type="text" id="new-addr-state" class="form-control" placeholder="e.g. Karnataka" data-testid="new-addr-state">
+              </div>
+              <div class="form-group">
+                <label class="form-label">PIN Code (6 Digits) *</label>
+                <input type="text" id="new-addr-pin" class="form-control" maxlength="6" placeholder="e.g. 560038" data-testid="checkout-pincode">
+                <div class="invalid-feedback" id="pin-feedback">Enter a valid 6-digit PIN code.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment Method -->
+        <div class="checkout-step-card" data-testid="checkout-step-payment">
+          <div class="checkout-step-title">
+            <span class="step-badge">3</span>
+            <span>Select Payment Method</span>
+          </div>
+
+          <label class="payment-option-label" data-testid="payment-label-cod">
+            <input type="radio" name="paymentMethod" value="Cash on Delivery (COD)" checked data-testid="payment-cod">
+            <span>💵 Cash on Delivery (Pay on doorstep via Cash/QR)</span>
+          </label>
+
+          <label class="payment-option-label" data-testid="payment-label-upi">
+            <input type="radio" name="paymentMethod" value="UPI (Google Pay, PhonePe, Paytm)" data-testid="payment-upi">
+            <span>⚡ Instant UPI (Google Pay, PhonePe, Paytm, BHIM)</span>
+          </label>
+
+          <label class="payment-option-label" data-testid="payment-label-card">
+            <input type="radio" name="paymentMethod" value="Credit / Debit Card" data-testid="payment-card">
+            <span>💳 Credit or Debit Card (Visa, MasterCard, RuPay)</span>
+          </label>
+
+          <label class="payment-option-label" data-testid="payment-label-netbanking">
+            <input type="radio" name="paymentMethod" value="Net Banking" data-testid="payment-netbanking">
+            <span>🏦 Net Banking (All Indian Major Banks)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Order Summary Column -->
+      <div class="checkout-summary-column">
+        <div class="order-summary-card" data-testid="checkout-summary-card">
+          <h3 class="order-summary-title">Items in Order (<span id="checkout-items-count">0</span>)</h3>
+
+          <div id="checkout-items-mini-list" style="max-height: 240px; overflow-y: auto; margin-bottom: 1.25rem;">
+            <!-- Mini item previews -->
+          </div>
+
+          <div class="summary-line">
+            <span>Items Total</span>
+            <span id="checkout-subtotal">₹ 0</span>
+          </div>
+
+          <div class="summary-line" id="checkout-discount-line" style="display: none; color: var(--success);">
+            <span>Coupon Savings</span>
+            <span id="checkout-discount">- ₹ 0</span>
+          </div>
+
+          <div class="summary-line">
+            <span>Delivery Fee</span>
+            <span id="checkout-shipping">FREE</span>
+          </div>
+
+          <div class="summary-line total">
+            <span>Amount Payable</span>
+            <span id="checkout-grand-total" data-testid="checkout-grand-total">₹ 0</span>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <button 
+              type="button" 
+              class="btn btn-primary btn-block btn-lg" 
+              id="btn-place-order" 
+              data-testid="place-order-btn"
+            >
+              Place Order & Complete &rarr;
+            </button>
+          </div>
+
+          <div id="checkout-error-banner" style="display: none; margin-top: 1rem; color: var(--danger); font-size: 0.8rem; background: var(--danger-bg); padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--danger-border);" data-testid="checkout-error">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cart = window.ChorbajarStorage.getCart();
+      if (cart.length === 0) {
+        window.ChorbajarApp.showToast('Your cart is empty. Please add items before checkout.', 'warning');
+        window.location.href = 'cart.html';
+        return;
+      }
+
+      const currentUser = window.ChorbajarStorage.getCurrentUser();
+      const addresses = currentUser ? window.ChorbajarStorage.getAddresses(currentUser.id) : [];
+
+      // Auto-fill user contact info if logged in
+      if (currentUser) {
+        document.getElementById('cust-name').value = currentUser.name || '';
+        document.getElementById('cust-email').value = currentUser.email || '';
+        document.getElementById('cust-phone').value = currentUser.phone || '';
+      }
+
+      // Check for applied coupon
+      let appliedCoupon = null;
+      try {
+        const stored = sessionStorage.getItem('chorbajar_applied_coupon');
+        if (stored) appliedCoupon = JSON.parse(stored);
+      } catch (e) {}
+
+      // Calculate totals
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      let discountAmount = 0;
+      if (appliedCoupon) {
+        const cRes = window.ChorbajarStorage.validateCoupon(appliedCoupon.code, subtotal);
+        if (cRes.valid) discountAmount = cRes.discountAmount;
+      }
+      const settings = window.ChorbajarStorage.getSettings();
+      const shippingFee = subtotal >= (settings.freeShippingThreshold || 500) ? 0 : (settings.shippingFee || 49);
+      const grandTotal = Math.max(0, subtotal - discountAmount + shippingFee);
+
+      // Render Mini Items List
+      document.getElementById('checkout-items-count').textContent = cart.reduce((sum, i) => sum + i.quantity, 0);
+      document.getElementById('checkout-items-mini-list').innerHTML = cart.map(i => `
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px; font-size: 0.85rem;">
+          <img src="${i.image}" alt="${i.name}" style="width: 44px; height: 44px; border-radius: 4px; object-fit: cover;">
+          <div style="flex: 1;">
+            <div style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 190px;">${i.name}</div>
+            <div style="color: var(--text-muted); font-size: 0.75rem;">Qty: ${i.quantity} × ${window.ChorbajarApp.formatPrice(i.price)}</div>
+          </div>
+          <div style="font-weight: 700;">${window.ChorbajarApp.formatPrice(i.price * i.quantity)}</div>
+        </div>
+      `).join('');
+
+      document.getElementById('checkout-subtotal').textContent = window.ChorbajarApp.formatPrice(subtotal);
+      if (discountAmount > 0) {
+        document.getElementById('checkout-discount-line').style.display = 'flex';
+        document.getElementById('checkout-discount').textContent = `- ${window.ChorbajarApp.formatPrice(discountAmount)}`;
+      }
+      document.getElementById('checkout-shipping').textContent = shippingFee === 0 ? 'FREE' : window.ChorbajarApp.formatPrice(shippingFee);
+      document.getElementById('checkout-grand-total').textContent = window.ChorbajarApp.formatPrice(grandTotal);
+
+      // Render Saved Addresses
+      const addrContainer = document.getElementById('saved-addresses-list');
+      let selectedAddressId = null;
+
+      if (addresses.length > 0) {
+        const defaultAddr = addresses.find(a => a.isDefault) || addresses[0];
+        selectedAddressId = defaultAddr.id;
+
+        addrContainer.innerHTML = addresses.map(a => `
+          <div class="address-card-option ${a.id === selectedAddressId ? 'selected' : ''}" data-addr-id="${a.id}" data-testid="address-option-${a.id}">
+            <input type="radio" name="shippingAddress" value="${a.id}" ${a.id === selectedAddressId ? 'checked' : ''} style="margin-top: 4px;" data-testid="address-radio-${a.id}">
+            <div>
+              <div style="font-weight: 700; font-size: 0.9rem;">
+                ${a.fullName} <span class="qa-badge" style="background: #e2e8f0; color: #334155;">${a.addressType}</span>
+                ${a.isDefault ? '<span class="status-pill status-active" style="font-size: 0.65rem; padding: 2px 6px;">Default</span>' : ''}
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px;">
+                ${a.addressLine1}, ${a.addressLine2 ? a.addressLine2 + ', ' : ''}${a.city}, ${a.state} - <strong>${a.pincode}</strong>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">Phone: ${a.phone}</div>
+            </div>
+          </div>
+        `).join('');
+
+        addrContainer.querySelectorAll('.address-card-option').forEach(card => {
+          card.onclick = () => {
+            addrContainer.querySelectorAll('.address-card-option').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            const radio = card.querySelector('input[type="radio"]');
+            radio.checked = true;
+            selectedAddressId = Number(card.getAttribute('data-addr-id'));
+            document.getElementById('new-address-form-box').style.display = 'none';
+          };
+        });
+      } else {
+        // Show new address form by default
+        document.getElementById('new-address-form-box').style.display = 'block';
+        document.getElementById('btn-toggle-new-addr').style.display = 'none';
+      }
+
+      // Toggle New Address Form
+      document.getElementById('btn-toggle-new-addr').onclick = () => {
+        const box = document.getElementById('new-address-form-box');
+        const isHidden = box.style.display === 'none';
+        box.style.display = isHidden ? 'block' : 'none';
+        if (isHidden) {
+          selectedAddressId = 'NEW';
+          addrContainer.querySelectorAll('.address-card-option').forEach(c => {
+            c.classList.remove('selected');
+            c.querySelector('input').checked = false;
+          });
+        }
+      };
+
+      // Place Order Validation & Execution
+      let isSubmitting = false;
+      const placeOrderBtn = document.getElementById('btn-place-order');
+      const errBanner = document.getElementById('checkout-error-banner');
+
+      function showError(msg) {
+        errBanner.textContent = msg;
+        errBanner.style.display = 'block';
+        window.ChorbajarApp.showToast(msg, 'danger');
+      }
+
+      placeOrderBtn.onclick = () => {
+        if (isSubmitting) return; // Prevent duplicate submission
+        errBanner.style.display = 'none';
+
+        // 1. Validate Contact Info
+        const name = document.getElementById('cust-name').value.trim();
+        const email = document.getElementById('cust-email').value.trim();
+        const phone = document.getElementById('cust-phone').value.trim();
+
+        if (!name) {
+          showError('Please enter your full name.');
+          return;
+        }
+        if (!email || !email.includes('@') || !email.includes('.')) {
+          showError('Please enter a valid email address.');
+          return;
+        }
+
+        // Validate 10-digit Indian mobile number
+        const phoneRegex = /^[6-9]\d{9}$/;
+        if (!phoneRegex.test(phone)) {
+          showError('Please enter a valid 10-digit Indian phone number (starting with 6, 7, 8, or 9).');
+          return;
+        }
+
+        // 2. Validate Address
+        let chosenAddress = null;
+        if (selectedAddressId && selectedAddressId !== 'NEW') {
+          chosenAddress = addresses.find(a => a.id === selectedAddressId);
+        }
+
+        if (!chosenAddress || selectedAddressId === 'NEW') {
+          const line1 = document.getElementById('new-addr-line1').value.trim();
+          const line2 = document.getElementById('new-addr-line2').value.trim();
+          const city = document.getElementById('new-addr-city').value.trim();
+          const state = document.getElementById('new-addr-state').value.trim();
+          const pin = document.getElementById('new-addr-pin').value.trim();
+
+          if (!line1) {
+            showError('Please enter your street address / house details.');
+            return;
+          }
+          if (!city || !state) {
+            showError('Please enter City and State.');
+            return;
+          }
+
+          // Validate 6-digit Indian PIN code
+          const pinRegex = /^[1-9][0-9]{5}$/;
+          if (!pinRegex.test(pin)) {
+            showError('Please enter a valid 6-digit Indian Postal PIN code.');
+            return;
+          }
+
+          chosenAddress = {
+            fullName: name,
+            phone: phone,
+            addressLine1: line1,
+            addressLine2: line2,
+            city: city,
+            state: state,
+            pincode: pin,
+            addressType: 'Shipping'
+          };
+
+          // Save address to user account if logged in
+          if (currentUser) {
+            window.ChorbajarStorage.saveAddress({ ...chosenAddress, userId: currentUser.id });
+          }
+        }
+
+        // 3. Payment Method
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+        // Prevent duplicate clicks
+        isSubmitting = true;
+        placeOrderBtn.disabled = true;
+        placeOrderBtn.textContent = 'Processing Order... ⏳';
+
+        // Simulate order placement
+        setTimeout(() => {
+          const newOrder = window.ChorbajarStorage.createOrder({
+            userId: currentUser ? currentUser.id : null,
+            customerName: name,
+            customerEmail: email,
+            customerPhone: phone,
+            items: cart,
+            subtotal: subtotal,
+            discount: discountAmount,
+            deliveryFee: shippingFee,
+            couponApplied: appliedCoupon ? appliedCoupon.code : null,
+            total: grandTotal,
+            paymentMethod: paymentMethod,
+            shippingAddress: chosenAddress
+          });
+
+          sessionStorage.removeItem('chorbajar_applied_coupon');
+          window.location.href = `order-success.html?orderId=${newOrder.id}`;
+        }, 600);
+      };
+    });
+  </script>
+</body>
+</html>

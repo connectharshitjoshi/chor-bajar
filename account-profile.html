@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="account-profile.html">Account</a>
+      <span class="separator">/</span>
+      <span>Profile</span>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- Account Sidebar -->
+      <aside class="sidebar-nav" data-testid="account-sidebar">
+        <div style="padding: 1.5rem; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-subtle);">
+          <img id="sidebar-user-avatar" src="" alt="Avatar" style="width: 70px; height: 70px; border-radius: var(--radius-full); margin: 0 auto 10px; object-fit: cover; border: 3px solid #ffffff;">
+          <h4 id="sidebar-user-name" style="font-size: 1rem; font-weight: 700;">Customer</h4>
+          <span style="font-size: 0.75rem; color: var(--text-muted);" id="sidebar-user-email">email@test.com</span>
+        </div>
+        <a href="account-profile.html" class="sidebar-link active" data-testid="sidebar-profile">👤 Personal Information</a>
+        <a href="account-orders.html" class="sidebar-link" data-testid="sidebar-orders">📦 My Orders & Tracking</a>
+        <a href="account-addresses.html" class="sidebar-link" data-testid="sidebar-addresses">📍 Saved Delivery Addresses</a>
+        <a href="account-settings.html" class="sidebar-link" data-testid="sidebar-settings">⚙️ Account Settings</a>
+      </aside>
+
+      <!-- Profile Content -->
+      <section class="dashboard-content-card" data-testid="profile-card">
+        <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+          Personal Profile
+        </h2>
+
+        <form id="profile-form" data-testid="profile-form">
+          <!-- Avatar Edit -->
+          <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+            <img id="edit-avatar-preview" src="" alt="Profile Photo" style="width: 80px; height: 80px; border-radius: var(--radius-full); object-fit: cover; border: 2px solid var(--primary);">
+            <div>
+              <label class="form-label" style="margin-bottom: 4px;">Profile Picture</label>
+              <input type="file" id="profile-avatar-file" accept="image/*" class="form-control" style="font-size: 0.8rem; padding: 4px 8px;" data-testid="profile-avatar-input">
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Simulated browser image reader</span>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="profile-name">Full Name</label>
+              <input type="text" id="profile-name" class="form-control" required data-testid="profile-name">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="profile-email">Email Address</label>
+              <input type="email" id="profile-email" class="form-control" required readonly style="background: var(--bg-subtle);" data-testid="profile-email">
+              <span style="font-size: 0.75rem; color: var(--text-muted);"><a href="verify-email.html" style="color: var(--primary);">Verify Email Status</a></span>
+            </div>
+          </div>
+
+          <div class="form-group" style="max-width: 50%;">
+            <label class="form-label" for="profile-phone">Mobile Phone</label>
+            <input type="tel" id="profile-phone" class="form-control" maxlength="10" required data-testid="profile-phone">
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-primary" id="btn-save-profile" data-testid="save-profile-btn">
+              Save Profile Changes
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.ChorbajarApp.requireAuth()) return;
+
+      const user = window.ChorbajarStorage.getCurrentUser();
+      let avatarBase64 = user.avatar || 'harshit.png';
+
+      document.getElementById('sidebar-user-avatar').src = avatarBase64;
+      document.getElementById('sidebar-user-name').textContent = user.name;
+      document.getElementById('sidebar-user-email').textContent = user.email;
+
+      document.getElementById('edit-avatar-preview').src = avatarBase64;
+      document.getElementById('profile-name').value = user.name;
+      document.getElementById('profile-email').value = user.email;
+      document.getElementById('profile-phone').value = user.phone || '9876543210';
+
+      // Avatar input preview
+      document.getElementById('profile-avatar-file').onchange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (re) => {
+            avatarBase64 = re.target.result;
+            document.getElementById('edit-avatar-preview').src = avatarBase64;
+            document.getElementById('sidebar-user-avatar').src = avatarBase64;
+          };
+          reader.readAsDataURL(file);
+        }
+      };
+
+      // Save form
+      document.getElementById('profile-form').onsubmit = (e) => {
+        e.preventDefault();
+        const updatedName = document.getElementById('profile-name').value.trim();
+        const updatedPhone = document.getElementById('profile-phone').value.trim();
+
+        const phoneRegex = /^[6-9]\d{9}$/;
+        if (!phoneRegex.test(updatedPhone)) {
+          window.ChorbajarApp.showToast('Please enter a valid 10-digit Indian phone number.', 'danger');
+          return;
+        }
+
+        window.ChorbajarStorage.updateUserProfile({
+          name: updatedName,
+          phone: updatedPhone,
+          avatar: avatarBase64
+        });
+
+        document.getElementById('sidebar-user-name').textContent = updatedName;
+        window.ChorbajarApp.showToast('Profile updated successfully!', 'success');
+      };
+    });
+  </script>
+</body>
+</html>

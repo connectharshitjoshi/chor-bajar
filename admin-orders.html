@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Orders | Chorbajar Admin</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <a href="admin-dashboard.html">Admin</a>
+      <span class="separator">/</span>
+      <span>Orders</span>
+    </div>
+
+    <div class="dashboard-layout">
+      <!-- Admin Sidebar -->
+      <aside class="sidebar-nav" data-testid="admin-sidebar">
+        <div style="padding: 1.25rem; background: #0f172a; color: #ffffff;">
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.5px;">Control Panel</div>
+          <h4 style="font-size: 1rem; font-weight: 800;">Chorbajar Admin</h4>
+        </div>
+        <a href="admin-dashboard.html" class="sidebar-link" data-testid="admin-nav-dashboard">📊 Dashboard Analytics</a>
+        <a href="admin-products.html" class="sidebar-link" data-testid="admin-nav-products">📦 Product Catalog (180+)</a>
+        <a href="admin-product-add.html" class="sidebar-link" data-testid="admin-nav-add-product">➕ Add New Product</a>
+        <a href="admin-orders.html" class="sidebar-link active" data-testid="admin-nav-orders">📑 Order Management</a>
+        <a href="admin-users.html" class="sidebar-link" data-testid="admin-nav-users">👥 Customer Directory</a>
+        <a href="admin-settings.html" class="sidebar-link" data-testid="admin-nav-settings">⚙️ Store Settings</a>
+      </aside>
+
+      <!-- Orders Main Section -->
+      <section class="dashboard-content-card" data-testid="admin-orders-manager">
+        <div style="border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <h2 style="font-size: 1.4rem; font-weight: 800;">Order Fulfillment & Tracking</h2>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Manage customer orders, update delivery progress, and inspect shipments.</div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div style="display: flex; gap: 12px; margin-bottom: 1.5rem; flex-wrap: wrap;">
+          <input 
+            type="text" 
+            id="orders-search-input" 
+            class="form-control" 
+            placeholder="Search by Order ID or Customer Name..." 
+            style="flex: 1; min-width: 220px; padding: 8px 12px; font-size: 0.85rem;" 
+            data-testid="admin-orders-search"
+          />
+          <select id="orders-status-filter" class="form-control" style="width: auto; padding: 8px 12px; font-size: 0.85rem;" data-testid="admin-orders-status-filter">
+            <option value="ALL">All Statuses</option>
+            <option value="Order Placed">Order Placed</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Shipped">Shipped</option>
+            <option value="Out for Delivery">Out for Delivery</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+
+        <!-- Orders Table -->
+        <div class="table-responsive">
+          <table class="data-table" data-testid="admin-orders-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Items</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th style="text-align: right;">Update Status</th>
+              </tr>
+            </thead>
+            <tbody id="admin-orders-tbody">
+              <!-- Injected via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.ChorbajarApp.requireAuth('admin')) return;
+
+      const searchInput = document.getElementById('orders-search-input');
+      const statusFilter = document.getElementById('orders-status-filter');
+      const tbody = document.getElementById('admin-orders-tbody');
+
+      function getStatusClass(status) {
+        if (status === 'Delivered') return 'status-delivered';
+        if (status === 'Shipped') return 'status-shipped';
+        if (status === 'Cancelled') return 'status-cancelled';
+        return 'status-placed';
+      }
+
+      function renderOrders() {
+        const orders = window.ChorbajarStorage.getOrders();
+        const query = searchInput.value.trim().toLowerCase();
+        const filterVal = statusFilter.value;
+
+        const filtered = orders.filter(o => {
+          if (filterVal !== 'ALL' && o.status !== filterVal) return false;
+          if (query) {
+            const mId = o.id.toLowerCase().includes(query);
+            const mCust = (o.customerName || (o.shippingAddress ? o.shippingAddress.fullName : '')).toLowerCase().includes(query);
+            if (!mId && !mCust) return false;
+          }
+          return true;
+        });
+
+        tbody.innerHTML = filtered.map(o => `
+          <tr data-testid="admin-order-row-${o.id}">
+            <td style="font-family: var(--font-mono); font-weight: 700; color: var(--primary);">
+              <a href="account-order-details.html?id=${o.id}" target="_blank" title="View customer order preview">${o.id}</a>
+            </td>
+            <td>
+              <strong>${o.customerName || (o.shippingAddress ? o.shippingAddress.fullName : 'Customer')}</strong>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">${o.customerPhone || (o.shippingAddress ? o.shippingAddress.phone : '')}</div>
+            </td>
+            <td>${new Date(o.orderDate).toLocaleDateString()}</td>
+            <td>${(o.items || []).length} items</td>
+            <td style="font-weight: 700;">${window.ChorbajarApp.formatPrice(o.total)}</td>
+            <td>
+              <span class="status-pill ${getStatusClass(o.status)}" id="status-pill-${o.id}" data-testid="order-status-pill-${o.id}">${o.status}</span>
+            </td>
+            <td style="text-align: right;">
+              <select 
+                class="form-control" 
+                style="width: auto; display: inline-block; padding: 4px 8px; font-size: 0.8rem;" 
+                onchange="window.updateStatus('${o.id}', this.value)"
+                data-testid="status-select-${o.id}"
+              >
+                <option value="Order Placed" ${o.status === 'Order Placed' ? 'selected' : ''}>Order Placed</option>
+                <option value="Confirmed" ${o.status === 'Confirmed' ? 'selected' : ''}>Confirmed</option>
+                <option value="Shipped" ${o.status === 'Shipped' ? 'selected' : ''}>Shipped</option>
+                <option value="Out for Delivery" ${o.status === 'Out for Delivery' ? 'selected' : ''}>Out for Delivery</option>
+                <option value="Delivered" ${o.status === 'Delivered' ? 'selected' : ''}>Delivered</option>
+                <option value="Cancelled" ${o.status === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+              </select>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      window.updateStatus = (orderId, newStatus) => {
+        window.ChorbajarStorage.updateOrderStatus(orderId, newStatus);
+        window.ChorbajarApp.showToast(`Order ${orderId} updated to: ${newStatus}`, 'success');
+        renderOrders();
+      };
+
+      searchInput.oninput = renderOrders;
+      statusFilter.onchange = renderOrders;
+
+      renderOrders();
+    });
+  </script>
+</body>
+</html>

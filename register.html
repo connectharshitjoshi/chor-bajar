@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="auth-page-wrap">
+    <div class="auth-card" style="max-width: 480px;" data-testid="register-card">
+      <div class="auth-header">
+        <h1 class="auth-title">Create an Account</h1>
+        <p class="auth-subtitle">Join Chorbajar for lightning deals & seamless checkout</p>
+      </div>
+
+      <div id="register-error-alert" style="display: none; background: var(--danger-bg); border: 1px solid var(--danger-border); color: var(--danger); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.85rem; margin-bottom: 1.25rem;" data-testid="register-error">
+      </div>
+
+      <form id="register-form" data-testid="register-form">
+        <div class="form-group">
+          <label class="form-label" for="reg-name">Full Name *</label>
+          <input type="text" id="reg-name" class="form-control" required placeholder="e.g. Priya Patel" data-testid="register-name" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-email">Email Address *</label>
+          <input type="email" id="reg-email" class="form-control" required placeholder="e.g. priya@example.com" data-testid="register-email" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-phone">Phone Number (10 Digits) *</label>
+          <input type="tel" id="reg-phone" class="form-control" maxlength="10" required placeholder="e.g. 9812345678" data-testid="register-phone" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-password">Password *</label>
+          <input type="password" id="reg-password" class="form-control" required placeholder="Min. 6 chars with uppercase & number" data-testid="register-password" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-confirm-password">Confirm Password *</label>
+          <input type="password" id="reg-confirm-password" class="form-control" required placeholder="Re-enter password" data-testid="register-confirm-password" />
+        </div>
+
+        <div class="form-group">
+          <label class="filter-checkbox-item">
+            <input type="checkbox" id="reg-terms" required data-testid="register-terms" />
+            <span style="font-size: 0.85rem;">I agree to the <a href="terms.html" style="color: var(--primary);">Terms of Service</a> & <a href="privacy.html" style="color: var(--primary);">Privacy Policy</a></span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="btn-register-submit" data-testid="register-submit">
+          Create Account &rarr;
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+        Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;" data-testid="login-link">Sign In</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('register-form');
+      const errBox = document.getElementById('register-error-alert');
+
+      function showError(msg) {
+        errBox.textContent = msg;
+        errBox.style.display = 'block';
+        window.ChorbajarApp.showToast(msg, 'danger');
+      }
+
+      form.onsubmit = (e) => {
+        e.preventDefault();
+        errBox.style.display = 'none';
+
+        const name = document.getElementById('reg-name').value.trim();
+        const email = document.getElementById('reg-email').value.trim();
+        const phone = document.getElementById('reg-phone').value.trim();
+        const password = document.getElementById('reg-password').value;
+        const confirmPassword = document.getElementById('reg-confirm-password').value;
+        const terms = document.getElementById('reg-terms').checked;
+
+        if (!name) {
+          showError('Please enter your full name.');
+          return;
+        }
+
+        if (!email || !email.includes('@') || !email.includes('.')) {
+          showError('Please enter a valid email address.');
+          return;
+        }
+
+        const phoneRegex = /^[6-9]\d{9}$/;
+        if (!phoneRegex.test(phone)) {
+          showError('Please enter a valid 10-digit Indian phone number (starting with 6-9).');
+          return;
+        }
+
+        if (password.length < 6) {
+          showError('Password must be at least 6 characters long.');
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          showError('Passwords do not match. Please re-enter.');
+          return;
+        }
+
+        if (!terms) {
+          showError('You must agree to the Terms & Privacy Policy to register.');
+          return;
+        }
+
+        const res = window.ChorbajarStorage.register(name, email, phone, password);
+
+        if (res.success) {
+          window.ChorbajarApp.showToast('Account registered! Please verify OTP.', 'success');
+          setTimeout(() => {
+            window.location.href = `verify-otp.html?email=${encodeURIComponent(email)}`;
+          }, 500);
+        } else {
+          showError(res.message);
+        }
+      };
+    });
+  </script>
+</body>
+</html>

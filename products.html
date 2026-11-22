@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Products | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span id="breadcrumb-current">All Products</span>
+    </div>
+
+    <div class="catalog-layout">
+      <!-- Filter Sidebar -->
+      <aside class="filter-sidebar" data-testid="filter-sidebar">
+        <div class="filter-header">
+          <h3 class="filter-title">Filters</h3>
+          <button type="button" class="filter-clear-btn" id="filter-clear-all" data-testid="filter-clear-btn">Clear All</button>
+        </div>
+
+        <!-- In-Stock Filter -->
+        <div class="filter-group">
+          <label class="filter-checkbox-item">
+            <input type="checkbox" id="filter-in-stock" data-testid="filter-in-stock">
+            <span style="font-weight: 600;">In Stock Only</span>
+          </label>
+        </div>
+
+        <!-- Categories Filter -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Categories</h4>
+          <ul class="filter-list" id="filter-category-list" data-testid="filter-categories">
+            <!-- Rendered by JS -->
+          </ul>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Price Range (₹)</h4>
+          <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
+            <input type="number" id="filter-min-price" placeholder="Min" class="form-control" style="padding: 6px 8px; font-size: 0.8rem;" data-testid="filter-min-price">
+            <span>-</span>
+            <input type="number" id="filter-max-price" placeholder="Max" class="form-control" style="padding: 6px 8px; font-size: 0.8rem;" data-testid="filter-max-price">
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm btn-block" id="btn-apply-price" data-testid="btn-apply-price">Apply Price</button>
+        </div>
+
+        <!-- Rating Filter -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Minimum Rating</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label class="filter-checkbox-item">
+              <input type="radio" name="rating-filter" value="4.5" data-testid="filter-rating-4.5">
+              <span>★ 4.5 & above</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="rating-filter" value="4.0" data-testid="filter-rating-4.0">
+              <span>★ 4.0 & above</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="rating-filter" value="3.5" data-testid="filter-rating-3.5">
+              <span>★ 3.5 & above</span>
+            </label>
+            <label class="filter-checkbox-item">
+              <input type="radio" name="rating-filter" value="0" checked data-testid="filter-rating-all">
+              <span>All Ratings</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Brands Filter -->
+        <div class="filter-group">
+          <h4 class="filter-group-title">Top Brands</h4>
+          <ul class="filter-list" id="filter-brand-list" data-testid="filter-brands">
+            <!-- Rendered by JS -->
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Products Display Area -->
+      <section class="catalog-main">
+        <!-- Top Controls -->
+        <div class="catalog-top-controls">
+          <div class="results-count" data-testid="results-count">
+            Showing <strong id="count-visible">0</strong> of <strong id="count-total">0</strong> products
+          </div>
+          <div class="sort-wrap">
+            <label for="sort-select">Sort By:</label>
+            <select id="sort-select" class="form-control" style="width: auto; padding: 6px 12px; font-size: 0.85rem;" data-testid="sort-select">
+              <option value="featured">Featured Picks</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating-desc">Highest Rated</option>
+              <option value="discount-desc">Biggest Discounts</option>
+              <option value="name-asc">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="catalog-products-grid" data-testid="products-grid">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Empty State Container -->
+        <div class="empty-state" id="catalog-empty-state" style="display: none;" data-testid="catalog-empty-state">
+          <div class="empty-state-icon">🔍</div>
+          <h3 class="empty-state-title">No matching products found</h3>
+          <p class="empty-state-desc">Try clearing filters or searching with different keywords.</p>
+          <button class="btn btn-primary btn-sm" id="btn-reset-filters-empty" data-testid="btn-reset-filters">Clear All Filters</button>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="catalog-pagination" data-testid="pagination">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const allProducts = window.ChorbajarStorage.getProducts();
+      const categories = window.CHORBAJAR_CATEGORIES || [];
+      const PAGE_SIZE = 12;
+      let currentPage = 1;
+
+      // Extract unique brands
+      const brands = [...new Set(allProducts.map(p => p.brand))].sort();
+
+      // State for filters
+      const state = {
+        categories: [],
+        brands: [],
+        minPrice: null,
+        maxPrice: null,
+        minRating: 0,
+        inStockOnly: false,
+        sortBy: 'featured',
+        searchQuery: window.ChorbajarApp.getUrlParam('q') || ''
+      };
+
+      // Check URL parameters for preset category
+      const urlCat = window.ChorbajarApp.getUrlParam('category');
+      if (urlCat) {
+        state.categories.push(urlCat);
+      }
+      const urlSort = window.ChorbajarApp.getUrlParam('sort');
+      if (urlSort) {
+        if (urlSort === 'discount') state.sortBy = 'discount-desc';
+        if (urlSort === 'rating') state.sortBy = 'rating-desc';
+        document.getElementById('sort-select').value = state.sortBy;
+      }
+
+      // Render Categories Filter List
+      const catListElem = document.getElementById('filter-category-list');
+      catListElem.innerHTML = categories.map(cat => `
+        <li>
+          <label class="filter-checkbox-item">
+            <input type="checkbox" value="${cat.name}" class="cat-filter-checkbox" ${state.categories.includes(cat.name) ? 'checked' : ''} data-testid="filter-cat-${cat.slug}">
+            <span>${cat.name} (${cat.count})</span>
+          </label>
+        </li>
+      `).join('');
+
+      // Render Brands Filter List
+      const brandListElem = document.getElementById('filter-brand-list');
+      brandListElem.innerHTML = brands.slice(0, 15).map(brand => `
+        <li>
+          <label class="filter-checkbox-item">
+            <input type="checkbox" value="${brand}" class="brand-filter-checkbox" data-testid="filter-brand-${brand}">
+            <span>${brand}</span>
+          </label>
+        </li>
+      `).join('');
+
+      // Filter logic
+      function getFilteredProducts() {
+        return allProducts.filter(p => {
+          // Category filter
+          if (state.categories.length > 0 && !state.categories.includes(p.category)) {
+            return false;
+          }
+          // Brand filter
+          if (state.brands.length > 0 && !state.brands.includes(p.brand)) {
+            return false;
+          }
+          // Stock filter
+          if (state.inStockOnly && p.stock <= 0) {
+            return false;
+          }
+          // Price filter
+          if (state.minPrice !== null && p.price < state.minPrice) {
+            return false;
+          }
+          if (state.maxPrice !== null && p.price > state.maxPrice) {
+            return false;
+          }
+          // Rating filter
+          if (p.rating < state.minRating) {
+            return false;
+          }
+          // Search query
+          if (state.searchQuery) {
+            const q = state.searchQuery.toLowerCase();
+            const matchName = p.name.toLowerCase().includes(q);
+            const matchBrand = p.brand.toLowerCase().includes(q);
+            const matchCat = p.category.toLowerCase().includes(q);
+            if (!matchName && !matchBrand && !matchCat) return false;
+          }
+          return true;
+        });
+      }
+
+      // Sorting logic
+      function sortProducts(list) {
+        const copy = [...list];
+        switch (state.sortBy) {
+          case 'price-asc':
+            return copy.sort((a, b) => a.price - b.price);
+          case 'price-desc':
+            return copy.sort((a, b) => b.price - a.price);
+          case 'rating-desc':
+            return copy.sort((a, b) => b.rating - a.rating);
+          case 'discount-desc':
+            return copy.sort((a, b) => b.discount - a.discount);
+          case 'name-asc':
+            return copy.sort((a, b) => a.name.localeCompare(b.name));
+          case 'featured':
+          default:
+            return copy.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+        }
+      }
+
+      // Render Catalog Page
+      function renderCatalog() {
+        const filtered = getFilteredProducts();
+        const sorted = sortProducts(filtered);
+
+        document.getElementById('count-total').textContent = allProducts.length;
+        document.getElementById('count-visible').textContent = sorted.length;
+
+        const gridElem = document.getElementById('catalog-products-grid');
+        const emptyElem = document.getElementById('catalog-empty-state');
+        const paginationElem = document.getElementById('catalog-pagination');
+
+        if (sorted.length === 0) {
+          gridElem.style.display = 'none';
+          emptyElem.style.display = 'block';
+          paginationElem.style.display = 'none';
+          return;
+        }
+
+        gridElem.style.display = 'grid';
+        emptyElem.style.display = 'none';
+        paginationElem.style.display = 'flex';
+
+        // Pagination slices
+        const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
+        if (currentPage > totalPages) currentPage = 1;
+        const startIndex = (currentPage - 1) * PAGE_SIZE;
+        const pageItems = sorted.slice(startIndex, startIndex + PAGE_SIZE);
+
+        gridElem.innerHTML = pageItems.map(p => window.ChorbajarApp.renderProductCard(p)).join('');
+
+        // Render Pagination buttons
+        let pagHtml = `
+          <button class="page-btn" id="page-prev" ${currentPage === 1 ? 'disabled' : ''} data-testid="pagination-prev">&laquo;</button>
+        `;
+        for (let i = 1; i <= totalPages; i++) {
+          pagHtml += `
+            <button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}" data-testid="pagination-page-${i}">${i}</button>
+          `;
+        }
+        pagHtml += `
+          <button class="page-btn" id="page-next" ${currentPage === totalPages ? 'disabled' : ''} data-testid="pagination-next">&raquo;</button>
+        `;
+        paginationElem.innerHTML = pagHtml;
+
+        // Pagination listeners
+        paginationElem.querySelectorAll('.page-btn[data-page]').forEach(btn => {
+          btn.onclick = () => {
+            currentPage = Number(btn.getAttribute('data-page'));
+            renderCatalog();
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+          };
+        });
+        const prevBtn = document.getElementById('page-prev');
+        if (prevBtn) {
+          prevBtn.onclick = () => {
+            if (currentPage > 1) {
+              currentPage--;
+              renderCatalog();
+              window.scrollTo({ top: 150, behavior: 'smooth' });
+            }
+          };
+        }
+        const nextBtn = document.getElementById('page-next');
+        if (nextBtn) {
+          nextBtn.onclick = () => {
+            if (currentPage < totalPages) {
+              currentPage++;
+              renderCatalog();
+              window.scrollTo({ top: 150, behavior: 'smooth' });
+            }
+          };
+        }
+      }
+
+      // Event Listeners
+      // Categories Checkboxes
+      document.querySelectorAll('.cat-filter-checkbox').forEach(cb => {
+        cb.onchange = () => {
+          state.categories = Array.from(document.querySelectorAll('.cat-filter-checkbox:checked')).map(c => c.value);
+          currentPage = 1;
+          renderCatalog();
+        };
+      });
+
+      // Brands Checkboxes
+      document.querySelectorAll('.brand-filter-checkbox').forEach(cb => {
+        cb.onchange = () => {
+          state.brands = Array.from(document.querySelectorAll('.brand-filter-checkbox:checked')).map(b => b.value);
+          currentPage = 1;
+          renderCatalog();
+        };
+      });
+
+      // In-stock toggle
+      document.getElementById('filter-in-stock').onchange = (e) => {
+        state.inStockOnly = e.target.checked;
+        currentPage = 1;
+        renderCatalog();
+      };
+
+      // Rating radios
+      document.querySelectorAll('input[name="rating-filter"]').forEach(r => {
+        r.onchange = () => {
+          state.minRating = Number(r.value);
+          currentPage = 1;
+          renderCatalog();
+        };
+      });
+
+      // Price filter button
+      document.getElementById('btn-apply-price').onclick = () => {
+        const minVal = document.getElementById('filter-min-price').value;
+        const maxVal = document.getElementById('filter-max-price').value;
+        state.minPrice = minVal ? Number(minVal) : null;
+        state.maxPrice = maxVal ? Number(maxVal) : null;
+        currentPage = 1;
+        renderCatalog();
+      };
+
+      // Sort Select
+      document.getElementById('sort-select').onchange = (e) => {
+        state.sortBy = e.target.value;
+        currentPage = 1;
+        renderCatalog();
+      };
+
+      // Clear all filters
+      function clearFilters() {
+        state.categories = [];
+        state.brands = [];
+        state.minPrice = null;
+        state.maxPrice = null;
+        state.minRating = 0;
+        state.inStockOnly = false;
+        state.searchQuery = '';
+
+        document.querySelectorAll('.cat-filter-checkbox').forEach(cb => cb.checked = false);
+        document.querySelectorAll('.brand-filter-checkbox').forEach(cb => cb.checked = false);
+        document.getElementById('filter-in-stock').checked = false;
+        document.getElementById('filter-min-price').value = '';
+        document.getElementById('filter-max-price').value = '';
+        document.querySelector('input[name="rating-filter"][value="0"]').checked = true;
+
+        currentPage = 1;
+        renderCatalog();
+      }
+
+      document.getElementById('filter-clear-all').onclick = clearFilters;
+      document.getElementById('btn-reset-filters-empty').onclick = clearFilters;
+
+      // Initial Render
+      renderCatalog();
+    });
+  </script>
+</body>
+</html>

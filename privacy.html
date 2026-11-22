@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Chorbajar</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+</head>
+<body>
+
+  <div id="site-header-container"></div>
+
+  <main class="container" style="max-width: 800px; padding: 2.5rem 1.25rem;">
+    <div class="breadcrumbs" data-testid="breadcrumbs">
+      <a href="index.html">Home</a>
+      <span class="separator">/</span>
+      <span>Privacy Policy</span>
+    </div>
+
+    <div style="background: #ffffff; padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); line-height: 1.7;">
+      <h1 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">Privacy Policy & QA Testing Notice</h1>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Last updated: November 2026</p>
+
+      <div class="qa-banner" style="background: var(--primary-light); color: var(--text-main); border: 1px solid var(--primary-border); border-radius: 6px; padding: 12px; margin-bottom: 1.5rem;">
+        <strong>Important QA Notice:</strong> Chorbajar is a frontend-only practice environment. No real user personal data, payment card numbers, or passwords are transmitted to external servers. All authentication and transactional data reside strictly within your local browser storage.
+      </div>
+
+      <h3 style="font-size: 1.1rem; font-weight: 700; margin: 1.25rem 0 0.5rem;">1. Information Storage</h3>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+        All state information including your user profile, cart items, wishlist, saved shipping addresses, and order history are persisted locally via your browser's <code>localStorage</code> and <code>sessionStorage</code> APIs.
+      </p>
+
+      <h3 style="font-size: 1.1rem; font-weight: 700; margin: 1.25rem 0 0.5rem;">2. Automated Testing Data Isolation</h3>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+        Because this application is tailored for software testing and Playwright test automation, you can use the "Reset Demo Data" feature at any point to restore the application state to factory defaults.
+      </p>
+
+      <h3 style="font-size: 1.1rem; font-weight: 700; margin: 1.25rem 0 0.5rem;">3. Simulated Payments</h3>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        Payment options (UPI, Credit/Debit Cards, Cash on Delivery, Net Banking) are purely simulated workflows designed to verify form validations, order generation, and stock decrement logic.
+      </p>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

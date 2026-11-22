@@ -33,22 +33,22 @@ Then visit: `http://localhost:3000/index.html`
 
 ## 2. Product Dataset & Category Architecture
 
-The application is powered by the **`ecommerce-products/`** local dataset containing **180 real products with 180 authentic 800×800 JPG images**:
+The application is powered by the **`assets/ecommerce-products/`** local dataset containing **180 real products with 180 authentic 800×800 JPG images**:
 
 | Category | Item Count | Image Folder |
 | :--- | :--- | :--- |
-| **Electronics** | 15 products | `ecommerce-products/electronics/` |
-| **Mobile Phones** | 15 products | `ecommerce-products/mobile-phones/` |
-| **Laptops & Computers** | 15 products | `ecommerce-products/laptops-computers/` |
-| **Clothing** | 15 products | `ecommerce-products/clothing/` |
-| **Shoes & Footwear** | 15 products | `ecommerce-products/shoes/` |
-| **Watches** | 15 products | `ecommerce-products/watches/` |
-| **Home & Kitchen** | 15 products | `ecommerce-products/home-kitchen/` |
-| **Furniture** | 15 products | `ecommerce-products/furniture/` |
-| **Beauty & Personal Care** | 15 products | `ecommerce-products/beauty-personal-care/` |
-| **Sports & Fitness** | 15 products | `ecommerce-products/sports-fitness/` |
-| **Bags & Accessories** | 15 products | `ecommerce-products/bags-accessories/` |
-| **Books & Stationery** | 15 products | `ecommerce-products/books-stationery/` |
+| **Electronics** | 15 products | `assets/ecommerce-products/electronics/` |
+| **Mobile Phones** | 15 products | `assets/ecommerce-products/mobile-phones/` |
+| **Laptops & Computers** | 15 products | `assets/ecommerce-products/laptops-computers/` |
+| **Clothing** | 15 products | `assets/ecommerce-products/clothing/` |
+| **Shoes & Footwear** | 15 products | `assets/ecommerce-products/shoes/` |
+| **Watches** | 15 products | `assets/ecommerce-products/watches/` |
+| **Home & Kitchen** | 15 products | `assets/ecommerce-products/home-kitchen/` |
+| **Furniture** | 15 products | `assets/ecommerce-products/furniture/` |
+| **Beauty & Personal Care** | 15 products | `assets/ecommerce-products/beauty-personal-care/` |
+| **Sports & Fitness** | 15 products | `assets/ecommerce-products/sports-fitness/` |
+| **Bags & Accessories** | 15 products | `assets/ecommerce-products/bags-accessories/` |
+| **Books & Stationery** | 15 products | `assets/ecommerce-products/books-stationery/` |
 
 ---
 
@@ -57,7 +57,7 @@ The application is powered by the **`ecommerce-products/`** local dataset contai
 ```text
 chorbajar/
 ├── index.html                      # Storefront Homepage
-├── harshit.png                     # Default User & Admin Avatar
+├── assets/harshit.png                     # Default User & Admin Avatar
 ├── package.json                    # Project metadata & start scripts
 ├── README.md                       # Documentation
 ├── css/
@@ -66,7 +66,7 @@ chorbajar/
 │   ├── app.js                      # Core UI, dynamic path resolution & helpers
 │   ├── storage.js                  # Centralized localStorage manager
 │   └── products-data.js            # Initial dataset (180 products, coupons, users)
-├── ecommerce-products/             # 180 authentic 800×800 JPG images (12 categories)
+├── assets/ecommerce-products/             # 180 authentic 800×800 JPG images (12 categories)
 ├── admin/                          # Admin Management Portal
 │   ├── dashboard.html              # Analytics & summary KPI metrics
 │   ├── products.html               # Product catalog management

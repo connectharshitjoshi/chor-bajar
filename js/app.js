@@ -219,7 +219,7 @@
               ${currentUser ? `
                 <div class="account-menu">
                   <button class="account-btn" id="navbar-account-toggle" data-testid="navbar-user-btn">
-                    <img src="${base}${currentUser.avatar || 'harshit.png'}" alt="${currentUser.name}">
+                    <img src="${base}${currentUser.avatar || 'assets/harshit.png'}" alt="${currentUser.name}">
                     <span>${currentUser.name.split(' ')[0]}</span>
                     <span style="font-size: 0.7rem;">▼</span>
                   </button>

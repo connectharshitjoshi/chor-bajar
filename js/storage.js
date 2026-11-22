@@ -56,7 +56,7 @@
             changed = true;
           }
           if (!u.avatar || u.avatar.includes('unsplash.com')) {
-            u.avatar = 'harshit.png';
+            u.avatar = 'assets/harshit.png';
             changed = true;
           }
         });
@@ -70,7 +70,7 @@
             currChanged = true;
           }
           if (!current.avatar || current.avatar.includes('unsplash.com')) {
-            current.avatar = 'harshit.png';
+            current.avatar = 'assets/harshit.png';
             currChanged = true;
           }
           if (currChanged) this.setCurrentUser(current, true);
@@ -345,7 +345,7 @@
         phone: phone.trim(),
         password: password,
         role: 'customer',
-        avatar: 'harshit.png',
+        avatar: 'assets/harshit.png',
         createdAt: new Date().toISOString().split('T')[0],
         status: 'Active'
       };

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Profile | Chorbajar</title>
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" href="../ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <link rel="icon" href="../assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
 </head>
 <body>
 
@@ -90,7 +90,7 @@
       if (!window.ChorbajarApp.requireAuth()) return;
 
       const user = window.ChorbajarStorage.getCurrentUser();
-      let avatarBase64 = user.avatar || '../harshit.png';
+      let avatarBase64 = user.avatar || '../assets/harshit.png';
 
       document.getElementById('sidebar-user-avatar').src = avatarBase64;
       document.getElementById('sidebar-user-name').textContent = user.name;

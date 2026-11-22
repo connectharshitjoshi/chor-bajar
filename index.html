@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chorbajar | Authentic E-Commerce Testing Playground</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <link rel="icon" href="assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
 </head>
 <body>
 
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="hero-image-wrap">
-        <img src="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg" alt="Featured Electronics Hero" style="width: 320px; height: 320px; object-fit: cover;">
+        <img src="assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg" alt="Featured Electronics Hero" style="width: 320px; height: 320px; object-fit: cover;">
       </div>
     </section>
 
@@ -133,7 +133,7 @@
       const catContainer = document.getElementById('home-categories-grid');
       if (catContainer && window.CHORBAJAR_CATEGORIES) {
         catContainer.innerHTML = window.CHORBAJAR_CATEGORIES.map(cat => `
-          <a href="shop/shop/category.html?name=${encodeURIComponent(cat.slug)}" class="category-card" data-testid="category-card-${cat.slug}">
+          <a href="shop/category.html?name=${encodeURIComponent(cat.slug)}" class="category-card" data-testid="category-card-${cat.slug}">
             <div class="category-img-wrap">
               <img src="${cat.image}" alt="${cat.name}" loading="lazy">
             </div>

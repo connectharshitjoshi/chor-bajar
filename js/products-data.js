@@ -16,11 +16,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 344,
     "stock": 20,
-    "image": "ecommerce-products/electronics/wireless-bluetooth-headphones.jpg",
+    "image": "assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg",
     "images": [
-      "ecommerce-products/electronics/wireless-bluetooth-headphones.jpg",
-      "ecommerce-products/electronics/wireless-bluetooth-headphones.jpg",
-      "ecommerce-products/electronics/wireless-bluetooth-headphones.jpg"
+      "assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg",
+      "assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg",
+      "assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -45,11 +45,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 287,
     "stock": 66,
-    "image": "ecommerce-products/electronics/portable-bluetooth-speaker.jpg",
+    "image": "assets/ecommerce-products/electronics/portable-bluetooth-speaker.jpg",
     "images": [
-      "ecommerce-products/electronics/portable-bluetooth-speaker.jpg",
-      "ecommerce-products/electronics/portable-bluetooth-speaker.jpg",
-      "ecommerce-products/electronics/portable-bluetooth-speaker.jpg"
+      "assets/ecommerce-products/electronics/portable-bluetooth-speaker.jpg",
+      "assets/ecommerce-products/electronics/portable-bluetooth-speaker.jpg",
+      "assets/ecommerce-products/electronics/portable-bluetooth-speaker.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -74,11 +74,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 420,
     "stock": 47,
-    "image": "ecommerce-products/electronics/mechanical-gaming-keyboard.jpg",
+    "image": "assets/ecommerce-products/electronics/mechanical-gaming-keyboard.jpg",
     "images": [
-      "ecommerce-products/electronics/mechanical-gaming-keyboard.jpg",
-      "ecommerce-products/electronics/mechanical-gaming-keyboard.jpg",
-      "ecommerce-products/electronics/mechanical-gaming-keyboard.jpg"
+      "assets/ecommerce-products/electronics/mechanical-gaming-keyboard.jpg",
+      "assets/ecommerce-products/electronics/mechanical-gaming-keyboard.jpg",
+      "assets/ecommerce-products/electronics/mechanical-gaming-keyboard.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -103,11 +103,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 244,
     "stock": 55,
-    "image": "ecommerce-products/electronics/ergonomic-wireless-mouse.jpg",
+    "image": "assets/ecommerce-products/electronics/ergonomic-wireless-mouse.jpg",
     "images": [
-      "ecommerce-products/electronics/ergonomic-wireless-mouse.jpg",
-      "ecommerce-products/electronics/ergonomic-wireless-mouse.jpg",
-      "ecommerce-products/electronics/ergonomic-wireless-mouse.jpg"
+      "assets/ecommerce-products/electronics/ergonomic-wireless-mouse.jpg",
+      "assets/ecommerce-products/electronics/ergonomic-wireless-mouse.jpg",
+      "assets/ecommerce-products/electronics/ergonomic-wireless-mouse.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -132,11 +132,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 322,
     "stock": 34,
-    "image": "ecommerce-products/electronics/20000mah-power-bank.jpg",
+    "image": "assets/ecommerce-products/electronics/20000mah-power-bank.jpg",
     "images": [
-      "ecommerce-products/electronics/20000mah-power-bank.jpg",
-      "ecommerce-products/electronics/20000mah-power-bank.jpg",
-      "ecommerce-products/electronics/20000mah-power-bank.jpg"
+      "assets/ecommerce-products/electronics/20000mah-power-bank.jpg",
+      "assets/ecommerce-products/electronics/20000mah-power-bank.jpg",
+      "assets/ecommerce-products/electronics/20000mah-power-bank.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -161,11 +161,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 120,
     "stock": 51,
-    "image": "ecommerce-products/electronics/multiport-usb-c-hub.jpg",
+    "image": "assets/ecommerce-products/electronics/multiport-usb-c-hub.jpg",
     "images": [
-      "ecommerce-products/electronics/multiport-usb-c-hub.jpg",
-      "ecommerce-products/electronics/multiport-usb-c-hub.jpg",
-      "ecommerce-products/electronics/multiport-usb-c-hub.jpg"
+      "assets/ecommerce-products/electronics/multiport-usb-c-hub.jpg",
+      "assets/ecommerce-products/electronics/multiport-usb-c-hub.jpg",
+      "assets/ecommerce-products/electronics/multiport-usb-c-hub.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -190,11 +190,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 138,
     "stock": 15,
-    "image": "ecommerce-products/electronics/4k-hd-webcam.jpg",
+    "image": "assets/ecommerce-products/electronics/4k-hd-webcam.jpg",
     "images": [
-      "ecommerce-products/electronics/4k-hd-webcam.jpg",
-      "ecommerce-products/electronics/4k-hd-webcam.jpg",
-      "ecommerce-products/electronics/4k-hd-webcam.jpg"
+      "assets/ecommerce-products/electronics/4k-hd-webcam.jpg",
+      "assets/ecommerce-products/electronics/4k-hd-webcam.jpg",
+      "assets/ecommerce-products/electronics/4k-hd-webcam.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -219,11 +219,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.9,
     "reviewsCount": 138,
     "stock": 36,
-    "image": "ecommerce-products/electronics/wireless-gaming-controller.jpg",
+    "image": "assets/ecommerce-products/electronics/wireless-gaming-controller.jpg",
     "images": [
-      "ecommerce-products/electronics/wireless-gaming-controller.jpg",
-      "ecommerce-products/electronics/wireless-gaming-controller.jpg",
-      "ecommerce-products/electronics/wireless-gaming-controller.jpg"
+      "assets/ecommerce-products/electronics/wireless-gaming-controller.jpg",
+      "assets/ecommerce-products/electronics/wireless-gaming-controller.jpg",
+      "assets/ecommerce-products/electronics/wireless-gaming-controller.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -248,11 +248,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 316,
     "stock": 57,
-    "image": "ecommerce-products/electronics/smart-voice-speaker.jpg",
+    "image": "assets/ecommerce-products/electronics/smart-voice-speaker.jpg",
     "images": [
-      "ecommerce-products/electronics/smart-voice-speaker.jpg",
-      "ecommerce-products/electronics/smart-voice-speaker.jpg",
-      "ecommerce-products/electronics/smart-voice-speaker.jpg"
+      "assets/ecommerce-products/electronics/smart-voice-speaker.jpg",
+      "assets/ecommerce-products/electronics/smart-voice-speaker.jpg",
+      "assets/ecommerce-products/electronics/smart-voice-speaker.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -277,11 +277,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 142,
     "stock": 14,
-    "image": "ecommerce-products/electronics/portable-external-ssd.jpg",
+    "image": "assets/ecommerce-products/electronics/portable-external-ssd.jpg",
     "images": [
-      "ecommerce-products/electronics/portable-external-ssd.jpg",
-      "ecommerce-products/electronics/portable-external-ssd.jpg",
-      "ecommerce-products/electronics/portable-external-ssd.jpg"
+      "assets/ecommerce-products/electronics/portable-external-ssd.jpg",
+      "assets/ecommerce-products/electronics/portable-external-ssd.jpg",
+      "assets/ecommerce-products/electronics/portable-external-ssd.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -306,11 +306,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 270,
     "stock": 47,
-    "image": "ecommerce-products/electronics/studio-condenser-microphone.jpg",
+    "image": "assets/ecommerce-products/electronics/studio-condenser-microphone.jpg",
     "images": [
-      "ecommerce-products/electronics/studio-condenser-microphone.jpg",
-      "ecommerce-products/electronics/studio-condenser-microphone.jpg",
-      "ecommerce-products/electronics/studio-condenser-microphone.jpg"
+      "assets/ecommerce-products/electronics/studio-condenser-microphone.jpg",
+      "assets/ecommerce-products/electronics/studio-condenser-microphone.jpg",
+      "assets/ecommerce-products/electronics/studio-condenser-microphone.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -335,11 +335,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 378,
     "stock": 49,
-    "image": "ecommerce-products/electronics/mini-portable-projector.jpg",
+    "image": "assets/ecommerce-products/electronics/mini-portable-projector.jpg",
     "images": [
-      "ecommerce-products/electronics/mini-portable-projector.jpg",
-      "ecommerce-products/electronics/mini-portable-projector.jpg",
-      "ecommerce-products/electronics/mini-portable-projector.jpg"
+      "assets/ecommerce-products/electronics/mini-portable-projector.jpg",
+      "assets/ecommerce-products/electronics/mini-portable-projector.jpg",
+      "assets/ecommerce-products/electronics/mini-portable-projector.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -364,11 +364,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 134,
     "stock": 19,
-    "image": "ecommerce-products/electronics/led-desk-lamp-with-usb.jpg",
+    "image": "assets/ecommerce-products/electronics/led-desk-lamp-with-usb.jpg",
     "images": [
-      "ecommerce-products/electronics/led-desk-lamp-with-usb.jpg",
-      "ecommerce-products/electronics/led-desk-lamp-with-usb.jpg",
-      "ecommerce-products/electronics/led-desk-lamp-with-usb.jpg"
+      "assets/ecommerce-products/electronics/led-desk-lamp-with-usb.jpg",
+      "assets/ecommerce-products/electronics/led-desk-lamp-with-usb.jpg",
+      "assets/ecommerce-products/electronics/led-desk-lamp-with-usb.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -393,11 +393,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 177,
     "stock": 43,
-    "image": "ecommerce-products/electronics/3-in-1-wireless-charging-pad.jpg",
+    "image": "assets/ecommerce-products/electronics/3-in-1-wireless-charging-pad.jpg",
     "images": [
-      "ecommerce-products/electronics/3-in-1-wireless-charging-pad.jpg",
-      "ecommerce-products/electronics/3-in-1-wireless-charging-pad.jpg",
-      "ecommerce-products/electronics/3-in-1-wireless-charging-pad.jpg"
+      "assets/ecommerce-products/electronics/3-in-1-wireless-charging-pad.jpg",
+      "assets/ecommerce-products/electronics/3-in-1-wireless-charging-pad.jpg",
+      "assets/ecommerce-products/electronics/3-in-1-wireless-charging-pad.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -422,11 +422,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 444,
     "stock": 20,
-    "image": "ecommerce-products/electronics/noise-cancelling-earbuds.jpg",
+    "image": "assets/ecommerce-products/electronics/noise-cancelling-earbuds.jpg",
     "images": [
-      "ecommerce-products/electronics/noise-cancelling-earbuds.jpg",
-      "ecommerce-products/electronics/noise-cancelling-earbuds.jpg",
-      "ecommerce-products/electronics/noise-cancelling-earbuds.jpg"
+      "assets/ecommerce-products/electronics/noise-cancelling-earbuds.jpg",
+      "assets/ecommerce-products/electronics/noise-cancelling-earbuds.jpg",
+      "assets/ecommerce-products/electronics/noise-cancelling-earbuds.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -451,11 +451,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.2,
     "reviewsCount": 283,
     "stock": 20,
-    "image": "ecommerce-products/mobile-phones/ultra-flagship-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/ultra-flagship-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/ultra-flagship-smartphone.jpg",
-      "ecommerce-products/mobile-phones/ultra-flagship-smartphone.jpg",
-      "ecommerce-products/mobile-phones/ultra-flagship-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/ultra-flagship-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/ultra-flagship-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/ultra-flagship-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -484,11 +484,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.8,
     "reviewsCount": 106,
     "stock": 39,
-    "image": "ecommerce-products/mobile-phones/compact-5g-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/compact-5g-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/compact-5g-smartphone.jpg",
-      "ecommerce-products/mobile-phones/compact-5g-smartphone.jpg",
-      "ecommerce-products/mobile-phones/compact-5g-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/compact-5g-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/compact-5g-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/compact-5g-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -517,11 +517,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 75,
     "stock": 55,
-    "image": "ecommerce-products/mobile-phones/dual-screen-foldable-phone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/dual-screen-foldable-phone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/dual-screen-foldable-phone.jpg",
-      "ecommerce-products/mobile-phones/dual-screen-foldable-phone.jpg",
-      "ecommerce-products/mobile-phones/dual-screen-foldable-phone.jpg"
+      "assets/ecommerce-products/mobile-phones/dual-screen-foldable-phone.jpg",
+      "assets/ecommerce-products/mobile-phones/dual-screen-foldable-phone.jpg",
+      "assets/ecommerce-products/mobile-phones/dual-screen-foldable-phone.jpg"
     ],
     "variants": [
       "128GB",
@@ -550,11 +550,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 160,
     "stock": 33,
-    "image": "ecommerce-products/mobile-phones/pro-camera-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/pro-camera-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/pro-camera-smartphone.jpg",
-      "ecommerce-products/mobile-phones/pro-camera-smartphone.jpg",
-      "ecommerce-products/mobile-phones/pro-camera-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/pro-camera-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/pro-camera-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/pro-camera-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -583,11 +583,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 136,
     "stock": 51,
-    "image": "ecommerce-products/mobile-phones/gaming-smartphone-rgb.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/gaming-smartphone-rgb.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/gaming-smartphone-rgb.jpg",
-      "ecommerce-products/mobile-phones/gaming-smartphone-rgb.jpg",
-      "ecommerce-products/mobile-phones/gaming-smartphone-rgb.jpg"
+      "assets/ecommerce-products/mobile-phones/gaming-smartphone-rgb.jpg",
+      "assets/ecommerce-products/mobile-phones/gaming-smartphone-rgb.jpg",
+      "assets/ecommerce-products/mobile-phones/gaming-smartphone-rgb.jpg"
     ],
     "variants": [
       "128GB",
@@ -616,11 +616,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.8,
     "reviewsCount": 346,
     "stock": 39,
-    "image": "ecommerce-products/mobile-phones/budget-4g-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/budget-4g-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/budget-4g-smartphone.jpg",
-      "ecommerce-products/mobile-phones/budget-4g-smartphone.jpg",
-      "ecommerce-products/mobile-phones/budget-4g-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/budget-4g-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/budget-4g-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/budget-4g-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -649,11 +649,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 324,
     "stock": 16,
-    "image": "ecommerce-products/mobile-phones/rugged-waterproof-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/rugged-waterproof-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/rugged-waterproof-smartphone.jpg",
-      "ecommerce-products/mobile-phones/rugged-waterproof-smartphone.jpg",
-      "ecommerce-products/mobile-phones/rugged-waterproof-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/rugged-waterproof-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/rugged-waterproof-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/rugged-waterproof-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -682,11 +682,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 421,
     "stock": 55,
-    "image": "ecommerce-products/mobile-phones/business-slim-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/business-slim-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/business-slim-smartphone.jpg",
-      "ecommerce-products/mobile-phones/business-slim-smartphone.jpg",
-      "ecommerce-products/mobile-phones/business-slim-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/business-slim-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/business-slim-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/business-slim-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -715,11 +715,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 248,
     "stock": 39,
-    "image": "ecommerce-products/mobile-phones/big-battery-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/big-battery-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/big-battery-smartphone.jpg",
-      "ecommerce-products/mobile-phones/big-battery-smartphone.jpg",
-      "ecommerce-products/mobile-phones/big-battery-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/big-battery-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/big-battery-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/big-battery-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -748,11 +748,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 25,
     "stock": 27,
-    "image": "ecommerce-products/mobile-phones/stylus-touch-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/stylus-touch-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/stylus-touch-smartphone.jpg",
-      "ecommerce-products/mobile-phones/stylus-touch-smartphone.jpg",
-      "ecommerce-products/mobile-phones/stylus-touch-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/stylus-touch-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/stylus-touch-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/stylus-touch-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -781,11 +781,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 260,
     "stock": 58,
-    "image": "ecommerce-products/mobile-phones/minimalist-flip-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/minimalist-flip-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/minimalist-flip-smartphone.jpg",
-      "ecommerce-products/mobile-phones/minimalist-flip-smartphone.jpg",
-      "ecommerce-products/mobile-phones/minimalist-flip-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/minimalist-flip-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/minimalist-flip-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/minimalist-flip-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -814,11 +814,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 386,
     "stock": 9,
-    "image": "ecommerce-products/mobile-phones/edge-to-edge-display-phone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/edge-to-edge-display-phone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/edge-to-edge-display-phone.jpg",
-      "ecommerce-products/mobile-phones/edge-to-edge-display-phone.jpg",
-      "ecommerce-products/mobile-phones/edge-to-edge-display-phone.jpg"
+      "assets/ecommerce-products/mobile-phones/edge-to-edge-display-phone.jpg",
+      "assets/ecommerce-products/mobile-phones/edge-to-edge-display-phone.jpg",
+      "assets/ecommerce-products/mobile-phones/edge-to-edge-display-phone.jpg"
     ],
     "variants": [
       "128GB",
@@ -847,11 +847,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 471,
     "stock": 40,
-    "image": "ecommerce-products/mobile-phones/fast-charging-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/fast-charging-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/fast-charging-smartphone.jpg",
-      "ecommerce-products/mobile-phones/fast-charging-smartphone.jpg",
-      "ecommerce-products/mobile-phones/fast-charging-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/fast-charging-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/fast-charging-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/fast-charging-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -880,11 +880,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 51,
     "stock": 36,
-    "image": "ecommerce-products/mobile-phones/premium-ceramic-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/premium-ceramic-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/premium-ceramic-smartphone.jpg",
-      "ecommerce-products/mobile-phones/premium-ceramic-smartphone.jpg",
-      "ecommerce-products/mobile-phones/premium-ceramic-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/premium-ceramic-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/premium-ceramic-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/premium-ceramic-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -913,11 +913,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 116,
     "stock": 21,
-    "image": "ecommerce-products/mobile-phones/quad-camera-ai-smartphone.jpg",
+    "image": "assets/ecommerce-products/mobile-phones/quad-camera-ai-smartphone.jpg",
     "images": [
-      "ecommerce-products/mobile-phones/quad-camera-ai-smartphone.jpg",
-      "ecommerce-products/mobile-phones/quad-camera-ai-smartphone.jpg",
-      "ecommerce-products/mobile-phones/quad-camera-ai-smartphone.jpg"
+      "assets/ecommerce-products/mobile-phones/quad-camera-ai-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/quad-camera-ai-smartphone.jpg",
+      "assets/ecommerce-products/mobile-phones/quad-camera-ai-smartphone.jpg"
     ],
     "variants": [
       "128GB",
@@ -946,11 +946,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.8,
     "reviewsCount": 259,
     "stock": 9,
-    "image": "ecommerce-products/laptops-computers/ultra-slim-14-inch-laptop.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/ultra-slim-14-inch-laptop.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/ultra-slim-14-inch-laptop.jpg",
-      "ecommerce-products/laptops-computers/ultra-slim-14-inch-laptop.jpg",
-      "ecommerce-products/laptops-computers/ultra-slim-14-inch-laptop.jpg"
+      "assets/ecommerce-products/laptops-computers/ultra-slim-14-inch-laptop.jpg",
+      "assets/ecommerce-products/laptops-computers/ultra-slim-14-inch-laptop.jpg",
+      "assets/ecommerce-products/laptops-computers/ultra-slim-14-inch-laptop.jpg"
     ],
     "variants": [
       "128GB",
@@ -979,11 +979,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 364,
     "stock": 37,
-    "image": "ecommerce-products/laptops-computers/high-performance-gaming-laptop.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/high-performance-gaming-laptop.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/high-performance-gaming-laptop.jpg",
-      "ecommerce-products/laptops-computers/high-performance-gaming-laptop.jpg",
-      "ecommerce-products/laptops-computers/high-performance-gaming-laptop.jpg"
+      "assets/ecommerce-products/laptops-computers/high-performance-gaming-laptop.jpg",
+      "assets/ecommerce-products/laptops-computers/high-performance-gaming-laptop.jpg",
+      "assets/ecommerce-products/laptops-computers/high-performance-gaming-laptop.jpg"
     ],
     "variants": [
       "128GB",
@@ -1012,11 +1012,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 48,
     "stock": 45,
-    "image": "ecommerce-products/laptops-computers/2-in-1-touch-laptop.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/2-in-1-touch-laptop.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/2-in-1-touch-laptop.jpg",
-      "ecommerce-products/laptops-computers/2-in-1-touch-laptop.jpg",
-      "ecommerce-products/laptops-computers/2-in-1-touch-laptop.jpg"
+      "assets/ecommerce-products/laptops-computers/2-in-1-touch-laptop.jpg",
+      "assets/ecommerce-products/laptops-computers/2-in-1-touch-laptop.jpg",
+      "assets/ecommerce-products/laptops-computers/2-in-1-touch-laptop.jpg"
     ],
     "variants": [
       "128GB",
@@ -1045,11 +1045,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 129,
     "stock": 56,
-    "image": "ecommerce-products/laptops-computers/27-inch-4k-ips-monitor.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/27-inch-4k-ips-monitor.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/27-inch-4k-ips-monitor.jpg",
-      "ecommerce-products/laptops-computers/27-inch-4k-ips-monitor.jpg",
-      "ecommerce-products/laptops-computers/27-inch-4k-ips-monitor.jpg"
+      "assets/ecommerce-products/laptops-computers/27-inch-4k-ips-monitor.jpg",
+      "assets/ecommerce-products/laptops-computers/27-inch-4k-ips-monitor.jpg",
+      "assets/ecommerce-products/laptops-computers/27-inch-4k-ips-monitor.jpg"
     ],
     "variants": [
       "128GB",
@@ -1078,11 +1078,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 433,
     "stock": 18,
-    "image": "ecommerce-products/laptops-computers/mini-desktop-pc.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/mini-desktop-pc.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/mini-desktop-pc.jpg",
-      "ecommerce-products/laptops-computers/mini-desktop-pc.jpg",
-      "ecommerce-products/laptops-computers/mini-desktop-pc.jpg"
+      "assets/ecommerce-products/laptops-computers/mini-desktop-pc.jpg",
+      "assets/ecommerce-products/laptops-computers/mini-desktop-pc.jpg",
+      "assets/ecommerce-products/laptops-computers/mini-desktop-pc.jpg"
     ],
     "variants": [
       "128GB",
@@ -1111,11 +1111,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 294,
     "stock": 28,
-    "image": "ecommerce-products/laptops-computers/gaming-desktop-tower.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/gaming-desktop-tower.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/gaming-desktop-tower.jpg",
-      "ecommerce-products/laptops-computers/gaming-desktop-tower.jpg",
-      "ecommerce-products/laptops-computers/gaming-desktop-tower.jpg"
+      "assets/ecommerce-products/laptops-computers/gaming-desktop-tower.jpg",
+      "assets/ecommerce-products/laptops-computers/gaming-desktop-tower.jpg",
+      "assets/ecommerce-products/laptops-computers/gaming-desktop-tower.jpg"
     ],
     "variants": [
       "128GB",
@@ -1144,11 +1144,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.8,
     "reviewsCount": 131,
     "stock": 48,
-    "image": "ecommerce-products/laptops-computers/aluminum-laptop-cooling-stand.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/aluminum-laptop-cooling-stand.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/aluminum-laptop-cooling-stand.jpg",
-      "ecommerce-products/laptops-computers/aluminum-laptop-cooling-stand.jpg",
-      "ecommerce-products/laptops-computers/aluminum-laptop-cooling-stand.jpg"
+      "assets/ecommerce-products/laptops-computers/aluminum-laptop-cooling-stand.jpg",
+      "assets/ecommerce-products/laptops-computers/aluminum-laptop-cooling-stand.jpg",
+      "assets/ecommerce-products/laptops-computers/aluminum-laptop-cooling-stand.jpg"
     ],
     "variants": [
       "128GB",
@@ -1177,11 +1177,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 203,
     "stock": 9,
-    "image": "ecommerce-products/laptops-computers/all-in-one-desktop.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/all-in-one-desktop.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/all-in-one-desktop.jpg",
-      "ecommerce-products/laptops-computers/all-in-one-desktop.jpg",
-      "ecommerce-products/laptops-computers/all-in-one-desktop.jpg"
+      "assets/ecommerce-products/laptops-computers/all-in-one-desktop.jpg",
+      "assets/ecommerce-products/laptops-computers/all-in-one-desktop.jpg",
+      "assets/ecommerce-products/laptops-computers/all-in-one-desktop.jpg"
     ],
     "variants": [
       "128GB",
@@ -1210,11 +1210,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 331,
     "stock": 19,
-    "image": "ecommerce-products/laptops-computers/ergonomic-split-keyboard.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/ergonomic-split-keyboard.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/ergonomic-split-keyboard.jpg",
-      "ecommerce-products/laptops-computers/ergonomic-split-keyboard.jpg",
-      "ecommerce-products/laptops-computers/ergonomic-split-keyboard.jpg"
+      "assets/ecommerce-products/laptops-computers/ergonomic-split-keyboard.jpg",
+      "assets/ecommerce-products/laptops-computers/ergonomic-split-keyboard.jpg",
+      "assets/ecommerce-products/laptops-computers/ergonomic-split-keyboard.jpg"
     ],
     "variants": [
       "128GB",
@@ -1243,11 +1243,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 423,
     "stock": 24,
-    "image": "ecommerce-products/laptops-computers/vertical-ergonomic-mouse.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/vertical-ergonomic-mouse.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/vertical-ergonomic-mouse.jpg",
-      "ecommerce-products/laptops-computers/vertical-ergonomic-mouse.jpg",
-      "ecommerce-products/laptops-computers/vertical-ergonomic-mouse.jpg"
+      "assets/ecommerce-products/laptops-computers/vertical-ergonomic-mouse.jpg",
+      "assets/ecommerce-products/laptops-computers/vertical-ergonomic-mouse.jpg",
+      "assets/ecommerce-products/laptops-computers/vertical-ergonomic-mouse.jpg"
     ],
     "variants": [
       "128GB",
@@ -1276,11 +1276,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.9,
     "reviewsCount": 243,
     "stock": 53,
-    "image": "ecommerce-products/laptops-computers/dual-monitor-desk-mount.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/dual-monitor-desk-mount.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/dual-monitor-desk-mount.jpg",
-      "ecommerce-products/laptops-computers/dual-monitor-desk-mount.jpg",
-      "ecommerce-products/laptops-computers/dual-monitor-desk-mount.jpg"
+      "assets/ecommerce-products/laptops-computers/dual-monitor-desk-mount.jpg",
+      "assets/ecommerce-products/laptops-computers/dual-monitor-desk-mount.jpg",
+      "assets/ecommerce-products/laptops-computers/dual-monitor-desk-mount.jpg"
     ],
     "variants": [
       "128GB",
@@ -1309,11 +1309,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.2,
     "reviewsCount": 455,
     "stock": 32,
-    "image": "ecommerce-products/laptops-computers/mechanical-number-keypad.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/mechanical-number-keypad.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/mechanical-number-keypad.jpg",
-      "ecommerce-products/laptops-computers/mechanical-number-keypad.jpg",
-      "ecommerce-products/laptops-computers/mechanical-number-keypad.jpg"
+      "assets/ecommerce-products/laptops-computers/mechanical-number-keypad.jpg",
+      "assets/ecommerce-products/laptops-computers/mechanical-number-keypad.jpg",
+      "assets/ecommerce-products/laptops-computers/mechanical-number-keypad.jpg"
     ],
     "variants": [
       "128GB",
@@ -1342,11 +1342,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 106,
     "stock": 46,
-    "image": "ecommerce-products/laptops-computers/usb-c-docking-station.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/usb-c-docking-station.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/usb-c-docking-station.jpg",
-      "ecommerce-products/laptops-computers/usb-c-docking-station.jpg",
-      "ecommerce-products/laptops-computers/usb-c-docking-station.jpg"
+      "assets/ecommerce-products/laptops-computers/usb-c-docking-station.jpg",
+      "assets/ecommerce-products/laptops-computers/usb-c-docking-station.jpg",
+      "assets/ecommerce-products/laptops-computers/usb-c-docking-station.jpg"
     ],
     "variants": [
       "128GB",
@@ -1375,11 +1375,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 262,
     "stock": 53,
-    "image": "ecommerce-products/laptops-computers/curved-ultrawide-monitor.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/curved-ultrawide-monitor.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/curved-ultrawide-monitor.jpg",
-      "ecommerce-products/laptops-computers/curved-ultrawide-monitor.jpg",
-      "ecommerce-products/laptops-computers/curved-ultrawide-monitor.jpg"
+      "assets/ecommerce-products/laptops-computers/curved-ultrawide-monitor.jpg",
+      "assets/ecommerce-products/laptops-computers/curved-ultrawide-monitor.jpg",
+      "assets/ecommerce-products/laptops-computers/curved-ultrawide-monitor.jpg"
     ],
     "variants": [
       "128GB",
@@ -1408,11 +1408,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 31,
     "stock": 50,
-    "image": "ecommerce-products/laptops-computers/protective-laptop-sleeve.jpg",
+    "image": "assets/ecommerce-products/laptops-computers/protective-laptop-sleeve.jpg",
     "images": [
-      "ecommerce-products/laptops-computers/protective-laptop-sleeve.jpg",
-      "ecommerce-products/laptops-computers/protective-laptop-sleeve.jpg",
-      "ecommerce-products/laptops-computers/protective-laptop-sleeve.jpg"
+      "assets/ecommerce-products/laptops-computers/protective-laptop-sleeve.jpg",
+      "assets/ecommerce-products/laptops-computers/protective-laptop-sleeve.jpg",
+      "assets/ecommerce-products/laptops-computers/protective-laptop-sleeve.jpg"
     ],
     "variants": [
       "128GB",
@@ -1441,11 +1441,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.2,
     "reviewsCount": 418,
     "stock": 28,
-    "image": "ecommerce-products/clothing/classic-crewneck-t-shirt.jpg",
+    "image": "assets/ecommerce-products/clothing/classic-crewneck-t-shirt.jpg",
     "images": [
-      "ecommerce-products/clothing/classic-crewneck-t-shirt.jpg",
-      "ecommerce-products/clothing/classic-crewneck-t-shirt.jpg",
-      "ecommerce-products/clothing/classic-crewneck-t-shirt.jpg"
+      "assets/ecommerce-products/clothing/classic-crewneck-t-shirt.jpg",
+      "assets/ecommerce-products/clothing/classic-crewneck-t-shirt.jpg",
+      "assets/ecommerce-products/clothing/classic-crewneck-t-shirt.jpg"
     ],
     "variants": [
       "S",
@@ -1475,11 +1475,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 31,
     "stock": 21,
-    "image": "ecommerce-products/clothing/slim-fit-denim-jacket.jpg",
+    "image": "assets/ecommerce-products/clothing/slim-fit-denim-jacket.jpg",
     "images": [
-      "ecommerce-products/clothing/slim-fit-denim-jacket.jpg",
-      "ecommerce-products/clothing/slim-fit-denim-jacket.jpg",
-      "ecommerce-products/clothing/slim-fit-denim-jacket.jpg"
+      "assets/ecommerce-products/clothing/slim-fit-denim-jacket.jpg",
+      "assets/ecommerce-products/clothing/slim-fit-denim-jacket.jpg",
+      "assets/ecommerce-products/clothing/slim-fit-denim-jacket.jpg"
     ],
     "variants": [
       "S",
@@ -1509,11 +1509,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.9,
     "reviewsCount": 107,
     "stock": 8,
-    "image": "ecommerce-products/clothing/cashmere-pullover-sweater.jpg",
+    "image": "assets/ecommerce-products/clothing/cashmere-pullover-sweater.jpg",
     "images": [
-      "ecommerce-products/clothing/cashmere-pullover-sweater.jpg",
-      "ecommerce-products/clothing/cashmere-pullover-sweater.jpg",
-      "ecommerce-products/clothing/cashmere-pullover-sweater.jpg"
+      "assets/ecommerce-products/clothing/cashmere-pullover-sweater.jpg",
+      "assets/ecommerce-products/clothing/cashmere-pullover-sweater.jpg",
+      "assets/ecommerce-products/clothing/cashmere-pullover-sweater.jpg"
     ],
     "variants": [
       "S",
@@ -1543,11 +1543,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 442,
     "stock": 38,
-    "image": "ecommerce-products/clothing/formal-oxford-shirt.jpg",
+    "image": "assets/ecommerce-products/clothing/formal-oxford-shirt.jpg",
     "images": [
-      "ecommerce-products/clothing/formal-oxford-shirt.jpg",
-      "ecommerce-products/clothing/formal-oxford-shirt.jpg",
-      "ecommerce-products/clothing/formal-oxford-shirt.jpg"
+      "assets/ecommerce-products/clothing/formal-oxford-shirt.jpg",
+      "assets/ecommerce-products/clothing/formal-oxford-shirt.jpg",
+      "assets/ecommerce-products/clothing/formal-oxford-shirt.jpg"
     ],
     "variants": [
       "S",
@@ -1577,11 +1577,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 68,
     "stock": 36,
-    "image": "ecommerce-products/clothing/waterproof-hooded-windbreaker.jpg",
+    "image": "assets/ecommerce-products/clothing/waterproof-hooded-windbreaker.jpg",
     "images": [
-      "ecommerce-products/clothing/waterproof-hooded-windbreaker.jpg",
-      "ecommerce-products/clothing/waterproof-hooded-windbreaker.jpg",
-      "ecommerce-products/clothing/waterproof-hooded-windbreaker.jpg"
+      "assets/ecommerce-products/clothing/waterproof-hooded-windbreaker.jpg",
+      "assets/ecommerce-products/clothing/waterproof-hooded-windbreaker.jpg",
+      "assets/ecommerce-products/clothing/waterproof-hooded-windbreaker.jpg"
     ],
     "variants": [
       "S",
@@ -1611,11 +1611,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 102,
     "stock": 61,
-    "image": "ecommerce-products/clothing/relaxed-fit-chino-trousers.jpg",
+    "image": "assets/ecommerce-products/clothing/relaxed-fit-chino-trousers.jpg",
     "images": [
-      "ecommerce-products/clothing/relaxed-fit-chino-trousers.jpg",
-      "ecommerce-products/clothing/relaxed-fit-chino-trousers.jpg",
-      "ecommerce-products/clothing/relaxed-fit-chino-trousers.jpg"
+      "assets/ecommerce-products/clothing/relaxed-fit-chino-trousers.jpg",
+      "assets/ecommerce-products/clothing/relaxed-fit-chino-trousers.jpg",
+      "assets/ecommerce-products/clothing/relaxed-fit-chino-trousers.jpg"
     ],
     "variants": [
       "S",
@@ -1645,11 +1645,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 69,
     "stock": 43,
-    "image": "ecommerce-products/clothing/floral-summer-dress.jpg",
+    "image": "assets/ecommerce-products/clothing/floral-summer-dress.jpg",
     "images": [
-      "ecommerce-products/clothing/floral-summer-dress.jpg",
-      "ecommerce-products/clothing/floral-summer-dress.jpg",
-      "ecommerce-products/clothing/floral-summer-dress.jpg"
+      "assets/ecommerce-products/clothing/floral-summer-dress.jpg",
+      "assets/ecommerce-products/clothing/floral-summer-dress.jpg",
+      "assets/ecommerce-products/clothing/floral-summer-dress.jpg"
     ],
     "variants": [
       "S",
@@ -1679,11 +1679,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 233,
     "stock": 63,
-    "image": "ecommerce-products/clothing/heavyweight-fleece-hoodie.jpg",
+    "image": "assets/ecommerce-products/clothing/heavyweight-fleece-hoodie.jpg",
     "images": [
-      "ecommerce-products/clothing/heavyweight-fleece-hoodie.jpg",
-      "ecommerce-products/clothing/heavyweight-fleece-hoodie.jpg",
-      "ecommerce-products/clothing/heavyweight-fleece-hoodie.jpg"
+      "assets/ecommerce-products/clothing/heavyweight-fleece-hoodie.jpg",
+      "assets/ecommerce-products/clothing/heavyweight-fleece-hoodie.jpg",
+      "assets/ecommerce-products/clothing/heavyweight-fleece-hoodie.jpg"
     ],
     "variants": [
       "S",
@@ -1713,11 +1713,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 51,
     "stock": 24,
-    "image": "ecommerce-products/clothing/mens-wool-winter-overcoat.jpg",
+    "image": "assets/ecommerce-products/clothing/mens-wool-winter-overcoat.jpg",
     "images": [
-      "ecommerce-products/clothing/mens-wool-winter-overcoat.jpg",
-      "ecommerce-products/clothing/mens-wool-winter-overcoat.jpg",
-      "ecommerce-products/clothing/mens-wool-winter-overcoat.jpg"
+      "assets/ecommerce-products/clothing/mens-wool-winter-overcoat.jpg",
+      "assets/ecommerce-products/clothing/mens-wool-winter-overcoat.jpg",
+      "assets/ecommerce-products/clothing/mens-wool-winter-overcoat.jpg"
     ],
     "variants": [
       "S",
@@ -1747,11 +1747,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 320,
     "stock": 32,
-    "image": "ecommerce-products/clothing/high-waisted-stretch-jeans.jpg",
+    "image": "assets/ecommerce-products/clothing/high-waisted-stretch-jeans.jpg",
     "images": [
-      "ecommerce-products/clothing/high-waisted-stretch-jeans.jpg",
-      "ecommerce-products/clothing/high-waisted-stretch-jeans.jpg",
-      "ecommerce-products/clothing/high-waisted-stretch-jeans.jpg"
+      "assets/ecommerce-products/clothing/high-waisted-stretch-jeans.jpg",
+      "assets/ecommerce-products/clothing/high-waisted-stretch-jeans.jpg",
+      "assets/ecommerce-products/clothing/high-waisted-stretch-jeans.jpg"
     ],
     "variants": [
       "S",
@@ -1781,11 +1781,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 70,
     "stock": 37,
-    "image": "ecommerce-products/clothing/athletic-zip-up-jacket.jpg",
+    "image": "assets/ecommerce-products/clothing/athletic-zip-up-jacket.jpg",
     "images": [
-      "ecommerce-products/clothing/athletic-zip-up-jacket.jpg",
-      "ecommerce-products/clothing/athletic-zip-up-jacket.jpg",
-      "ecommerce-products/clothing/athletic-zip-up-jacket.jpg"
+      "assets/ecommerce-products/clothing/athletic-zip-up-jacket.jpg",
+      "assets/ecommerce-products/clothing/athletic-zip-up-jacket.jpg",
+      "assets/ecommerce-products/clothing/athletic-zip-up-jacket.jpg"
     ],
     "variants": [
       "S",
@@ -1815,11 +1815,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 36,
     "stock": 21,
-    "image": "ecommerce-products/clothing/linen-short-sleeve-shirt.jpg",
+    "image": "assets/ecommerce-products/clothing/linen-short-sleeve-shirt.jpg",
     "images": [
-      "ecommerce-products/clothing/linen-short-sleeve-shirt.jpg",
-      "ecommerce-products/clothing/linen-short-sleeve-shirt.jpg",
-      "ecommerce-products/clothing/linen-short-sleeve-shirt.jpg"
+      "assets/ecommerce-products/clothing/linen-short-sleeve-shirt.jpg",
+      "assets/ecommerce-products/clothing/linen-short-sleeve-shirt.jpg",
+      "assets/ecommerce-products/clothing/linen-short-sleeve-shirt.jpg"
     ],
     "variants": [
       "S",
@@ -1849,11 +1849,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 387,
     "stock": 26,
-    "image": "ecommerce-products/clothing/tailored-business-blazer.jpg",
+    "image": "assets/ecommerce-products/clothing/tailored-business-blazer.jpg",
     "images": [
-      "ecommerce-products/clothing/tailored-business-blazer.jpg",
-      "ecommerce-products/clothing/tailored-business-blazer.jpg",
-      "ecommerce-products/clothing/tailored-business-blazer.jpg"
+      "assets/ecommerce-products/clothing/tailored-business-blazer.jpg",
+      "assets/ecommerce-products/clothing/tailored-business-blazer.jpg",
+      "assets/ecommerce-products/clothing/tailored-business-blazer.jpg"
     ],
     "variants": [
       "S",
@@ -1883,11 +1883,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.2,
     "reviewsCount": 372,
     "stock": 15,
-    "image": "ecommerce-products/clothing/cotton-cargo-shorts.jpg",
+    "image": "assets/ecommerce-products/clothing/cotton-cargo-shorts.jpg",
     "images": [
-      "ecommerce-products/clothing/cotton-cargo-shorts.jpg",
-      "ecommerce-products/clothing/cotton-cargo-shorts.jpg",
-      "ecommerce-products/clothing/cotton-cargo-shorts.jpg"
+      "assets/ecommerce-products/clothing/cotton-cargo-shorts.jpg",
+      "assets/ecommerce-products/clothing/cotton-cargo-shorts.jpg",
+      "assets/ecommerce-products/clothing/cotton-cargo-shorts.jpg"
     ],
     "variants": [
       "S",
@@ -1917,11 +1917,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 408,
     "stock": 27,
-    "image": "ecommerce-products/clothing/quilted-puffer-vest.jpg",
+    "image": "assets/ecommerce-products/clothing/quilted-puffer-vest.jpg",
     "images": [
-      "ecommerce-products/clothing/quilted-puffer-vest.jpg",
-      "ecommerce-products/clothing/quilted-puffer-vest.jpg",
-      "ecommerce-products/clothing/quilted-puffer-vest.jpg"
+      "assets/ecommerce-products/clothing/quilted-puffer-vest.jpg",
+      "assets/ecommerce-products/clothing/quilted-puffer-vest.jpg",
+      "assets/ecommerce-products/clothing/quilted-puffer-vest.jpg"
     ],
     "variants": [
       "S",
@@ -1951,11 +1951,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 390,
     "stock": 58,
-    "image": "ecommerce-products/shoes/breathable-mesh-running-shoes.jpg",
+    "image": "assets/ecommerce-products/shoes/breathable-mesh-running-shoes.jpg",
     "images": [
-      "ecommerce-products/shoes/breathable-mesh-running-shoes.jpg",
-      "ecommerce-products/shoes/breathable-mesh-running-shoes.jpg",
-      "ecommerce-products/shoes/breathable-mesh-running-shoes.jpg"
+      "assets/ecommerce-products/shoes/breathable-mesh-running-shoes.jpg",
+      "assets/ecommerce-products/shoes/breathable-mesh-running-shoes.jpg",
+      "assets/ecommerce-products/shoes/breathable-mesh-running-shoes.jpg"
     ],
     "variants": [
       "UK 7",
@@ -1986,11 +1986,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 448,
     "stock": 19,
-    "image": "ecommerce-products/shoes/classic-white-leather-sneakers.jpg",
+    "image": "assets/ecommerce-products/shoes/classic-white-leather-sneakers.jpg",
     "images": [
-      "ecommerce-products/shoes/classic-white-leather-sneakers.jpg",
-      "ecommerce-products/shoes/classic-white-leather-sneakers.jpg",
-      "ecommerce-products/shoes/classic-white-leather-sneakers.jpg"
+      "assets/ecommerce-products/shoes/classic-white-leather-sneakers.jpg",
+      "assets/ecommerce-products/shoes/classic-white-leather-sneakers.jpg",
+      "assets/ecommerce-products/shoes/classic-white-leather-sneakers.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2021,11 +2021,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 438,
     "stock": 65,
-    "image": "ecommerce-products/shoes/leather-oxford-dress-shoes.jpg",
+    "image": "assets/ecommerce-products/shoes/leather-oxford-dress-shoes.jpg",
     "images": [
-      "ecommerce-products/shoes/leather-oxford-dress-shoes.jpg",
-      "ecommerce-products/shoes/leather-oxford-dress-shoes.jpg",
-      "ecommerce-products/shoes/leather-oxford-dress-shoes.jpg"
+      "assets/ecommerce-products/shoes/leather-oxford-dress-shoes.jpg",
+      "assets/ecommerce-products/shoes/leather-oxford-dress-shoes.jpg",
+      "assets/ecommerce-products/shoes/leather-oxford-dress-shoes.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2056,11 +2056,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 27,
     "stock": 27,
-    "image": "ecommerce-products/shoes/waterproof-trail-hiking-boots.jpg",
+    "image": "assets/ecommerce-products/shoes/waterproof-trail-hiking-boots.jpg",
     "images": [
-      "ecommerce-products/shoes/waterproof-trail-hiking-boots.jpg",
-      "ecommerce-products/shoes/waterproof-trail-hiking-boots.jpg",
-      "ecommerce-products/shoes/waterproof-trail-hiking-boots.jpg"
+      "assets/ecommerce-products/shoes/waterproof-trail-hiking-boots.jpg",
+      "assets/ecommerce-products/shoes/waterproof-trail-hiking-boots.jpg",
+      "assets/ecommerce-products/shoes/waterproof-trail-hiking-boots.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2091,11 +2091,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 127,
     "stock": 12,
-    "image": "ecommerce-products/shoes/suede-casual-loafers.jpg",
+    "image": "assets/ecommerce-products/shoes/suede-casual-loafers.jpg",
     "images": [
-      "ecommerce-products/shoes/suede-casual-loafers.jpg",
-      "ecommerce-products/shoes/suede-casual-loafers.jpg",
-      "ecommerce-products/shoes/suede-casual-loafers.jpg"
+      "assets/ecommerce-products/shoes/suede-casual-loafers.jpg",
+      "assets/ecommerce-products/shoes/suede-casual-loafers.jpg",
+      "assets/ecommerce-products/shoes/suede-casual-loafers.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2126,11 +2126,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 237,
     "stock": 11,
-    "image": "ecommerce-products/shoes/high-top-canvas-sneakers.jpg",
+    "image": "assets/ecommerce-products/shoes/high-top-canvas-sneakers.jpg",
     "images": [
-      "ecommerce-products/shoes/high-top-canvas-sneakers.jpg",
-      "ecommerce-products/shoes/high-top-canvas-sneakers.jpg",
-      "ecommerce-products/shoes/high-top-canvas-sneakers.jpg"
+      "assets/ecommerce-products/shoes/high-top-canvas-sneakers.jpg",
+      "assets/ecommerce-products/shoes/high-top-canvas-sneakers.jpg",
+      "assets/ecommerce-products/shoes/high-top-canvas-sneakers.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2161,11 +2161,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 340,
     "stock": 13,
-    "image": "ecommerce-products/shoes/cushioned-trail-running-shoes.jpg",
+    "image": "assets/ecommerce-products/shoes/cushioned-trail-running-shoes.jpg",
     "images": [
-      "ecommerce-products/shoes/cushioned-trail-running-shoes.jpg",
-      "ecommerce-products/shoes/cushioned-trail-running-shoes.jpg",
-      "ecommerce-products/shoes/cushioned-trail-running-shoes.jpg"
+      "assets/ecommerce-products/shoes/cushioned-trail-running-shoes.jpg",
+      "assets/ecommerce-products/shoes/cushioned-trail-running-shoes.jpg",
+      "assets/ecommerce-products/shoes/cushioned-trail-running-shoes.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2196,11 +2196,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 360,
     "stock": 56,
-    "image": "ecommerce-products/shoes/slip-on-walking-shoes.jpg",
+    "image": "assets/ecommerce-products/shoes/slip-on-walking-shoes.jpg",
     "images": [
-      "ecommerce-products/shoes/slip-on-walking-shoes.jpg",
-      "ecommerce-products/shoes/slip-on-walking-shoes.jpg",
-      "ecommerce-products/shoes/slip-on-walking-shoes.jpg"
+      "assets/ecommerce-products/shoes/slip-on-walking-shoes.jpg",
+      "assets/ecommerce-products/shoes/slip-on-walking-shoes.jpg",
+      "assets/ecommerce-products/shoes/slip-on-walking-shoes.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2231,11 +2231,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 83,
     "stock": 19,
-    "image": "ecommerce-products/shoes/classic-chelsea-leather-boots.jpg",
+    "image": "assets/ecommerce-products/shoes/classic-chelsea-leather-boots.jpg",
     "images": [
-      "ecommerce-products/shoes/classic-chelsea-leather-boots.jpg",
-      "ecommerce-products/shoes/classic-chelsea-leather-boots.jpg",
-      "ecommerce-products/shoes/classic-chelsea-leather-boots.jpg"
+      "assets/ecommerce-products/shoes/classic-chelsea-leather-boots.jpg",
+      "assets/ecommerce-products/shoes/classic-chelsea-leather-boots.jpg",
+      "assets/ecommerce-products/shoes/classic-chelsea-leather-boots.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2266,11 +2266,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 38,
     "stock": 9,
-    "image": "ecommerce-products/shoes/athletic-cross-training-shoes.jpg",
+    "image": "assets/ecommerce-products/shoes/athletic-cross-training-shoes.jpg",
     "images": [
-      "ecommerce-products/shoes/athletic-cross-training-shoes.jpg",
-      "ecommerce-products/shoes/athletic-cross-training-shoes.jpg",
-      "ecommerce-products/shoes/athletic-cross-training-shoes.jpg"
+      "assets/ecommerce-products/shoes/athletic-cross-training-shoes.jpg",
+      "assets/ecommerce-products/shoes/athletic-cross-training-shoes.jpg",
+      "assets/ecommerce-products/shoes/athletic-cross-training-shoes.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2301,11 +2301,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.2,
     "reviewsCount": 257,
     "stock": 60,
-    "image": "ecommerce-products/shoes/leather-slide-sandals.jpg",
+    "image": "assets/ecommerce-products/shoes/leather-slide-sandals.jpg",
     "images": [
-      "ecommerce-products/shoes/leather-slide-sandals.jpg",
-      "ecommerce-products/shoes/leather-slide-sandals.jpg",
-      "ecommerce-products/shoes/leather-slide-sandals.jpg"
+      "assets/ecommerce-products/shoes/leather-slide-sandals.jpg",
+      "assets/ecommerce-products/shoes/leather-slide-sandals.jpg",
+      "assets/ecommerce-products/shoes/leather-slide-sandals.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2336,11 +2336,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 221,
     "stock": 17,
-    "image": "ecommerce-products/shoes/formal-monk-strap-shoes.jpg",
+    "image": "assets/ecommerce-products/shoes/formal-monk-strap-shoes.jpg",
     "images": [
-      "ecommerce-products/shoes/formal-monk-strap-shoes.jpg",
-      "ecommerce-products/shoes/formal-monk-strap-shoes.jpg",
-      "ecommerce-products/shoes/formal-monk-strap-shoes.jpg"
+      "assets/ecommerce-products/shoes/formal-monk-strap-shoes.jpg",
+      "assets/ecommerce-products/shoes/formal-monk-strap-shoes.jpg",
+      "assets/ecommerce-products/shoes/formal-monk-strap-shoes.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2371,11 +2371,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 274,
     "stock": 11,
-    "image": "ecommerce-products/shoes/ankle-desert-chukka-boots.jpg",
+    "image": "assets/ecommerce-products/shoes/ankle-desert-chukka-boots.jpg",
     "images": [
-      "ecommerce-products/shoes/ankle-desert-chukka-boots.jpg",
-      "ecommerce-products/shoes/ankle-desert-chukka-boots.jpg",
-      "ecommerce-products/shoes/ankle-desert-chukka-boots.jpg"
+      "assets/ecommerce-products/shoes/ankle-desert-chukka-boots.jpg",
+      "assets/ecommerce-products/shoes/ankle-desert-chukka-boots.jpg",
+      "assets/ecommerce-products/shoes/ankle-desert-chukka-boots.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2406,11 +2406,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 108,
     "stock": 24,
-    "image": "ecommerce-products/shoes/responsive-basketball-shoes.jpg",
+    "image": "assets/ecommerce-products/shoes/responsive-basketball-shoes.jpg",
     "images": [
-      "ecommerce-products/shoes/responsive-basketball-shoes.jpg",
-      "ecommerce-products/shoes/responsive-basketball-shoes.jpg",
-      "ecommerce-products/shoes/responsive-basketball-shoes.jpg"
+      "assets/ecommerce-products/shoes/responsive-basketball-shoes.jpg",
+      "assets/ecommerce-products/shoes/responsive-basketball-shoes.jpg",
+      "assets/ecommerce-products/shoes/responsive-basketball-shoes.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2441,11 +2441,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 218,
     "stock": 41,
-    "image": "ecommerce-products/shoes/cozy-sherpa-slippers.jpg",
+    "image": "assets/ecommerce-products/shoes/cozy-sherpa-slippers.jpg",
     "images": [
-      "ecommerce-products/shoes/cozy-sherpa-slippers.jpg",
-      "ecommerce-products/shoes/cozy-sherpa-slippers.jpg",
-      "ecommerce-products/shoes/cozy-sherpa-slippers.jpg"
+      "assets/ecommerce-products/shoes/cozy-sherpa-slippers.jpg",
+      "assets/ecommerce-products/shoes/cozy-sherpa-slippers.jpg",
+      "assets/ecommerce-products/shoes/cozy-sherpa-slippers.jpg"
     ],
     "variants": [
       "UK 7",
@@ -2476,11 +2476,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.2,
     "reviewsCount": 36,
     "stock": 26,
-    "image": "ecommerce-products/watches/stainless-steel-chronograph-watch.jpg",
+    "image": "assets/ecommerce-products/watches/stainless-steel-chronograph-watch.jpg",
     "images": [
-      "ecommerce-products/watches/stainless-steel-chronograph-watch.jpg",
-      "ecommerce-products/watches/stainless-steel-chronograph-watch.jpg",
-      "ecommerce-products/watches/stainless-steel-chronograph-watch.jpg"
+      "assets/ecommerce-products/watches/stainless-steel-chronograph-watch.jpg",
+      "assets/ecommerce-products/watches/stainless-steel-chronograph-watch.jpg",
+      "assets/ecommerce-products/watches/stainless-steel-chronograph-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2509,11 +2509,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 201,
     "stock": 30,
-    "image": "ecommerce-products/watches/minimalist-analog-leather-watch.jpg",
+    "image": "assets/ecommerce-products/watches/minimalist-analog-leather-watch.jpg",
     "images": [
-      "ecommerce-products/watches/minimalist-analog-leather-watch.jpg",
-      "ecommerce-products/watches/minimalist-analog-leather-watch.jpg",
-      "ecommerce-products/watches/minimalist-analog-leather-watch.jpg"
+      "assets/ecommerce-products/watches/minimalist-analog-leather-watch.jpg",
+      "assets/ecommerce-products/watches/minimalist-analog-leather-watch.jpg",
+      "assets/ecommerce-products/watches/minimalist-analog-leather-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2542,11 +2542,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 56,
     "stock": 11,
-    "image": "ecommerce-products/watches/rugged-tactical-digital-watch.jpg",
+    "image": "assets/ecommerce-products/watches/rugged-tactical-digital-watch.jpg",
     "images": [
-      "ecommerce-products/watches/rugged-tactical-digital-watch.jpg",
-      "ecommerce-products/watches/rugged-tactical-digital-watch.jpg",
-      "ecommerce-products/watches/rugged-tactical-digital-watch.jpg"
+      "assets/ecommerce-products/watches/rugged-tactical-digital-watch.jpg",
+      "assets/ecommerce-products/watches/rugged-tactical-digital-watch.jpg",
+      "assets/ecommerce-products/watches/rugged-tactical-digital-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2575,11 +2575,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 324,
     "stock": 9,
-    "image": "ecommerce-products/watches/automatic-skeleton-watch.jpg",
+    "image": "assets/ecommerce-products/watches/automatic-skeleton-watch.jpg",
     "images": [
-      "ecommerce-products/watches/automatic-skeleton-watch.jpg",
-      "ecommerce-products/watches/automatic-skeleton-watch.jpg",
-      "ecommerce-products/watches/automatic-skeleton-watch.jpg"
+      "assets/ecommerce-products/watches/automatic-skeleton-watch.jpg",
+      "assets/ecommerce-products/watches/automatic-skeleton-watch.jpg",
+      "assets/ecommerce-products/watches/automatic-skeleton-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2608,11 +2608,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 83,
     "stock": 67,
-    "image": "ecommerce-products/watches/luxury-rose-gold-dress-watch.jpg",
+    "image": "assets/ecommerce-products/watches/luxury-rose-gold-dress-watch.jpg",
     "images": [
-      "ecommerce-products/watches/luxury-rose-gold-dress-watch.jpg",
-      "ecommerce-products/watches/luxury-rose-gold-dress-watch.jpg",
-      "ecommerce-products/watches/luxury-rose-gold-dress-watch.jpg"
+      "assets/ecommerce-products/watches/luxury-rose-gold-dress-watch.jpg",
+      "assets/ecommerce-products/watches/luxury-rose-gold-dress-watch.jpg",
+      "assets/ecommerce-products/watches/luxury-rose-gold-dress-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2641,11 +2641,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 183,
     "stock": 31,
-    "image": "ecommerce-products/watches/smart-fitness-tracker-watch.jpg",
+    "image": "assets/ecommerce-products/watches/smart-fitness-tracker-watch.jpg",
     "images": [
-      "ecommerce-products/watches/smart-fitness-tracker-watch.jpg",
-      "ecommerce-products/watches/smart-fitness-tracker-watch.jpg",
-      "ecommerce-products/watches/smart-fitness-tracker-watch.jpg"
+      "assets/ecommerce-products/watches/smart-fitness-tracker-watch.jpg",
+      "assets/ecommerce-products/watches/smart-fitness-tracker-watch.jpg",
+      "assets/ecommerce-products/watches/smart-fitness-tracker-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2674,11 +2674,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 233,
     "stock": 8,
-    "image": "ecommerce-products/watches/ceramic-diver-sports-watch.jpg",
+    "image": "assets/ecommerce-products/watches/ceramic-diver-sports-watch.jpg",
     "images": [
-      "ecommerce-products/watches/ceramic-diver-sports-watch.jpg",
-      "ecommerce-products/watches/ceramic-diver-sports-watch.jpg",
-      "ecommerce-products/watches/ceramic-diver-sports-watch.jpg"
+      "assets/ecommerce-products/watches/ceramic-diver-sports-watch.jpg",
+      "assets/ecommerce-products/watches/ceramic-diver-sports-watch.jpg",
+      "assets/ecommerce-products/watches/ceramic-diver-sports-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2707,11 +2707,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 345,
     "stock": 44,
-    "image": "ecommerce-products/watches/solar-powered-outdoor-watch.jpg",
+    "image": "assets/ecommerce-products/watches/solar-powered-outdoor-watch.jpg",
     "images": [
-      "ecommerce-products/watches/solar-powered-outdoor-watch.jpg",
-      "ecommerce-products/watches/solar-powered-outdoor-watch.jpg",
-      "ecommerce-products/watches/solar-powered-outdoor-watch.jpg"
+      "assets/ecommerce-products/watches/solar-powered-outdoor-watch.jpg",
+      "assets/ecommerce-products/watches/solar-powered-outdoor-watch.jpg",
+      "assets/ecommerce-products/watches/solar-powered-outdoor-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2740,11 +2740,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 117,
     "stock": 21,
-    "image": "ecommerce-products/watches/vintage-square-case-watch.jpg",
+    "image": "assets/ecommerce-products/watches/vintage-square-case-watch.jpg",
     "images": [
-      "ecommerce-products/watches/vintage-square-case-watch.jpg",
-      "ecommerce-products/watches/vintage-square-case-watch.jpg",
-      "ecommerce-products/watches/vintage-square-case-watch.jpg"
+      "assets/ecommerce-products/watches/vintage-square-case-watch.jpg",
+      "assets/ecommerce-products/watches/vintage-square-case-watch.jpg",
+      "assets/ecommerce-products/watches/vintage-square-case-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2773,11 +2773,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 393,
     "stock": 18,
-    "image": "ecommerce-products/watches/titanium-lightweight-watch.jpg",
+    "image": "assets/ecommerce-products/watches/titanium-lightweight-watch.jpg",
     "images": [
-      "ecommerce-products/watches/titanium-lightweight-watch.jpg",
-      "ecommerce-products/watches/titanium-lightweight-watch.jpg",
-      "ecommerce-products/watches/titanium-lightweight-watch.jpg"
+      "assets/ecommerce-products/watches/titanium-lightweight-watch.jpg",
+      "assets/ecommerce-products/watches/titanium-lightweight-watch.jpg",
+      "assets/ecommerce-products/watches/titanium-lightweight-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2806,11 +2806,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 281,
     "stock": 22,
-    "image": "ecommerce-products/watches/pilot-aviation-chronometer.jpg",
+    "image": "assets/ecommerce-products/watches/pilot-aviation-chronometer.jpg",
     "images": [
-      "ecommerce-products/watches/pilot-aviation-chronometer.jpg",
-      "ecommerce-products/watches/pilot-aviation-chronometer.jpg",
-      "ecommerce-products/watches/pilot-aviation-chronometer.jpg"
+      "assets/ecommerce-products/watches/pilot-aviation-chronometer.jpg",
+      "assets/ecommerce-products/watches/pilot-aviation-chronometer.jpg",
+      "assets/ecommerce-products/watches/pilot-aviation-chronometer.jpg"
     ],
     "variants": [
       "Black",
@@ -2839,11 +2839,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 373,
     "stock": 52,
-    "image": "ecommerce-products/watches/sapphire-crystal-dress-watch.jpg",
+    "image": "assets/ecommerce-products/watches/sapphire-crystal-dress-watch.jpg",
     "images": [
-      "ecommerce-products/watches/sapphire-crystal-dress-watch.jpg",
-      "ecommerce-products/watches/sapphire-crystal-dress-watch.jpg",
-      "ecommerce-products/watches/sapphire-crystal-dress-watch.jpg"
+      "assets/ecommerce-products/watches/sapphire-crystal-dress-watch.jpg",
+      "assets/ecommerce-products/watches/sapphire-crystal-dress-watch.jpg",
+      "assets/ecommerce-products/watches/sapphire-crystal-dress-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2872,11 +2872,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 104,
     "stock": 64,
-    "image": "ecommerce-products/watches/minimalist-mesh-band-watch.jpg",
+    "image": "assets/ecommerce-products/watches/minimalist-mesh-band-watch.jpg",
     "images": [
-      "ecommerce-products/watches/minimalist-mesh-band-watch.jpg",
-      "ecommerce-products/watches/minimalist-mesh-band-watch.jpg",
-      "ecommerce-products/watches/minimalist-mesh-band-watch.jpg"
+      "assets/ecommerce-products/watches/minimalist-mesh-band-watch.jpg",
+      "assets/ecommerce-products/watches/minimalist-mesh-band-watch.jpg",
+      "assets/ecommerce-products/watches/minimalist-mesh-band-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2905,11 +2905,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.9,
     "reviewsCount": 30,
     "stock": 59,
-    "image": "ecommerce-products/watches/dual-time-zone-travel-watch.jpg",
+    "image": "assets/ecommerce-products/watches/dual-time-zone-travel-watch.jpg",
     "images": [
-      "ecommerce-products/watches/dual-time-zone-travel-watch.jpg",
-      "ecommerce-products/watches/dual-time-zone-travel-watch.jpg",
-      "ecommerce-products/watches/dual-time-zone-travel-watch.jpg"
+      "assets/ecommerce-products/watches/dual-time-zone-travel-watch.jpg",
+      "assets/ecommerce-products/watches/dual-time-zone-travel-watch.jpg",
+      "assets/ecommerce-products/watches/dual-time-zone-travel-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2938,11 +2938,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 183,
     "stock": 51,
-    "image": "ecommerce-products/watches/retro-digital-lcd-watch.jpg",
+    "image": "assets/ecommerce-products/watches/retro-digital-lcd-watch.jpg",
     "images": [
-      "ecommerce-products/watches/retro-digital-lcd-watch.jpg",
-      "ecommerce-products/watches/retro-digital-lcd-watch.jpg",
-      "ecommerce-products/watches/retro-digital-lcd-watch.jpg"
+      "assets/ecommerce-products/watches/retro-digital-lcd-watch.jpg",
+      "assets/ecommerce-products/watches/retro-digital-lcd-watch.jpg",
+      "assets/ecommerce-products/watches/retro-digital-lcd-watch.jpg"
     ],
     "variants": [
       "Black",
@@ -2971,11 +2971,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 288,
     "stock": 36,
-    "image": "ecommerce-products/home-kitchen/ceramic-pour-over-coffee-dripper.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/ceramic-pour-over-coffee-dripper.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/ceramic-pour-over-coffee-dripper.jpg",
-      "ecommerce-products/home-kitchen/ceramic-pour-over-coffee-dripper.jpg",
-      "ecommerce-products/home-kitchen/ceramic-pour-over-coffee-dripper.jpg"
+      "assets/ecommerce-products/home-kitchen/ceramic-pour-over-coffee-dripper.jpg",
+      "assets/ecommerce-products/home-kitchen/ceramic-pour-over-coffee-dripper.jpg",
+      "assets/ecommerce-products/home-kitchen/ceramic-pour-over-coffee-dripper.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3000,11 +3000,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.8,
     "reviewsCount": 107,
     "stock": 61,
-    "image": "ecommerce-products/home-kitchen/stainless-steel-electric-kettle.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/stainless-steel-electric-kettle.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/stainless-steel-electric-kettle.jpg",
-      "ecommerce-products/home-kitchen/stainless-steel-electric-kettle.jpg",
-      "ecommerce-products/home-kitchen/stainless-steel-electric-kettle.jpg"
+      "assets/ecommerce-products/home-kitchen/stainless-steel-electric-kettle.jpg",
+      "assets/ecommerce-products/home-kitchen/stainless-steel-electric-kettle.jpg",
+      "assets/ecommerce-products/home-kitchen/stainless-steel-electric-kettle.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3029,11 +3029,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 193,
     "stock": 18,
-    "image": "ecommerce-products/home-kitchen/cast-iron-dutch-oven.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/cast-iron-dutch-oven.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/cast-iron-dutch-oven.jpg",
-      "ecommerce-products/home-kitchen/cast-iron-dutch-oven.jpg",
-      "ecommerce-products/home-kitchen/cast-iron-dutch-oven.jpg"
+      "assets/ecommerce-products/home-kitchen/cast-iron-dutch-oven.jpg",
+      "assets/ecommerce-products/home-kitchen/cast-iron-dutch-oven.jpg",
+      "assets/ecommerce-products/home-kitchen/cast-iron-dutch-oven.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3058,11 +3058,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 180,
     "stock": 24,
-    "image": "ecommerce-products/home-kitchen/high-speed-countertop-blender.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/high-speed-countertop-blender.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/high-speed-countertop-blender.jpg",
-      "ecommerce-products/home-kitchen/high-speed-countertop-blender.jpg",
-      "ecommerce-products/home-kitchen/high-speed-countertop-blender.jpg"
+      "assets/ecommerce-products/home-kitchen/high-speed-countertop-blender.jpg",
+      "assets/ecommerce-products/home-kitchen/high-speed-countertop-blender.jpg",
+      "assets/ecommerce-products/home-kitchen/high-speed-countertop-blender.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -3087,11 +3087,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 95,
     "stock": 45,
-    "image": "ecommerce-products/home-kitchen/non-stick-chefs-frying-pan.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/non-stick-chefs-frying-pan.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/non-stick-chefs-frying-pan.jpg",
-      "ecommerce-products/home-kitchen/non-stick-chefs-frying-pan.jpg",
-      "ecommerce-products/home-kitchen/non-stick-chefs-frying-pan.jpg"
+      "assets/ecommerce-products/home-kitchen/non-stick-chefs-frying-pan.jpg",
+      "assets/ecommerce-products/home-kitchen/non-stick-chefs-frying-pan.jpg",
+      "assets/ecommerce-products/home-kitchen/non-stick-chefs-frying-pan.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3116,11 +3116,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 287,
     "stock": 67,
-    "image": "ecommerce-products/home-kitchen/handmade-ceramic-coffee-mug.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/handmade-ceramic-coffee-mug.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/handmade-ceramic-coffee-mug.jpg",
-      "ecommerce-products/home-kitchen/handmade-ceramic-coffee-mug.jpg",
-      "ecommerce-products/home-kitchen/handmade-ceramic-coffee-mug.jpg"
+      "assets/ecommerce-products/home-kitchen/handmade-ceramic-coffee-mug.jpg",
+      "assets/ecommerce-products/home-kitchen/handmade-ceramic-coffee-mug.jpg",
+      "assets/ecommerce-products/home-kitchen/handmade-ceramic-coffee-mug.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3145,11 +3145,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.8,
     "reviewsCount": 404,
     "stock": 65,
-    "image": "ecommerce-products/home-kitchen/japanese-chef-knife.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/japanese-chef-knife.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/japanese-chef-knife.jpg",
-      "ecommerce-products/home-kitchen/japanese-chef-knife.jpg",
-      "ecommerce-products/home-kitchen/japanese-chef-knife.jpg"
+      "assets/ecommerce-products/home-kitchen/japanese-chef-knife.jpg",
+      "assets/ecommerce-products/home-kitchen/japanese-chef-knife.jpg",
+      "assets/ecommerce-products/home-kitchen/japanese-chef-knife.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3174,11 +3174,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 209,
     "stock": 32,
-    "image": "ecommerce-products/home-kitchen/glass-french-press-coffee-maker.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/glass-french-press-coffee-maker.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/glass-french-press-coffee-maker.jpg",
-      "ecommerce-products/home-kitchen/glass-french-press-coffee-maker.jpg",
-      "ecommerce-products/home-kitchen/glass-french-press-coffee-maker.jpg"
+      "assets/ecommerce-products/home-kitchen/glass-french-press-coffee-maker.jpg",
+      "assets/ecommerce-products/home-kitchen/glass-french-press-coffee-maker.jpg",
+      "assets/ecommerce-products/home-kitchen/glass-french-press-coffee-maker.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -3203,11 +3203,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 422,
     "stock": 39,
-    "image": "ecommerce-products/home-kitchen/digital-kitchen-food-scale.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/digital-kitchen-food-scale.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/digital-kitchen-food-scale.jpg",
-      "ecommerce-products/home-kitchen/digital-kitchen-food-scale.jpg",
-      "ecommerce-products/home-kitchen/digital-kitchen-food-scale.jpg"
+      "assets/ecommerce-products/home-kitchen/digital-kitchen-food-scale.jpg",
+      "assets/ecommerce-products/home-kitchen/digital-kitchen-food-scale.jpg",
+      "assets/ecommerce-products/home-kitchen/digital-kitchen-food-scale.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3232,11 +3232,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 230,
     "stock": 44,
-    "image": "ecommerce-products/home-kitchen/automatic-4-slice-toaster.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/automatic-4-slice-toaster.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/automatic-4-slice-toaster.jpg",
-      "ecommerce-products/home-kitchen/automatic-4-slice-toaster.jpg",
-      "ecommerce-products/home-kitchen/automatic-4-slice-toaster.jpg"
+      "assets/ecommerce-products/home-kitchen/automatic-4-slice-toaster.jpg",
+      "assets/ecommerce-products/home-kitchen/automatic-4-slice-toaster.jpg",
+      "assets/ecommerce-products/home-kitchen/automatic-4-slice-toaster.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3261,11 +3261,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 144,
     "stock": 14,
-    "image": "ecommerce-products/home-kitchen/bamboo-wooden-cutting-board.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/bamboo-wooden-cutting-board.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/bamboo-wooden-cutting-board.jpg",
-      "ecommerce-products/home-kitchen/bamboo-wooden-cutting-board.jpg",
-      "ecommerce-products/home-kitchen/bamboo-wooden-cutting-board.jpg"
+      "assets/ecommerce-products/home-kitchen/bamboo-wooden-cutting-board.jpg",
+      "assets/ecommerce-products/home-kitchen/bamboo-wooden-cutting-board.jpg",
+      "assets/ecommerce-products/home-kitchen/bamboo-wooden-cutting-board.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3290,11 +3290,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 373,
     "stock": 12,
-    "image": "ecommerce-products/home-kitchen/stainless-steel-insulated-tumbler.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/stainless-steel-insulated-tumbler.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/stainless-steel-insulated-tumbler.jpg",
-      "ecommerce-products/home-kitchen/stainless-steel-insulated-tumbler.jpg",
-      "ecommerce-products/home-kitchen/stainless-steel-insulated-tumbler.jpg"
+      "assets/ecommerce-products/home-kitchen/stainless-steel-insulated-tumbler.jpg",
+      "assets/ecommerce-products/home-kitchen/stainless-steel-insulated-tumbler.jpg",
+      "assets/ecommerce-products/home-kitchen/stainless-steel-insulated-tumbler.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -3319,11 +3319,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.2,
     "reviewsCount": 442,
     "stock": 63,
-    "image": "ecommerce-products/home-kitchen/manual-salt-pepper-grinder-set.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/manual-salt-pepper-grinder-set.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/manual-salt-pepper-grinder-set.jpg",
-      "ecommerce-products/home-kitchen/manual-salt-pepper-grinder-set.jpg",
-      "ecommerce-products/home-kitchen/manual-salt-pepper-grinder-set.jpg"
+      "assets/ecommerce-products/home-kitchen/manual-salt-pepper-grinder-set.jpg",
+      "assets/ecommerce-products/home-kitchen/manual-salt-pepper-grinder-set.jpg",
+      "assets/ecommerce-products/home-kitchen/manual-salt-pepper-grinder-set.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3348,11 +3348,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 375,
     "stock": 18,
-    "image": "ecommerce-products/home-kitchen/glass-storage-containers.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/glass-storage-containers.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/glass-storage-containers.jpg",
-      "ecommerce-products/home-kitchen/glass-storage-containers.jpg",
-      "ecommerce-products/home-kitchen/glass-storage-containers.jpg"
+      "assets/ecommerce-products/home-kitchen/glass-storage-containers.jpg",
+      "assets/ecommerce-products/home-kitchen/glass-storage-containers.jpg",
+      "assets/ecommerce-products/home-kitchen/glass-storage-containers.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3377,11 +3377,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 190,
     "stock": 10,
-    "image": "ecommerce-products/home-kitchen/stainless-steel-cocktail-shaker.jpg",
+    "image": "assets/ecommerce-products/home-kitchen/stainless-steel-cocktail-shaker.jpg",
     "images": [
-      "ecommerce-products/home-kitchen/stainless-steel-cocktail-shaker.jpg",
-      "ecommerce-products/home-kitchen/stainless-steel-cocktail-shaker.jpg",
-      "ecommerce-products/home-kitchen/stainless-steel-cocktail-shaker.jpg"
+      "assets/ecommerce-products/home-kitchen/stainless-steel-cocktail-shaker.jpg",
+      "assets/ecommerce-products/home-kitchen/stainless-steel-cocktail-shaker.jpg",
+      "assets/ecommerce-products/home-kitchen/stainless-steel-cocktail-shaker.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3406,11 +3406,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 463,
     "stock": 39,
-    "image": "ecommerce-products/furniture/mid-century-modern-armchair.jpg",
+    "image": "assets/ecommerce-products/furniture/mid-century-modern-armchair.jpg",
     "images": [
-      "ecommerce-products/furniture/mid-century-modern-armchair.jpg",
-      "ecommerce-products/furniture/mid-century-modern-armchair.jpg",
-      "ecommerce-products/furniture/mid-century-modern-armchair.jpg"
+      "assets/ecommerce-products/furniture/mid-century-modern-armchair.jpg",
+      "assets/ecommerce-products/furniture/mid-century-modern-armchair.jpg",
+      "assets/ecommerce-products/furniture/mid-century-modern-armchair.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -3435,11 +3435,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 74,
     "stock": 30,
-    "image": "ecommerce-products/furniture/ergonomic-mesh-office-chair.jpg",
+    "image": "assets/ecommerce-products/furniture/ergonomic-mesh-office-chair.jpg",
     "images": [
-      "ecommerce-products/furniture/ergonomic-mesh-office-chair.jpg",
-      "ecommerce-products/furniture/ergonomic-mesh-office-chair.jpg",
-      "ecommerce-products/furniture/ergonomic-mesh-office-chair.jpg"
+      "assets/ecommerce-products/furniture/ergonomic-mesh-office-chair.jpg",
+      "assets/ecommerce-products/furniture/ergonomic-mesh-office-chair.jpg",
+      "assets/ecommerce-products/furniture/ergonomic-mesh-office-chair.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3464,11 +3464,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.9,
     "reviewsCount": 353,
     "stock": 19,
-    "image": "ecommerce-products/furniture/solid-oak-coffee-table.jpg",
+    "image": "assets/ecommerce-products/furniture/solid-oak-coffee-table.jpg",
     "images": [
-      "ecommerce-products/furniture/solid-oak-coffee-table.jpg",
-      "ecommerce-products/furniture/solid-oak-coffee-table.jpg",
-      "ecommerce-products/furniture/solid-oak-coffee-table.jpg"
+      "assets/ecommerce-products/furniture/solid-oak-coffee-table.jpg",
+      "assets/ecommerce-products/furniture/solid-oak-coffee-table.jpg",
+      "assets/ecommerce-products/furniture/solid-oak-coffee-table.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3493,11 +3493,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.8,
     "reviewsCount": 84,
     "stock": 33,
-    "image": "ecommerce-products/furniture/minimalist-floating-wall-shelf.jpg",
+    "image": "assets/ecommerce-products/furniture/minimalist-floating-wall-shelf.jpg",
     "images": [
-      "ecommerce-products/furniture/minimalist-floating-wall-shelf.jpg",
-      "ecommerce-products/furniture/minimalist-floating-wall-shelf.jpg",
-      "ecommerce-products/furniture/minimalist-floating-wall-shelf.jpg"
+      "assets/ecommerce-products/furniture/minimalist-floating-wall-shelf.jpg",
+      "assets/ecommerce-products/furniture/minimalist-floating-wall-shelf.jpg",
+      "assets/ecommerce-products/furniture/minimalist-floating-wall-shelf.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3522,11 +3522,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 299,
     "stock": 20,
-    "image": "ecommerce-products/furniture/modern-floor-standing-lamp.jpg",
+    "image": "assets/ecommerce-products/furniture/modern-floor-standing-lamp.jpg",
     "images": [
-      "ecommerce-products/furniture/modern-floor-standing-lamp.jpg",
-      "ecommerce-products/furniture/modern-floor-standing-lamp.jpg",
-      "ecommerce-products/furniture/modern-floor-standing-lamp.jpg"
+      "assets/ecommerce-products/furniture/modern-floor-standing-lamp.jpg",
+      "assets/ecommerce-products/furniture/modern-floor-standing-lamp.jpg",
+      "assets/ecommerce-products/furniture/modern-floor-standing-lamp.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -3551,11 +3551,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.2,
     "reviewsCount": 325,
     "stock": 53,
-    "image": "ecommerce-products/furniture/wooden-4-drawer-nightstand.jpg",
+    "image": "assets/ecommerce-products/furniture/wooden-4-drawer-nightstand.jpg",
     "images": [
-      "ecommerce-products/furniture/wooden-4-drawer-nightstand.jpg",
-      "ecommerce-products/furniture/wooden-4-drawer-nightstand.jpg",
-      "ecommerce-products/furniture/wooden-4-drawer-nightstand.jpg"
+      "assets/ecommerce-products/furniture/wooden-4-drawer-nightstand.jpg",
+      "assets/ecommerce-products/furniture/wooden-4-drawer-nightstand.jpg",
+      "assets/ecommerce-products/furniture/wooden-4-drawer-nightstand.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3580,11 +3580,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.9,
     "reviewsCount": 469,
     "stock": 29,
-    "image": "ecommerce-products/furniture/velvet-accent-dining-chair.jpg",
+    "image": "assets/ecommerce-products/furniture/velvet-accent-dining-chair.jpg",
     "images": [
-      "ecommerce-products/furniture/velvet-accent-dining-chair.jpg",
-      "ecommerce-products/furniture/velvet-accent-dining-chair.jpg",
-      "ecommerce-products/furniture/velvet-accent-dining-chair.jpg"
+      "assets/ecommerce-products/furniture/velvet-accent-dining-chair.jpg",
+      "assets/ecommerce-products/furniture/velvet-accent-dining-chair.jpg",
+      "assets/ecommerce-products/furniture/velvet-accent-dining-chair.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3609,11 +3609,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 357,
     "stock": 24,
-    "image": "ecommerce-products/furniture/adjustable-standing-desk.jpg",
+    "image": "assets/ecommerce-products/furniture/adjustable-standing-desk.jpg",
     "images": [
-      "ecommerce-products/furniture/adjustable-standing-desk.jpg",
-      "ecommerce-products/furniture/adjustable-standing-desk.jpg",
-      "ecommerce-products/furniture/adjustable-standing-desk.jpg"
+      "assets/ecommerce-products/furniture/adjustable-standing-desk.jpg",
+      "assets/ecommerce-products/furniture/adjustable-standing-desk.jpg",
+      "assets/ecommerce-products/furniture/adjustable-standing-desk.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3638,11 +3638,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.8,
     "reviewsCount": 412,
     "stock": 12,
-    "image": "ecommerce-products/furniture/5-tier-industrial-bookshelf.jpg",
+    "image": "assets/ecommerce-products/furniture/5-tier-industrial-bookshelf.jpg",
     "images": [
-      "ecommerce-products/furniture/5-tier-industrial-bookshelf.jpg",
-      "ecommerce-products/furniture/5-tier-industrial-bookshelf.jpg",
-      "ecommerce-products/furniture/5-tier-industrial-bookshelf.jpg"
+      "assets/ecommerce-products/furniture/5-tier-industrial-bookshelf.jpg",
+      "assets/ecommerce-products/furniture/5-tier-industrial-bookshelf.jpg",
+      "assets/ecommerce-products/furniture/5-tier-industrial-bookshelf.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -3667,11 +3667,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 25,
     "stock": 44,
-    "image": "ecommerce-products/furniture/round-marble-side-table.jpg",
+    "image": "assets/ecommerce-products/furniture/round-marble-side-table.jpg",
     "images": [
-      "ecommerce-products/furniture/round-marble-side-table.jpg",
-      "ecommerce-products/furniture/round-marble-side-table.jpg",
-      "ecommerce-products/furniture/round-marble-side-table.jpg"
+      "assets/ecommerce-products/furniture/round-marble-side-table.jpg",
+      "assets/ecommerce-products/furniture/round-marble-side-table.jpg",
+      "assets/ecommerce-products/furniture/round-marble-side-table.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3696,11 +3696,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 370,
     "stock": 53,
-    "image": "ecommerce-products/furniture/upholstered-3-seater-sofa.jpg",
+    "image": "assets/ecommerce-products/furniture/upholstered-3-seater-sofa.jpg",
     "images": [
-      "ecommerce-products/furniture/upholstered-3-seater-sofa.jpg",
-      "ecommerce-products/furniture/upholstered-3-seater-sofa.jpg",
-      "ecommerce-products/furniture/upholstered-3-seater-sofa.jpg"
+      "assets/ecommerce-products/furniture/upholstered-3-seater-sofa.jpg",
+      "assets/ecommerce-products/furniture/upholstered-3-seater-sofa.jpg",
+      "assets/ecommerce-products/furniture/upholstered-3-seater-sofa.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3725,11 +3725,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 211,
     "stock": 48,
-    "image": "ecommerce-products/furniture/contemporary-entryway-bench.jpg",
+    "image": "assets/ecommerce-products/furniture/contemporary-entryway-bench.jpg",
     "images": [
-      "ecommerce-products/furniture/contemporary-entryway-bench.jpg",
-      "ecommerce-products/furniture/contemporary-entryway-bench.jpg",
-      "ecommerce-products/furniture/contemporary-entryway-bench.jpg"
+      "assets/ecommerce-products/furniture/contemporary-entryway-bench.jpg",
+      "assets/ecommerce-products/furniture/contemporary-entryway-bench.jpg",
+      "assets/ecommerce-products/furniture/contemporary-entryway-bench.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3754,11 +3754,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 461,
     "stock": 46,
-    "image": "ecommerce-products/furniture/minimalist-bar-stool.jpg",
+    "image": "assets/ecommerce-products/furniture/minimalist-bar-stool.jpg",
     "images": [
-      "ecommerce-products/furniture/minimalist-bar-stool.jpg",
-      "ecommerce-products/furniture/minimalist-bar-stool.jpg",
-      "ecommerce-products/furniture/minimalist-bar-stool.jpg"
+      "assets/ecommerce-products/furniture/minimalist-bar-stool.jpg",
+      "assets/ecommerce-products/furniture/minimalist-bar-stool.jpg",
+      "assets/ecommerce-products/furniture/minimalist-bar-stool.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -3783,11 +3783,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 287,
     "stock": 16,
-    "image": "ecommerce-products/furniture/geometric-wooden-room-divider.jpg",
+    "image": "assets/ecommerce-products/furniture/geometric-wooden-room-divider.jpg",
     "images": [
-      "ecommerce-products/furniture/geometric-wooden-room-divider.jpg",
-      "ecommerce-products/furniture/geometric-wooden-room-divider.jpg",
-      "ecommerce-products/furniture/geometric-wooden-room-divider.jpg"
+      "assets/ecommerce-products/furniture/geometric-wooden-room-divider.jpg",
+      "assets/ecommerce-products/furniture/geometric-wooden-room-divider.jpg",
+      "assets/ecommerce-products/furniture/geometric-wooden-room-divider.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3812,11 +3812,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 58,
     "stock": 37,
-    "image": "ecommerce-products/furniture/tufted-storage-ottoman.jpg",
+    "image": "assets/ecommerce-products/furniture/tufted-storage-ottoman.jpg",
     "images": [
-      "ecommerce-products/furniture/tufted-storage-ottoman.jpg",
-      "ecommerce-products/furniture/tufted-storage-ottoman.jpg",
-      "ecommerce-products/furniture/tufted-storage-ottoman.jpg"
+      "assets/ecommerce-products/furniture/tufted-storage-ottoman.jpg",
+      "assets/ecommerce-products/furniture/tufted-storage-ottoman.jpg",
+      "assets/ecommerce-products/furniture/tufted-storage-ottoman.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3841,11 +3841,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 168,
     "stock": 44,
-    "image": "ecommerce-products/beauty-personal-care/hydrating-vitamin-c-serum.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/hydrating-vitamin-c-serum.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/hydrating-vitamin-c-serum.jpg",
-      "ecommerce-products/beauty-personal-care/hydrating-vitamin-c-serum.jpg",
-      "ecommerce-products/beauty-personal-care/hydrating-vitamin-c-serum.jpg"
+      "assets/ecommerce-products/beauty-personal-care/hydrating-vitamin-c-serum.jpg",
+      "assets/ecommerce-products/beauty-personal-care/hydrating-vitamin-c-serum.jpg",
+      "assets/ecommerce-products/beauty-personal-care/hydrating-vitamin-c-serum.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3870,11 +3870,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.9,
     "reviewsCount": 53,
     "stock": 51,
-    "image": "ecommerce-products/beauty-personal-care/ultrasonic-facial-cleansing-brush.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/ultrasonic-facial-cleansing-brush.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/ultrasonic-facial-cleansing-brush.jpg",
-      "ecommerce-products/beauty-personal-care/ultrasonic-facial-cleansing-brush.jpg",
-      "ecommerce-products/beauty-personal-care/ultrasonic-facial-cleansing-brush.jpg"
+      "assets/ecommerce-products/beauty-personal-care/ultrasonic-facial-cleansing-brush.jpg",
+      "assets/ecommerce-products/beauty-personal-care/ultrasonic-facial-cleansing-brush.jpg",
+      "assets/ecommerce-products/beauty-personal-care/ultrasonic-facial-cleansing-brush.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -3899,11 +3899,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.9,
     "reviewsCount": 468,
     "stock": 65,
-    "image": "ecommerce-products/beauty-personal-care/natural-botanical-body-lotion.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/natural-botanical-body-lotion.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/natural-botanical-body-lotion.jpg",
-      "ecommerce-products/beauty-personal-care/natural-botanical-body-lotion.jpg",
-      "ecommerce-products/beauty-personal-care/natural-botanical-body-lotion.jpg"
+      "assets/ecommerce-products/beauty-personal-care/natural-botanical-body-lotion.jpg",
+      "assets/ecommerce-products/beauty-personal-care/natural-botanical-body-lotion.jpg",
+      "assets/ecommerce-products/beauty-personal-care/natural-botanical-body-lotion.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3928,11 +3928,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 214,
     "stock": 30,
-    "image": "ecommerce-products/beauty-personal-care/organic-moisturizing-face-cream.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/organic-moisturizing-face-cream.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/organic-moisturizing-face-cream.jpg",
-      "ecommerce-products/beauty-personal-care/organic-moisturizing-face-cream.jpg",
-      "ecommerce-products/beauty-personal-care/organic-moisturizing-face-cream.jpg"
+      "assets/ecommerce-products/beauty-personal-care/organic-moisturizing-face-cream.jpg",
+      "assets/ecommerce-products/beauty-personal-care/organic-moisturizing-face-cream.jpg",
+      "assets/ecommerce-products/beauty-personal-care/organic-moisturizing-face-cream.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3957,11 +3957,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 470,
     "stock": 51,
-    "image": "ecommerce-products/beauty-personal-care/premium-matte-lipstick.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/premium-matte-lipstick.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/premium-matte-lipstick.jpg",
-      "ecommerce-products/beauty-personal-care/premium-matte-lipstick.jpg",
-      "ecommerce-products/beauty-personal-care/premium-matte-lipstick.jpg"
+      "assets/ecommerce-products/beauty-personal-care/premium-matte-lipstick.jpg",
+      "assets/ecommerce-products/beauty-personal-care/premium-matte-lipstick.jpg",
+      "assets/ecommerce-products/beauty-personal-care/premium-matte-lipstick.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -3986,11 +3986,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 199,
     "stock": 46,
-    "image": "ecommerce-products/beauty-personal-care/luxury-eau-de-parfum.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/luxury-eau-de-parfum.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/luxury-eau-de-parfum.jpg",
-      "ecommerce-products/beauty-personal-care/luxury-eau-de-parfum.jpg",
-      "ecommerce-products/beauty-personal-care/luxury-eau-de-parfum.jpg"
+      "assets/ecommerce-products/beauty-personal-care/luxury-eau-de-parfum.jpg",
+      "assets/ecommerce-products/beauty-personal-care/luxury-eau-de-parfum.jpg",
+      "assets/ecommerce-products/beauty-personal-care/luxury-eau-de-parfum.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -4015,11 +4015,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 162,
     "stock": 64,
-    "image": "ecommerce-products/beauty-personal-care/sonic-electric-toothbrush.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/sonic-electric-toothbrush.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/sonic-electric-toothbrush.jpg",
-      "ecommerce-products/beauty-personal-care/sonic-electric-toothbrush.jpg",
-      "ecommerce-products/beauty-personal-care/sonic-electric-toothbrush.jpg"
+      "assets/ecommerce-products/beauty-personal-care/sonic-electric-toothbrush.jpg",
+      "assets/ecommerce-products/beauty-personal-care/sonic-electric-toothbrush.jpg",
+      "assets/ecommerce-products/beauty-personal-care/sonic-electric-toothbrush.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4044,11 +4044,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 75,
     "stock": 21,
-    "image": "ecommerce-products/beauty-personal-care/herbal-nourishing-hair-oil.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/herbal-nourishing-hair-oil.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/herbal-nourishing-hair-oil.jpg",
-      "ecommerce-products/beauty-personal-care/herbal-nourishing-hair-oil.jpg",
-      "ecommerce-products/beauty-personal-care/herbal-nourishing-hair-oil.jpg"
+      "assets/ecommerce-products/beauty-personal-care/herbal-nourishing-hair-oil.jpg",
+      "assets/ecommerce-products/beauty-personal-care/herbal-nourishing-hair-oil.jpg",
+      "assets/ecommerce-products/beauty-personal-care/herbal-nourishing-hair-oil.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4073,11 +4073,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 175,
     "stock": 45,
-    "image": "ecommerce-products/beauty-personal-care/ionic-hair-dryer.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/ionic-hair-dryer.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/ionic-hair-dryer.jpg",
-      "ecommerce-products/beauty-personal-care/ionic-hair-dryer.jpg",
-      "ecommerce-products/beauty-personal-care/ionic-hair-dryer.jpg"
+      "assets/ecommerce-products/beauty-personal-care/ionic-hair-dryer.jpg",
+      "assets/ecommerce-products/beauty-personal-care/ionic-hair-dryer.jpg",
+      "assets/ecommerce-products/beauty-personal-care/ionic-hair-dryer.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4102,11 +4102,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 279,
     "stock": 38,
-    "image": "ecommerce-products/beauty-personal-care/rose-quartz-face-roller.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/rose-quartz-face-roller.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/rose-quartz-face-roller.jpg",
-      "ecommerce-products/beauty-personal-care/rose-quartz-face-roller.jpg",
-      "ecommerce-products/beauty-personal-care/rose-quartz-face-roller.jpg"
+      "assets/ecommerce-products/beauty-personal-care/rose-quartz-face-roller.jpg",
+      "assets/ecommerce-products/beauty-personal-care/rose-quartz-face-roller.jpg",
+      "assets/ecommerce-products/beauty-personal-care/rose-quartz-face-roller.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -4131,11 +4131,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 339,
     "stock": 59,
-    "image": "ecommerce-products/beauty-personal-care/exfoliating-coffee-body-scrub.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/exfoliating-coffee-body-scrub.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/exfoliating-coffee-body-scrub.jpg",
-      "ecommerce-products/beauty-personal-care/exfoliating-coffee-body-scrub.jpg",
-      "ecommerce-products/beauty-personal-care/exfoliating-coffee-body-scrub.jpg"
+      "assets/ecommerce-products/beauty-personal-care/exfoliating-coffee-body-scrub.jpg",
+      "assets/ecommerce-products/beauty-personal-care/exfoliating-coffee-body-scrub.jpg",
+      "assets/ecommerce-products/beauty-personal-care/exfoliating-coffee-body-scrub.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4160,11 +4160,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 95,
     "stock": 47,
-    "image": "ecommerce-products/beauty-personal-care/beard-grooming-care-kit.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/beard-grooming-care-kit.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/beard-grooming-care-kit.jpg",
-      "ecommerce-products/beauty-personal-care/beard-grooming-care-kit.jpg",
-      "ecommerce-products/beauty-personal-care/beard-grooming-care-kit.jpg"
+      "assets/ecommerce-products/beauty-personal-care/beard-grooming-care-kit.jpg",
+      "assets/ecommerce-products/beauty-personal-care/beard-grooming-care-kit.jpg",
+      "assets/ecommerce-products/beauty-personal-care/beard-grooming-care-kit.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4189,11 +4189,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 283,
     "stock": 20,
-    "image": "ecommerce-products/beauty-personal-care/lavender-essential-oil.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/lavender-essential-oil.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/lavender-essential-oil.jpg",
-      "ecommerce-products/beauty-personal-care/lavender-essential-oil.jpg",
-      "ecommerce-products/beauty-personal-care/lavender-essential-oil.jpg"
+      "assets/ecommerce-products/beauty-personal-care/lavender-essential-oil.jpg",
+      "assets/ecommerce-products/beauty-personal-care/lavender-essential-oil.jpg",
+      "assets/ecommerce-products/beauty-personal-care/lavender-essential-oil.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4218,11 +4218,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 119,
     "stock": 32,
-    "image": "ecommerce-products/beauty-personal-care/mineral-sunscreen-spf-50.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/mineral-sunscreen-spf-50.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/mineral-sunscreen-spf-50.jpg",
-      "ecommerce-products/beauty-personal-care/mineral-sunscreen-spf-50.jpg",
-      "ecommerce-products/beauty-personal-care/mineral-sunscreen-spf-50.jpg"
+      "assets/ecommerce-products/beauty-personal-care/mineral-sunscreen-spf-50.jpg",
+      "assets/ecommerce-products/beauty-personal-care/mineral-sunscreen-spf-50.jpg",
+      "assets/ecommerce-products/beauty-personal-care/mineral-sunscreen-spf-50.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -4247,11 +4247,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 49,
     "stock": 35,
-    "image": "ecommerce-products/beauty-personal-care/handcrafted-shea-butter-soap.jpg",
+    "image": "assets/ecommerce-products/beauty-personal-care/handcrafted-shea-butter-soap.jpg",
     "images": [
-      "ecommerce-products/beauty-personal-care/handcrafted-shea-butter-soap.jpg",
-      "ecommerce-products/beauty-personal-care/handcrafted-shea-butter-soap.jpg",
-      "ecommerce-products/beauty-personal-care/handcrafted-shea-butter-soap.jpg"
+      "assets/ecommerce-products/beauty-personal-care/handcrafted-shea-butter-soap.jpg",
+      "assets/ecommerce-products/beauty-personal-care/handcrafted-shea-butter-soap.jpg",
+      "assets/ecommerce-products/beauty-personal-care/handcrafted-shea-butter-soap.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4276,11 +4276,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 78,
     "stock": 34,
-    "image": "ecommerce-products/sports-fitness/high-density-yoga-mat.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/high-density-yoga-mat.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/high-density-yoga-mat.jpg",
-      "ecommerce-products/sports-fitness/high-density-yoga-mat.jpg",
-      "ecommerce-products/sports-fitness/high-density-yoga-mat.jpg"
+      "assets/ecommerce-products/sports-fitness/high-density-yoga-mat.jpg",
+      "assets/ecommerce-products/sports-fitness/high-density-yoga-mat.jpg",
+      "assets/ecommerce-products/sports-fitness/high-density-yoga-mat.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4305,11 +4305,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 309,
     "stock": 65,
-    "image": "ecommerce-products/sports-fitness/hexagonal-rubber-dumbbells.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/hexagonal-rubber-dumbbells.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/hexagonal-rubber-dumbbells.jpg",
-      "ecommerce-products/sports-fitness/hexagonal-rubber-dumbbells.jpg",
-      "ecommerce-products/sports-fitness/hexagonal-rubber-dumbbells.jpg"
+      "assets/ecommerce-products/sports-fitness/hexagonal-rubber-dumbbells.jpg",
+      "assets/ecommerce-products/sports-fitness/hexagonal-rubber-dumbbells.jpg",
+      "assets/ecommerce-products/sports-fitness/hexagonal-rubber-dumbbells.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4334,11 +4334,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 414,
     "stock": 19,
-    "image": "ecommerce-products/sports-fitness/insulated-stainless-water-bottle.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/insulated-stainless-water-bottle.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/insulated-stainless-water-bottle.jpg",
-      "ecommerce-products/sports-fitness/insulated-stainless-water-bottle.jpg",
-      "ecommerce-products/sports-fitness/insulated-stainless-water-bottle.jpg"
+      "assets/ecommerce-products/sports-fitness/insulated-stainless-water-bottle.jpg",
+      "assets/ecommerce-products/sports-fitness/insulated-stainless-water-bottle.jpg",
+      "assets/ecommerce-products/sports-fitness/insulated-stainless-water-bottle.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -4363,11 +4363,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 439,
     "stock": 9,
-    "image": "ecommerce-products/sports-fitness/adjustable-speed-jump-rope.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/adjustable-speed-jump-rope.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/adjustable-speed-jump-rope.jpg",
-      "ecommerce-products/sports-fitness/adjustable-speed-jump-rope.jpg",
-      "ecommerce-products/sports-fitness/adjustable-speed-jump-rope.jpg"
+      "assets/ecommerce-products/sports-fitness/adjustable-speed-jump-rope.jpg",
+      "assets/ecommerce-products/sports-fitness/adjustable-speed-jump-rope.jpg",
+      "assets/ecommerce-products/sports-fitness/adjustable-speed-jump-rope.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4392,11 +4392,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 373,
     "stock": 19,
-    "image": "ecommerce-products/sports-fitness/resistance-exercise-bands.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/resistance-exercise-bands.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/resistance-exercise-bands.jpg",
-      "ecommerce-products/sports-fitness/resistance-exercise-bands.jpg",
-      "ecommerce-products/sports-fitness/resistance-exercise-bands.jpg"
+      "assets/ecommerce-products/sports-fitness/resistance-exercise-bands.jpg",
+      "assets/ecommerce-products/sports-fitness/resistance-exercise-bands.jpg",
+      "assets/ecommerce-products/sports-fitness/resistance-exercise-bands.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4421,11 +4421,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 258,
     "stock": 38,
-    "image": "ecommerce-products/sports-fitness/deep-tissue-foam-roller.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/deep-tissue-foam-roller.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/deep-tissue-foam-roller.jpg",
-      "ecommerce-products/sports-fitness/deep-tissue-foam-roller.jpg",
-      "ecommerce-products/sports-fitness/deep-tissue-foam-roller.jpg"
+      "assets/ecommerce-products/sports-fitness/deep-tissue-foam-roller.jpg",
+      "assets/ecommerce-products/sports-fitness/deep-tissue-foam-roller.jpg",
+      "assets/ecommerce-products/sports-fitness/deep-tissue-foam-roller.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4450,11 +4450,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.9,
     "reviewsCount": 128,
     "stock": 41,
-    "image": "ecommerce-products/sports-fitness/official-size-soccer-ball.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/official-size-soccer-ball.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/official-size-soccer-ball.jpg",
-      "ecommerce-products/sports-fitness/official-size-soccer-ball.jpg",
-      "ecommerce-products/sports-fitness/official-size-soccer-ball.jpg"
+      "assets/ecommerce-products/sports-fitness/official-size-soccer-ball.jpg",
+      "assets/ecommerce-products/sports-fitness/official-size-soccer-ball.jpg",
+      "assets/ecommerce-products/sports-fitness/official-size-soccer-ball.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -4479,11 +4479,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 175,
     "stock": 20,
-    "image": "ecommerce-products/sports-fitness/professional-boxing-gloves.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/professional-boxing-gloves.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/professional-boxing-gloves.jpg",
-      "ecommerce-products/sports-fitness/professional-boxing-gloves.jpg",
-      "ecommerce-products/sports-fitness/professional-boxing-gloves.jpg"
+      "assets/ecommerce-products/sports-fitness/professional-boxing-gloves.jpg",
+      "assets/ecommerce-products/sports-fitness/professional-boxing-gloves.jpg",
+      "assets/ecommerce-products/sports-fitness/professional-boxing-gloves.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4508,11 +4508,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 324,
     "stock": 27,
-    "image": "ecommerce-products/sports-fitness/aerodynamic-bike-helmet.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/aerodynamic-bike-helmet.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/aerodynamic-bike-helmet.jpg",
-      "ecommerce-products/sports-fitness/aerodynamic-bike-helmet.jpg",
-      "ecommerce-products/sports-fitness/aerodynamic-bike-helmet.jpg"
+      "assets/ecommerce-products/sports-fitness/aerodynamic-bike-helmet.jpg",
+      "assets/ecommerce-products/sports-fitness/aerodynamic-bike-helmet.jpg",
+      "assets/ecommerce-products/sports-fitness/aerodynamic-bike-helmet.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4537,11 +4537,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 348,
     "stock": 29,
-    "image": "ecommerce-products/sports-fitness/cast-iron-kettlebell.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/cast-iron-kettlebell.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/cast-iron-kettlebell.jpg",
-      "ecommerce-products/sports-fitness/cast-iron-kettlebell.jpg",
-      "ecommerce-products/sports-fitness/cast-iron-kettlebell.jpg"
+      "assets/ecommerce-products/sports-fitness/cast-iron-kettlebell.jpg",
+      "assets/ecommerce-products/sports-fitness/cast-iron-kettlebell.jpg",
+      "assets/ecommerce-products/sports-fitness/cast-iron-kettlebell.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4566,11 +4566,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 115,
     "stock": 27,
-    "image": "ecommerce-products/sports-fitness/padded-cycling-gloves.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/padded-cycling-gloves.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/padded-cycling-gloves.jpg",
-      "ecommerce-products/sports-fitness/padded-cycling-gloves.jpg",
-      "ecommerce-products/sports-fitness/padded-cycling-gloves.jpg"
+      "assets/ecommerce-products/sports-fitness/padded-cycling-gloves.jpg",
+      "assets/ecommerce-products/sports-fitness/padded-cycling-gloves.jpg",
+      "assets/ecommerce-products/sports-fitness/padded-cycling-gloves.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -4595,11 +4595,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 90,
     "stock": 48,
-    "image": "ecommerce-products/sports-fitness/compression-knee-support-brace.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/compression-knee-support-brace.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/compression-knee-support-brace.jpg",
-      "ecommerce-products/sports-fitness/compression-knee-support-brace.jpg",
-      "ecommerce-products/sports-fitness/compression-knee-support-brace.jpg"
+      "assets/ecommerce-products/sports-fitness/compression-knee-support-brace.jpg",
+      "assets/ecommerce-products/sports-fitness/compression-knee-support-brace.jpg",
+      "assets/ecommerce-products/sports-fitness/compression-knee-support-brace.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4624,11 +4624,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 470,
     "stock": 14,
-    "image": "ecommerce-products/sports-fitness/microfiber-quick-dry-gym-towel.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/microfiber-quick-dry-gym-towel.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/microfiber-quick-dry-gym-towel.jpg",
-      "ecommerce-products/sports-fitness/microfiber-quick-dry-gym-towel.jpg",
-      "ecommerce-products/sports-fitness/microfiber-quick-dry-gym-towel.jpg"
+      "assets/ecommerce-products/sports-fitness/microfiber-quick-dry-gym-towel.jpg",
+      "assets/ecommerce-products/sports-fitness/microfiber-quick-dry-gym-towel.jpg",
+      "assets/ecommerce-products/sports-fitness/microfiber-quick-dry-gym-towel.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4653,11 +4653,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 3.9,
     "reviewsCount": 442,
     "stock": 23,
-    "image": "ecommerce-products/sports-fitness/waterproof-sports-duffel-bag.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/waterproof-sports-duffel-bag.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/waterproof-sports-duffel-bag.jpg",
-      "ecommerce-products/sports-fitness/waterproof-sports-duffel-bag.jpg",
-      "ecommerce-products/sports-fitness/waterproof-sports-duffel-bag.jpg"
+      "assets/ecommerce-products/sports-fitness/waterproof-sports-duffel-bag.jpg",
+      "assets/ecommerce-products/sports-fitness/waterproof-sports-duffel-bag.jpg",
+      "assets/ecommerce-products/sports-fitness/waterproof-sports-duffel-bag.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4682,11 +4682,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 48,
     "stock": 15,
-    "image": "ecommerce-products/sports-fitness/smart-body-fat-scale.jpg",
+    "image": "assets/ecommerce-products/sports-fitness/smart-body-fat-scale.jpg",
     "images": [
-      "ecommerce-products/sports-fitness/smart-body-fat-scale.jpg",
-      "ecommerce-products/sports-fitness/smart-body-fat-scale.jpg",
-      "ecommerce-products/sports-fitness/smart-body-fat-scale.jpg"
+      "assets/ecommerce-products/sports-fitness/smart-body-fat-scale.jpg",
+      "assets/ecommerce-products/sports-fitness/smart-body-fat-scale.jpg",
+      "assets/ecommerce-products/sports-fitness/smart-body-fat-scale.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -4711,11 +4711,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 452,
     "stock": 66,
-    "image": "ecommerce-products/bags-accessories/vintage-leather-backpack.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/vintage-leather-backpack.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/vintage-leather-backpack.jpg",
-      "ecommerce-products/bags-accessories/vintage-leather-backpack.jpg",
-      "ecommerce-products/bags-accessories/vintage-leather-backpack.jpg"
+      "assets/ecommerce-products/bags-accessories/vintage-leather-backpack.jpg",
+      "assets/ecommerce-products/bags-accessories/vintage-leather-backpack.jpg",
+      "assets/ecommerce-products/bags-accessories/vintage-leather-backpack.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4740,11 +4740,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 107,
     "stock": 15,
-    "image": "ecommerce-products/bags-accessories/slim-rfid-cardholder.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/slim-rfid-cardholder.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/slim-rfid-cardholder.jpg",
-      "ecommerce-products/bags-accessories/slim-rfid-cardholder.jpg",
-      "ecommerce-products/bags-accessories/slim-rfid-cardholder.jpg"
+      "assets/ecommerce-products/bags-accessories/slim-rfid-cardholder.jpg",
+      "assets/ecommerce-products/bags-accessories/slim-rfid-cardholder.jpg",
+      "assets/ecommerce-products/bags-accessories/slim-rfid-cardholder.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4769,11 +4769,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 68,
     "stock": 24,
-    "image": "ecommerce-products/bags-accessories/classic-polarized-sunglasses.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/classic-polarized-sunglasses.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/classic-polarized-sunglasses.jpg",
-      "ecommerce-products/bags-accessories/classic-polarized-sunglasses.jpg",
-      "ecommerce-products/bags-accessories/classic-polarized-sunglasses.jpg"
+      "assets/ecommerce-products/bags-accessories/classic-polarized-sunglasses.jpg",
+      "assets/ecommerce-products/bags-accessories/classic-polarized-sunglasses.jpg",
+      "assets/ecommerce-products/bags-accessories/classic-polarized-sunglasses.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4798,11 +4798,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 228,
     "stock": 25,
-    "image": "ecommerce-products/bags-accessories/heavy-canvas-tote-bag.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/heavy-canvas-tote-bag.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/heavy-canvas-tote-bag.jpg",
-      "ecommerce-products/bags-accessories/heavy-canvas-tote-bag.jpg",
-      "ecommerce-products/bags-accessories/heavy-canvas-tote-bag.jpg"
+      "assets/ecommerce-products/bags-accessories/heavy-canvas-tote-bag.jpg",
+      "assets/ecommerce-products/bags-accessories/heavy-canvas-tote-bag.jpg",
+      "assets/ecommerce-products/bags-accessories/heavy-canvas-tote-bag.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -4827,11 +4827,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.3,
     "reviewsCount": 386,
     "stock": 57,
-    "image": "ecommerce-products/bags-accessories/leather-bi-fold-wallet.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/leather-bi-fold-wallet.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/leather-bi-fold-wallet.jpg",
-      "ecommerce-products/bags-accessories/leather-bi-fold-wallet.jpg",
-      "ecommerce-products/bags-accessories/leather-bi-fold-wallet.jpg"
+      "assets/ecommerce-products/bags-accessories/leather-bi-fold-wallet.jpg",
+      "assets/ecommerce-products/bags-accessories/leather-bi-fold-wallet.jpg",
+      "assets/ecommerce-products/bags-accessories/leather-bi-fold-wallet.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4856,11 +4856,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 447,
     "stock": 54,
-    "image": "ecommerce-products/bags-accessories/hardshell-carry-on-luggage.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/hardshell-carry-on-luggage.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/hardshell-carry-on-luggage.jpg",
-      "ecommerce-products/bags-accessories/hardshell-carry-on-luggage.jpg",
-      "ecommerce-products/bags-accessories/hardshell-carry-on-luggage.jpg"
+      "assets/ecommerce-products/bags-accessories/hardshell-carry-on-luggage.jpg",
+      "assets/ecommerce-products/bags-accessories/hardshell-carry-on-luggage.jpg",
+      "assets/ecommerce-products/bags-accessories/hardshell-carry-on-luggage.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4885,11 +4885,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 390,
     "stock": 16,
-    "image": "ecommerce-products/bags-accessories/water-resistant-crossbody-sling.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/water-resistant-crossbody-sling.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/water-resistant-crossbody-sling.jpg",
-      "ecommerce-products/bags-accessories/water-resistant-crossbody-sling.jpg",
-      "ecommerce-products/bags-accessories/water-resistant-crossbody-sling.jpg"
+      "assets/ecommerce-products/bags-accessories/water-resistant-crossbody-sling.jpg",
+      "assets/ecommerce-products/bags-accessories/water-resistant-crossbody-sling.jpg",
+      "assets/ecommerce-products/bags-accessories/water-resistant-crossbody-sling.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4914,11 +4914,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 314,
     "stock": 61,
-    "image": "ecommerce-products/bags-accessories/premium-leather-dress-belt.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/premium-leather-dress-belt.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/premium-leather-dress-belt.jpg",
-      "ecommerce-products/bags-accessories/premium-leather-dress-belt.jpg",
-      "ecommerce-products/bags-accessories/premium-leather-dress-belt.jpg"
+      "assets/ecommerce-products/bags-accessories/premium-leather-dress-belt.jpg",
+      "assets/ecommerce-products/bags-accessories/premium-leather-dress-belt.jpg",
+      "assets/ecommerce-products/bags-accessories/premium-leather-dress-belt.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -4943,11 +4943,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 284,
     "stock": 31,
-    "image": "ecommerce-products/bags-accessories/cashmere-winter-scarf.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/cashmere-winter-scarf.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/cashmere-winter-scarf.jpg",
-      "ecommerce-products/bags-accessories/cashmere-winter-scarf.jpg",
-      "ecommerce-products/bags-accessories/cashmere-winter-scarf.jpg"
+      "assets/ecommerce-products/bags-accessories/cashmere-winter-scarf.jpg",
+      "assets/ecommerce-products/bags-accessories/cashmere-winter-scarf.jpg",
+      "assets/ecommerce-products/bags-accessories/cashmere-winter-scarf.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -4972,11 +4972,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 139,
     "stock": 31,
-    "image": "ecommerce-products/bags-accessories/waterproof-laptop-backpack.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/waterproof-laptop-backpack.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/waterproof-laptop-backpack.jpg",
-      "ecommerce-products/bags-accessories/waterproof-laptop-backpack.jpg",
-      "ecommerce-products/bags-accessories/waterproof-laptop-backpack.jpg"
+      "assets/ecommerce-products/bags-accessories/waterproof-laptop-backpack.jpg",
+      "assets/ecommerce-products/bags-accessories/waterproof-laptop-backpack.jpg",
+      "assets/ecommerce-products/bags-accessories/waterproof-laptop-backpack.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5001,11 +5001,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 357,
     "stock": 36,
-    "image": "ecommerce-products/bags-accessories/structured-leather-handbag.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/structured-leather-handbag.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/structured-leather-handbag.jpg",
-      "ecommerce-products/bags-accessories/structured-leather-handbag.jpg",
-      "ecommerce-products/bags-accessories/structured-leather-handbag.jpg"
+      "assets/ecommerce-products/bags-accessories/structured-leather-handbag.jpg",
+      "assets/ecommerce-products/bags-accessories/structured-leather-handbag.jpg",
+      "assets/ecommerce-products/bags-accessories/structured-leather-handbag.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5030,11 +5030,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 273,
     "stock": 46,
-    "image": "ecommerce-products/bags-accessories/canvas-weekend-travel-duffle.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/canvas-weekend-travel-duffle.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/canvas-weekend-travel-duffle.jpg",
-      "ecommerce-products/bags-accessories/canvas-weekend-travel-duffle.jpg",
-      "ecommerce-products/bags-accessories/canvas-weekend-travel-duffle.jpg"
+      "assets/ecommerce-products/bags-accessories/canvas-weekend-travel-duffle.jpg",
+      "assets/ecommerce-products/bags-accessories/canvas-weekend-travel-duffle.jpg",
+      "assets/ecommerce-products/bags-accessories/canvas-weekend-travel-duffle.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -5059,11 +5059,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 259,
     "stock": 35,
-    "image": "ecommerce-products/bags-accessories/aviator-metal-sunglasses.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/aviator-metal-sunglasses.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/aviator-metal-sunglasses.jpg",
-      "ecommerce-products/bags-accessories/aviator-metal-sunglasses.jpg",
-      "ecommerce-products/bags-accessories/aviator-metal-sunglasses.jpg"
+      "assets/ecommerce-products/bags-accessories/aviator-metal-sunglasses.jpg",
+      "assets/ecommerce-products/bags-accessories/aviator-metal-sunglasses.jpg",
+      "assets/ecommerce-products/bags-accessories/aviator-metal-sunglasses.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5088,11 +5088,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 396,
     "stock": 17,
-    "image": "ecommerce-products/bags-accessories/leather-passport-wallet.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/leather-passport-wallet.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/leather-passport-wallet.jpg",
-      "ecommerce-products/bags-accessories/leather-passport-wallet.jpg",
-      "ecommerce-products/bags-accessories/leather-passport-wallet.jpg"
+      "assets/ecommerce-products/bags-accessories/leather-passport-wallet.jpg",
+      "assets/ecommerce-products/bags-accessories/leather-passport-wallet.jpg",
+      "assets/ecommerce-products/bags-accessories/leather-passport-wallet.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5117,11 +5117,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 345,
     "stock": 24,
-    "image": "ecommerce-products/bags-accessories/classic-cotton-baseball-cap.jpg",
+    "image": "assets/ecommerce-products/bags-accessories/classic-cotton-baseball-cap.jpg",
     "images": [
-      "ecommerce-products/bags-accessories/classic-cotton-baseball-cap.jpg",
-      "ecommerce-products/bags-accessories/classic-cotton-baseball-cap.jpg",
-      "ecommerce-products/bags-accessories/classic-cotton-baseball-cap.jpg"
+      "assets/ecommerce-products/bags-accessories/classic-cotton-baseball-cap.jpg",
+      "assets/ecommerce-products/bags-accessories/classic-cotton-baseball-cap.jpg",
+      "assets/ecommerce-products/bags-accessories/classic-cotton-baseball-cap.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5146,11 +5146,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.6,
     "reviewsCount": 35,
     "stock": 27,
-    "image": "ecommerce-products/books-stationery/hardcover-leather-notebook.jpg",
+    "image": "assets/ecommerce-products/books-stationery/hardcover-leather-notebook.jpg",
     "images": [
-      "ecommerce-products/books-stationery/hardcover-leather-notebook.jpg",
-      "ecommerce-products/books-stationery/hardcover-leather-notebook.jpg",
-      "ecommerce-products/books-stationery/hardcover-leather-notebook.jpg"
+      "assets/ecommerce-products/books-stationery/hardcover-leather-notebook.jpg",
+      "assets/ecommerce-products/books-stationery/hardcover-leather-notebook.jpg",
+      "assets/ecommerce-products/books-stationery/hardcover-leather-notebook.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -5175,11 +5175,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 276,
     "stock": 24,
-    "image": "ecommerce-products/books-stationery/classic-brass-fountain-pen.jpg",
+    "image": "assets/ecommerce-products/books-stationery/classic-brass-fountain-pen.jpg",
     "images": [
-      "ecommerce-products/books-stationery/classic-brass-fountain-pen.jpg",
-      "ecommerce-products/books-stationery/classic-brass-fountain-pen.jpg",
-      "ecommerce-products/books-stationery/classic-brass-fountain-pen.jpg"
+      "assets/ecommerce-products/books-stationery/classic-brass-fountain-pen.jpg",
+      "assets/ecommerce-products/books-stationery/classic-brass-fountain-pen.jpg",
+      "assets/ecommerce-products/books-stationery/classic-brass-fountain-pen.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5204,11 +5204,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.2,
     "reviewsCount": 281,
     "stock": 57,
-    "image": "ecommerce-products/books-stationery/wooden-desk-organizer-tray.jpg",
+    "image": "assets/ecommerce-products/books-stationery/wooden-desk-organizer-tray.jpg",
     "images": [
-      "ecommerce-products/books-stationery/wooden-desk-organizer-tray.jpg",
-      "ecommerce-products/books-stationery/wooden-desk-organizer-tray.jpg",
-      "ecommerce-products/books-stationery/wooden-desk-organizer-tray.jpg"
+      "assets/ecommerce-products/books-stationery/wooden-desk-organizer-tray.jpg",
+      "assets/ecommerce-products/books-stationery/wooden-desk-organizer-tray.jpg",
+      "assets/ecommerce-products/books-stationery/wooden-desk-organizer-tray.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5233,11 +5233,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 269,
     "stock": 24,
-    "image": "ecommerce-products/books-stationery/weekly-planner-journal.jpg",
+    "image": "assets/ecommerce-products/books-stationery/weekly-planner-journal.jpg",
     "images": [
-      "ecommerce-products/books-stationery/weekly-planner-journal.jpg",
-      "ecommerce-products/books-stationery/weekly-planner-journal.jpg",
-      "ecommerce-products/books-stationery/weekly-planner-journal.jpg"
+      "assets/ecommerce-products/books-stationery/weekly-planner-journal.jpg",
+      "assets/ecommerce-products/books-stationery/weekly-planner-journal.jpg",
+      "assets/ecommerce-products/books-stationery/weekly-planner-journal.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5262,11 +5262,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.9,
     "reviewsCount": 115,
     "stock": 11,
-    "image": "ecommerce-products/books-stationery/solid-brass-bookmark.jpg",
+    "image": "assets/ecommerce-products/books-stationery/solid-brass-bookmark.jpg",
     "images": [
-      "ecommerce-products/books-stationery/solid-brass-bookmark.jpg",
-      "ecommerce-products/books-stationery/solid-brass-bookmark.jpg",
-      "ecommerce-products/books-stationery/solid-brass-bookmark.jpg"
+      "assets/ecommerce-products/books-stationery/solid-brass-bookmark.jpg",
+      "assets/ecommerce-products/books-stationery/solid-brass-bookmark.jpg",
+      "assets/ecommerce-products/books-stationery/solid-brass-bookmark.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -5291,11 +5291,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 132,
     "stock": 13,
-    "image": "ecommerce-products/books-stationery/metal-drafting-pencil.jpg",
+    "image": "assets/ecommerce-products/books-stationery/metal-drafting-pencil.jpg",
     "images": [
-      "ecommerce-products/books-stationery/metal-drafting-pencil.jpg",
-      "ecommerce-products/books-stationery/metal-drafting-pencil.jpg",
-      "ecommerce-products/books-stationery/metal-drafting-pencil.jpg"
+      "assets/ecommerce-products/books-stationery/metal-drafting-pencil.jpg",
+      "assets/ecommerce-products/books-stationery/metal-drafting-pencil.jpg",
+      "assets/ecommerce-products/books-stationery/metal-drafting-pencil.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5320,11 +5320,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 427,
     "stock": 41,
-    "image": "ecommerce-products/books-stationery/watercolor-paint-set.jpg",
+    "image": "assets/ecommerce-products/books-stationery/watercolor-paint-set.jpg",
     "images": [
-      "ecommerce-products/books-stationery/watercolor-paint-set.jpg",
-      "ecommerce-products/books-stationery/watercolor-paint-set.jpg",
-      "ecommerce-products/books-stationery/watercolor-paint-set.jpg"
+      "assets/ecommerce-products/books-stationery/watercolor-paint-set.jpg",
+      "assets/ecommerce-products/books-stationery/watercolor-paint-set.jpg",
+      "assets/ecommerce-products/books-stationery/watercolor-paint-set.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5349,11 +5349,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 377,
     "stock": 30,
-    "image": "ecommerce-products/books-stationery/ceramic-pen-pencil-holder.jpg",
+    "image": "assets/ecommerce-products/books-stationery/ceramic-pen-pencil-holder.jpg",
     "images": [
-      "ecommerce-products/books-stationery/ceramic-pen-pencil-holder.jpg",
-      "ecommerce-products/books-stationery/ceramic-pen-pencil-holder.jpg",
-      "ecommerce-products/books-stationery/ceramic-pen-pencil-holder.jpg"
+      "assets/ecommerce-products/books-stationery/ceramic-pen-pencil-holder.jpg",
+      "assets/ecommerce-products/books-stationery/ceramic-pen-pencil-holder.jpg",
+      "assets/ecommerce-products/books-stationery/ceramic-pen-pencil-holder.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5378,11 +5378,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.1,
     "reviewsCount": 149,
     "stock": 41,
-    "image": "ecommerce-products/books-stationery/premium-artist-sketchbook.jpg",
+    "image": "assets/ecommerce-products/books-stationery/premium-artist-sketchbook.jpg",
     "images": [
-      "ecommerce-products/books-stationery/premium-artist-sketchbook.jpg",
-      "ecommerce-products/books-stationery/premium-artist-sketchbook.jpg",
-      "ecommerce-products/books-stationery/premium-artist-sketchbook.jpg"
+      "assets/ecommerce-products/books-stationery/premium-artist-sketchbook.jpg",
+      "assets/ecommerce-products/books-stationery/premium-artist-sketchbook.jpg",
+      "assets/ecommerce-products/books-stationery/premium-artist-sketchbook.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -5407,11 +5407,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.7,
     "reviewsCount": 72,
     "stock": 61,
-    "image": "ecommerce-products/books-stationery/desktop-tape-dispenser.jpg",
+    "image": "assets/ecommerce-products/books-stationery/desktop-tape-dispenser.jpg",
     "images": [
-      "ecommerce-products/books-stationery/desktop-tape-dispenser.jpg",
-      "ecommerce-products/books-stationery/desktop-tape-dispenser.jpg",
-      "ecommerce-products/books-stationery/desktop-tape-dispenser.jpg"
+      "assets/ecommerce-products/books-stationery/desktop-tape-dispenser.jpg",
+      "assets/ecommerce-products/books-stationery/desktop-tape-dispenser.jpg",
+      "assets/ecommerce-products/books-stationery/desktop-tape-dispenser.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5436,11 +5436,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 349,
     "stock": 65,
-    "image": "ecommerce-products/books-stationery/stainless-steel-paper-scissors.jpg",
+    "image": "assets/ecommerce-products/books-stationery/stainless-steel-paper-scissors.jpg",
     "images": [
-      "ecommerce-products/books-stationery/stainless-steel-paper-scissors.jpg",
-      "ecommerce-products/books-stationery/stainless-steel-paper-scissors.jpg",
-      "ecommerce-products/books-stationery/stainless-steel-paper-scissors.jpg"
+      "assets/ecommerce-products/books-stationery/stainless-steel-paper-scissors.jpg",
+      "assets/ecommerce-products/books-stationery/stainless-steel-paper-scissors.jpg",
+      "assets/ecommerce-products/books-stationery/stainless-steel-paper-scissors.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5465,11 +5465,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.8,
     "reviewsCount": 385,
     "stock": 46,
-    "image": "ecommerce-products/books-stationery/metal-bookends-set.jpg",
+    "image": "assets/ecommerce-products/books-stationery/metal-bookends-set.jpg",
     "images": [
-      "ecommerce-products/books-stationery/metal-bookends-set.jpg",
-      "ecommerce-products/books-stationery/metal-bookends-set.jpg",
-      "ecommerce-products/books-stationery/metal-bookends-set.jpg"
+      "assets/ecommerce-products/books-stationery/metal-bookends-set.jpg",
+      "assets/ecommerce-products/books-stationery/metal-bookends-set.jpg",
+      "assets/ecommerce-products/books-stationery/metal-bookends-set.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5494,11 +5494,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.4,
     "reviewsCount": 387,
     "stock": 52,
-    "image": "ecommerce-products/books-stationery/calligraphy-ink-bottle.jpg",
+    "image": "assets/ecommerce-products/books-stationery/calligraphy-ink-bottle.jpg",
     "images": [
-      "ecommerce-products/books-stationery/calligraphy-ink-bottle.jpg",
-      "ecommerce-products/books-stationery/calligraphy-ink-bottle.jpg",
-      "ecommerce-products/books-stationery/calligraphy-ink-bottle.jpg"
+      "assets/ecommerce-products/books-stationery/calligraphy-ink-bottle.jpg",
+      "assets/ecommerce-products/books-stationery/calligraphy-ink-bottle.jpg",
+      "assets/ecommerce-products/books-stationery/calligraphy-ink-bottle.jpg"
     ],
     "variants": [],
     "featured": true,
@@ -5523,11 +5523,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4,
     "reviewsCount": 441,
     "stock": 33,
-    "image": "ecommerce-products/books-stationery/wax-seal-stamp-kit.jpg",
+    "image": "assets/ecommerce-products/books-stationery/wax-seal-stamp-kit.jpg",
     "images": [
-      "ecommerce-products/books-stationery/wax-seal-stamp-kit.jpg",
-      "ecommerce-products/books-stationery/wax-seal-stamp-kit.jpg",
-      "ecommerce-products/books-stationery/wax-seal-stamp-kit.jpg"
+      "assets/ecommerce-products/books-stationery/wax-seal-stamp-kit.jpg",
+      "assets/ecommerce-products/books-stationery/wax-seal-stamp-kit.jpg",
+      "assets/ecommerce-products/books-stationery/wax-seal-stamp-kit.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5552,11 +5552,11 @@ window.CHORBAJAR_DEFAULT_PRODUCTS = [
     "rating": 4.5,
     "reviewsCount": 37,
     "stock": 62,
-    "image": "ecommerce-products/books-stationery/highlighting-pastel-markers.jpg",
+    "image": "assets/ecommerce-products/books-stationery/highlighting-pastel-markers.jpg",
     "images": [
-      "ecommerce-products/books-stationery/highlighting-pastel-markers.jpg",
-      "ecommerce-products/books-stationery/highlighting-pastel-markers.jpg",
-      "ecommerce-products/books-stationery/highlighting-pastel-markers.jpg"
+      "assets/ecommerce-products/books-stationery/highlighting-pastel-markers.jpg",
+      "assets/ecommerce-products/books-stationery/highlighting-pastel-markers.jpg",
+      "assets/ecommerce-products/books-stationery/highlighting-pastel-markers.jpg"
     ],
     "variants": [],
     "featured": false,
@@ -5577,7 +5577,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "zap",
     "description": "Audio gear, gaming peripherals, smart accessories & more",
     "count": 15,
-    "image": "ecommerce-products/electronics/wireless-bluetooth-headphones.jpg"
+    "image": "assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg"
   },
   {
     "name": "Mobile Phones",
@@ -5585,7 +5585,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "smartphone",
     "description": "Flagships, foldables, gaming phones & budget 5G",
     "count": 15,
-    "image": "ecommerce-products/mobile-phones/ultra-flagship-smartphone.jpg"
+    "image": "assets/ecommerce-products/mobile-phones/ultra-flagship-smartphone.jpg"
   },
   {
     "name": "Laptops & Computers",
@@ -5593,7 +5593,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "laptop",
     "description": "Laptops, 4K monitors, ergonomic gear & accessories",
     "count": 15,
-    "image": "ecommerce-products/laptops-computers/ultra-slim-14-inch-laptop.jpg"
+    "image": "assets/ecommerce-products/laptops-computers/ultra-slim-14-inch-laptop.jpg"
   },
   {
     "name": "Clothing",
@@ -5601,7 +5601,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "shirt",
     "description": "Jackets, sweaters, casual tees, trousers & winter wear",
     "count": 15,
-    "image": "ecommerce-products/clothing/classic-crewneck-t-shirt.jpg"
+    "image": "assets/ecommerce-products/clothing/classic-crewneck-t-shirt.jpg"
   },
   {
     "name": "Shoes",
@@ -5609,7 +5609,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "footprints",
     "description": "Running sneakers, formal oxfords, boots & trainers",
     "count": 15,
-    "image": "ecommerce-products/shoes/breathable-mesh-running-shoes.jpg"
+    "image": "assets/ecommerce-products/shoes/breathable-mesh-running-shoes.jpg"
   },
   {
     "name": "Watches",
@@ -5617,7 +5617,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "watch",
     "description": "Chronographs, automatic skeletons, luxury & digital watches",
     "count": 15,
-    "image": "ecommerce-products/watches/stainless-steel-chronograph-watch.jpg"
+    "image": "assets/ecommerce-products/watches/stainless-steel-chronograph-watch.jpg"
   },
   {
     "name": "Home & Kitchen",
@@ -5625,7 +5625,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "utensils",
     "description": "Coffee drippers, cookware, knives & blenders",
     "count": 15,
-    "image": "ecommerce-products/home-kitchen/ceramic-pour-over-coffee-dripper.jpg"
+    "image": "assets/ecommerce-products/home-kitchen/ceramic-pour-over-coffee-dripper.jpg"
   },
   {
     "name": "Furniture",
@@ -5633,7 +5633,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "armchair",
     "description": "Office chairs, standing desks, sofas & nightstands",
     "count": 15,
-    "image": "ecommerce-products/furniture/mid-century-modern-armchair.jpg"
+    "image": "assets/ecommerce-products/furniture/mid-century-modern-armchair.jpg"
   },
   {
     "name": "Beauty & Personal Care",
@@ -5641,7 +5641,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "sparkles",
     "description": "Serums, grooming kits, hair dryers & scrubs",
     "count": 15,
-    "image": "ecommerce-products/beauty-personal-care/hydrating-vitamin-c-serum.jpg"
+    "image": "assets/ecommerce-products/beauty-personal-care/hydrating-vitamin-c-serum.jpg"
   },
   {
     "name": "Sports & Fitness",
@@ -5649,7 +5649,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "dumbbell",
     "description": "Dumbbells, yoga mats, kettlebells & gym essentials",
     "count": 15,
-    "image": "ecommerce-products/sports-fitness/high-density-yoga-mat.jpg"
+    "image": "assets/ecommerce-products/sports-fitness/high-density-yoga-mat.jpg"
   },
   {
     "name": "Bags & Accessories",
@@ -5657,7 +5657,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "briefcase",
     "description": "Leather backpacks, travel duffles, wallets & sunglasses",
     "count": 15,
-    "image": "ecommerce-products/bags-accessories/vintage-leather-backpack.jpg"
+    "image": "assets/ecommerce-products/bags-accessories/vintage-leather-backpack.jpg"
   },
   {
     "name": "Books & Stationery",
@@ -5665,7 +5665,7 @@ window.CHORBAJAR_CATEGORIES = [
     "icon": "book-open",
     "description": "Fountain pens, leather journals, desk trays & notebooks",
     "count": 15,
-    "image": "ecommerce-products/books-stationery/hardcover-leather-notebook.jpg"
+    "image": "assets/ecommerce-products/books-stationery/hardcover-leather-notebook.jpg"
   }
 ];
 
@@ -5701,7 +5701,7 @@ window.CHORBAJAR_DEFAULT_USERS = [
     "password": "Test@123",
     "phone": "9876543210",
     "role": "customer",
-    "avatar": "harshit.png",
+    "avatar": "assets/harshit.png",
     "createdAt": "2026-01-15",
     "status": "Active"
   },
@@ -5712,7 +5712,7 @@ window.CHORBAJAR_DEFAULT_USERS = [
     "password": "Admin@123",
     "phone": "9898989898",
     "role": "admin",
-    "avatar": "harshit.png",
+    "avatar": "assets/harshit.png",
     "createdAt": "2026-01-01",
     "status": "Active"
   }
@@ -5758,7 +5758,7 @@ window.CHORBAJAR_DEFAULT_ORDERS = [
         "name": "Wireless Bluetooth Headphones",
         "price": 3799,
         "quantity": 1,
-        "image": "ecommerce-products/electronics/wireless-bluetooth-headphones.jpg",
+        "image": "assets/ecommerce-products/electronics/wireless-bluetooth-headphones.jpg",
         "variant": null
       },
       {
@@ -5766,7 +5766,7 @@ window.CHORBAJAR_DEFAULT_ORDERS = [
         "name": "Stainless Steel Chronograph Watch",
         "price": 1799,
         "quantity": 1,
-        "image": "ecommerce-products/watches/stainless-steel-chronograph-watch.jpg",
+        "image": "assets/ecommerce-products/watches/stainless-steel-chronograph-watch.jpg",
         "variant": "Silver"
       }
     ],
@@ -5828,7 +5828,7 @@ window.CHORBAJAR_DEFAULT_ORDERS = [
         "name": "Classic Crewneck Cotton T-Shirt",
         "price": 3549,
         "quantity": 2,
-        "image": "ecommerce-products/clothing/classic-crewneck-t-shirt.jpg",
+        "image": "assets/ecommerce-products/clothing/classic-crewneck-t-shirt.jpg",
         "variant": "L"
       }
     ],

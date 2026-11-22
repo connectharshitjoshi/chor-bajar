@@ -260,7 +260,7 @@ npm run test:live
 The CI/CD workflow sends an email on both **PASS** and **FAIL** states. To enable email delivery via Gmail or your SMTP provider, add the following secrets in **GitHub Repo > Settings > Secrets and variables > Actions**:
 - `MAIL_USERNAME`: Your email address (e.g., `your-email@gmail.com`)
 - `MAIL_PASSWORD`: Your Google App Password (generated via Google Account > Security > App Passwords)
-- `MAIL_TO`: *(Optional, defaults to `harshit.joshi.in@gmail.com`)*
+- `MAIL_TO`: *(Optional, defaults to `connect.harshitjoshi@gmail.com`)*
 - `MAIL_SERVER`: *(Optional, defaults to `smtp.gmail.com`)*
 - `MAIL_PORT`: *(Optional, defaults to `465`)*
 

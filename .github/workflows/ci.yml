@@ -52,8 +52,8 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "${{ steps.run_tests.outcome == 'success' && '✅ PASS: Chorbajar CI/CD Pipeline - All Tests Succeeded' || '❌ FAIL: Chorbajar CI/CD Pipeline - Test Run Failed' }}"
-          to: ${{ secrets.MAIL_TO || secrets.MAIL_USERNAME || 'harshit.joshi.in@gmail.com' }}
-          from: Chorbajar CI/CD <${{ secrets.MAIL_USERNAME || 'harshit.joshi.in@gmail.com' }}>
+          to: ${{ secrets.MAIL_TO || secrets.MAIL_USERNAME || 'connect.harshitjoshi@gmail.com' }}
+          from: Chorbajar CI/CD <${{ secrets.MAIL_USERNAME || 'connect.harshitjoshi@gmail.com' }}>
           html_body: |
             <!DOCTYPE html>
             <html>

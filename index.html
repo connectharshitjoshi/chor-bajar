@@ -23,10 +23,10 @@
           Explore over 180 curated products across Electronics, Fashion, Home & Kitchen, Watches, Books, and Sports. Tested for peak reliability.
         </p>
         <div class="hero-actions">
-          <a href="products.html" class="btn-hero" data-testid="hero-shop-btn">
+          <a href="shop/products.html" class="btn-hero" data-testid="hero-shop-btn">
             Shop Catalog &rarr;
           </a>
-          <a href="products.html?sort=discount" class="btn btn-outline-primary" style="color: #ffffff; border-color: rgba(255,255,255,0.4);" data-testid="hero-deals-btn">
+          <a href="shop/products.html?sort=discount" class="btn btn-outline-primary" style="color: #ffffff; border-color: rgba(255,255,255,0.4);" data-testid="hero-deals-btn">
             Top Deals (Up to 50% Off)
           </a>
         </div>
@@ -40,7 +40,7 @@
     <section class="categories-section" style="margin-bottom: 3rem;">
       <div class="section-header">
         <h2 class="section-title">Shop by Category</h2>
-        <a href="products.html" class="section-link" data-testid="view-all-categories">View All Categories &rarr;</a>
+        <a href="shop/products.html" class="section-link" data-testid="view-all-categories">View All Categories &rarr;</a>
       </div>
       <div class="category-cards-grid" id="home-categories-grid" data-testid="home-categories-grid">
         <!-- Rendered via JS -->
@@ -51,7 +51,7 @@
     <section class="featured-products-section" style="margin-bottom: 3rem;">
       <div class="section-header">
         <h2 class="section-title">Featured Picks for You</h2>
-        <a href="products.html?filter=featured" class="section-link" data-testid="view-all-featured">Explore All &rarr;</a>
+        <a href="shop/products.html?filter=featured" class="section-link" data-testid="view-all-featured">Explore All &rarr;</a>
       </div>
       <div class="products-grid" id="featured-products-grid" data-testid="featured-products-grid">
         <!-- Rendered via JS -->
@@ -94,7 +94,7 @@
     <section class="trending-products-section" style="margin-bottom: 3.5rem;">
       <div class="section-header">
         <h2 class="section-title">Trending This Week</h2>
-        <a href="products.html?sort=rating" class="section-link" data-testid="view-all-trending">Browse Trending &rarr;</a>
+        <a href="shop/products.html?sort=rating" class="section-link" data-testid="view-all-trending">Browse Trending &rarr;</a>
       </div>
       <div class="products-grid" id="trending-products-grid" data-testid="trending-products-grid">
         <!-- Rendered via JS -->
@@ -133,7 +133,7 @@
       const catContainer = document.getElementById('home-categories-grid');
       if (catContainer && window.CHORBAJAR_CATEGORIES) {
         catContainer.innerHTML = window.CHORBAJAR_CATEGORIES.map(cat => `
-          <a href="category.html?name=${encodeURIComponent(cat.slug)}" class="category-card" data-testid="category-card-${cat.slug}">
+          <a href="shop/shop/category.html?name=${encodeURIComponent(cat.slug)}" class="category-card" data-testid="category-card-${cat.slug}">
             <div class="category-img-wrap">
               <img src="${cat.image}" alt="${cat.name}" loading="lazy">
             </div>

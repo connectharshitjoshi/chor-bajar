@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order Confirmed | Chorbajar</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
   <style>
     .success-card {
       background: #ffffff;
@@ -111,7 +111,7 @@
         <a href="products.html" class="btn btn-primary" data-testid="continue-shopping-btn">
           Continue Shopping &rarr;
         </a>
-        <a href="account-orders.html" class="btn btn-secondary" data-testid="view-orders-btn">
+        <a href="../account/orders.html" class="btn btn-secondary" data-testid="view-orders-btn">
           View My Orders
         </a>
         <button type="button" class="btn btn-secondary" onclick="window.print();" data-testid="print-invoice-btn">
@@ -124,16 +124,16 @@
   <div id="site-footer-container"></div>
 
   <!-- Scripts -->
-  <script src="js/products-data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/app.js"></script>
+  <script src="../js/products-data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const orderId = window.ChorbajarApp.getUrlParam('orderId');
       const order = window.ChorbajarStorage.getOrderById(orderId);
 
       if (!order) {
-        window.location.href = 'index.html';
+        window.location.href = '../index.html';
         return;
       }
 
@@ -150,7 +150,7 @@
       document.getElementById('order-items-list').innerHTML = (order.items || []).map(i => `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.85rem;">
           <div style="display: flex; gap: 10px; align-items: center;">
-            <img src="${i.image}" alt="${i.name}" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
+            <img src="../${i.image}" alt="${i.name}" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
             <div>
               <div style="font-weight: 600;">${i.name}</div>
               <div style="color: var(--text-muted); font-size: 0.75rem;">Qty: ${i.quantity} ${i.variant ? '• Variant: ' + i.variant : ''}</div>

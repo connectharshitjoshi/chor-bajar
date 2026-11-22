@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout | Chorbajar</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
   <style>
     .checkout-layout {
       display: grid;
@@ -88,7 +88,7 @@
 
   <main class="container">
     <div class="breadcrumbs" data-testid="breadcrumbs">
-      <a href="index.html">Home</a>
+      <a href="../index.html">Home</a>
       <span class="separator">/</span>
       <a href="cart.html">Cart</a>
       <span class="separator">/</span>
@@ -253,9 +253,9 @@
   <div id="site-footer-container"></div>
 
   <!-- Scripts -->
-  <script src="js/products-data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/app.js"></script>
+  <script src="../js/products-data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const cart = window.ChorbajarStorage.getCart();
@@ -297,7 +297,7 @@
       document.getElementById('checkout-items-count').textContent = cart.reduce((sum, i) => sum + i.quantity, 0);
       document.getElementById('checkout-items-mini-list').innerHTML = cart.map(i => `
         <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px; font-size: 0.85rem;">
-          <img src="${i.image}" alt="${i.name}" style="width: 44px; height: 44px; border-radius: 4px; object-fit: cover;">
+          <img src="../${i.image}" alt="${i.name}" style="width: 44px; height: 44px; border-radius: 4px; object-fit: cover;">
           <div style="flex: 1;">
             <div style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 190px;">${i.name}</div>
             <div style="color: var(--text-muted); font-size: 0.75rem;">Qty: ${i.quantity} × ${window.ChorbajarApp.formatPrice(i.price)}</div>

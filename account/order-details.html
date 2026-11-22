@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Order Details | Chorbajar</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
 </head>
 <body>
 
@@ -13,9 +13,9 @@
 
   <main class="container">
     <div class="breadcrumbs" data-testid="breadcrumbs">
-      <a href="index.html">Home</a>
+      <a href="../index.html">Home</a>
       <span class="separator">/</span>
-      <a href="account-orders.html">My Orders</a>
+      <a href="orders.html">My Orders</a>
       <span class="separator">/</span>
       <span id="breadcrumb-order-id">Order Details</span>
     </div>
@@ -23,10 +23,10 @@
     <div class="dashboard-layout">
       <!-- Account Sidebar -->
       <aside class="sidebar-nav" data-testid="account-sidebar">
-        <a href="account-profile.html" class="sidebar-link" data-testid="sidebar-profile">👤 Personal Information</a>
-        <a href="account-orders.html" class="sidebar-link active" data-testid="sidebar-orders">📦 My Orders & Tracking</a>
-        <a href="account-addresses.html" class="sidebar-link" data-testid="sidebar-addresses">📍 Saved Delivery Addresses</a>
-        <a href="account-settings.html" class="sidebar-link" data-testid="sidebar-settings">⚙️ Account Settings</a>
+        <a href="profile.html" class="sidebar-link" data-testid="sidebar-profile">👤 Personal Information</a>
+        <a href="orders.html" class="sidebar-link active" data-testid="sidebar-orders">📦 My Orders & Tracking</a>
+        <a href="addresses.html" class="sidebar-link" data-testid="sidebar-addresses">📍 Saved Delivery Addresses</a>
+        <a href="settings.html" class="sidebar-link" data-testid="sidebar-settings">⚙️ Account Settings</a>
       </aside>
 
       <!-- Order Details Main Card -->
@@ -111,9 +111,9 @@
   <div id="site-footer-container"></div>
 
   <!-- Scripts -->
-  <script src="js/products-data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/app.js"></script>
+  <script src="../js/products-data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (!window.ChorbajarApp.requireAuth()) return;
@@ -122,7 +122,7 @@
       const order = window.ChorbajarStorage.getOrderById(orderId);
 
       if (!order) {
-        window.location.href = 'account-orders.html';
+        window.location.href = 'orders.html';
         return;
       }
 
@@ -175,9 +175,9 @@
         <tr>
           <td>
             <div style="display: flex; gap: 12px; align-items: center;">
-              <img src="${i.image}" alt="${i.name}" style="width: 44px; height: 44px; border-radius: 4px; object-fit: cover;">
+              <img src="../${i.image}" alt="${i.name}" style="width: 44px; height: 44px; border-radius: 4px; object-fit: cover;">
               <div>
-                <a href="product-details.html?id=${i.productId}" style="font-weight: 600; color: var(--text-main);">${i.name}</a>
+                <a href="../shop/product-details.html?id=${i.productId}" style="font-weight: 600; color: var(--text-main);">${i.name}</a>
                 ${i.variant ? `<div style="font-size: 0.75rem; color: var(--text-muted);">Variant: ${i.variant}</div>` : ''}
               </div>
             </div>

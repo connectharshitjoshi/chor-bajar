@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add / Edit Product | Chorbajar Admin</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
 </head>
 <body>
 
@@ -13,11 +13,11 @@
 
   <main class="container">
     <div class="breadcrumbs" data-testid="breadcrumbs">
-      <a href="index.html">Home</a>
+      <a href="../index.html">Home</a>
       <span class="separator">/</span>
-      <a href="admin-dashboard.html">Admin</a>
+      <a href="dashboard.html">Admin</a>
       <span class="separator">/</span>
-      <a href="admin-products.html">Products</a>
+      <a href="products.html">Products</a>
       <span class="separator">/</span>
       <span id="breadcrumb-action-title">Add Product</span>
     </div>
@@ -29,12 +29,12 @@
           <div style="font-size: 0.75rem; text-transform: uppercase; color: #38bdf8; font-weight: 700; letter-spacing: 0.5px;">Control Panel</div>
           <h4 style="font-size: 1rem; font-weight: 800;">Chorbajar Admin</h4>
         </div>
-        <a href="admin-dashboard.html" class="sidebar-link" data-testid="admin-nav-dashboard">📊 Dashboard Analytics</a>
-        <a href="admin-products.html" class="sidebar-link" data-testid="admin-nav-products">📦 Product Catalog (180+)</a>
-        <a href="admin-product-add.html" class="sidebar-link active" data-testid="admin-nav-add-product">➕ Add New Product</a>
-        <a href="admin-orders.html" class="sidebar-link" data-testid="admin-nav-orders">📑 Order Management</a>
-        <a href="admin-users.html" class="sidebar-link" data-testid="admin-nav-users">👥 Customer Directory</a>
-        <a href="admin-settings.html" class="sidebar-link" data-testid="admin-nav-settings">⚙️ Store Settings</a>
+        <a href="dashboard.html" class="sidebar-link" data-testid="admin-nav-dashboard">📊 Dashboard Analytics</a>
+        <a href="products.html" class="sidebar-link" data-testid="admin-nav-products">📦 Product Catalog (180+)</a>
+        <a href="product-add.html" class="sidebar-link active" data-testid="admin-nav-add-product">➕ Add New Product</a>
+        <a href="orders.html" class="sidebar-link" data-testid="admin-nav-orders">📑 Order Management</a>
+        <a href="users.html" class="sidebar-link" data-testid="admin-nav-users">👥 Customer Directory</a>
+        <a href="settings.html" class="sidebar-link" data-testid="admin-nav-settings">⚙️ Store Settings</a>
       </aside>
 
       <!-- Add/Edit Form Card -->
@@ -99,7 +99,7 @@
 
               <div style="margin-top: 1rem; border: 1px dashed var(--border); border-radius: var(--radius-md); padding: 10px; text-align: center; background: var(--bg-subtle);">
                 <div style="font-size: 0.8rem; font-weight: 600; margin-bottom: 6px;">Image Preview:</div>
-                <img id="image-preview" src="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg" alt="Preview" style="max-height: 200px; margin: 0 auto; object-fit: contain; border-radius: 4px;">
+                <img id="image-preview" src="../ecommerce-products/electronics/wireless-bluetooth-headphones.jpg" alt="Preview" style="max-height: 200px; margin: 0 auto; object-fit: contain; border-radius: 4px;">
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@
             <button type="submit" class="btn btn-primary" id="btn-submit-product" data-testid="admin-submit-product">
               Save Product
             </button>
-            <a href="admin-products.html" class="btn btn-secondary" data-testid="admin-cancel-product">Cancel</a>
+            <a href="products.html" class="btn btn-secondary" data-testid="admin-cancel-product">Cancel</a>
           </div>
         </form>
       </section>
@@ -118,9 +118,9 @@
   <div id="site-footer-container"></div>
 
   <!-- Scripts -->
-  <script src="js/products-data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/app.js"></script>
+  <script src="../js/products-data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (!window.ChorbajarApp.requireAuth('admin')) return;
@@ -155,7 +155,7 @@
           document.getElementById('prod-discount').value = product.discount || 0;
           document.getElementById('prod-stock').value = product.stock;
           document.getElementById('prod-image').value = product.image;
-          previewImg.src = product.image;
+          previewImg.src = '../' + product.image;
         }
       }
 
@@ -212,7 +212,7 @@
         }
 
         setTimeout(() => {
-          window.location.href = 'admin-products.html';
+          window.location.href = 'products.html';
         }, 500);
       };
     });

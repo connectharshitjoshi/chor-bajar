@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shopping Cart | Chorbajar</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
 
   <main class="container">
     <div class="breadcrumbs" data-testid="breadcrumbs">
-      <a href="index.html">Home</a>
+      <a href="../index.html">Home</a>
       <span class="separator">/</span>
       <span>Shopping Cart</span>
     </div>
@@ -104,9 +104,9 @@
   <div id="site-footer-container"></div>
 
   <!-- Scripts -->
-  <script src="js/products-data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/app.js"></script>
+  <script src="../js/products-data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       let appliedCoupon = null;
@@ -140,7 +140,7 @@
         const container = document.getElementById('cart-items-container');
         container.innerHTML = cart.map(item => `
           <div class="cart-item-row" data-testid="cart-item-${item.productId}">
-            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+            <img src="../${item.image}" alt="${item.name}" class="cart-item-img">
             <div class="cart-item-details">
               <div class="product-card-brand">${item.brand}</div>
               <h4><a href="product-details.html?id=${item.productId}">${item.name}</a></h4>

@@ -21,7 +21,20 @@
   const App = {
     icons: ICONS,
 
+    // Dynamically calculate base path relative to current HTML location
+    getBasePath() {
+      const path = (window.location.pathname || '').replace(/\\/g, '/');
+      const subdirs = ['/admin/', '/account/', '/auth/', '/shop/', '/legal/'];
+      for (const dir of subdirs) {
+        if (path.includes(dir)) {
+          return '../';
+        }
+      }
+      return './';
+    },
+
     init() {
+      this.basePath = this.getBasePath();
       this.ensureToastContainer();
       this.renderHeader();
       this.renderFooter();
@@ -142,6 +155,7 @@
       const headerElem = document.getElementById('site-header-container');
       if (!headerElem) return;
 
+      const base = this.getBasePath();
       const currentUser = window.ChorbajarStorage.getCurrentUser();
       const isAdmin = currentUser && currentUser.role === 'admin';
       const categories = window.CHORBAJAR_CATEGORIES || [];
@@ -150,7 +164,6 @@
         <!-- Top Notice Bar for QA Automation & Testing -->
         <div class="qa-banner">
           <div class="qa-banner-left">
-           
             <span class="qa-creds-hint">Customer: <strong>user@test.com / Test@123</strong> | Admin: <strong>admin@test.com / Admin@123</strong></span>
           </div>
           <div class="qa-banner-right">
@@ -162,14 +175,14 @@
         <header class="site-header">
           <div class="container navbar-main">
             <!-- Brand Logo -->
-            <a href="index.html" class="brand-logo" data-testid="navbar-logo">
+            <a href="${base}index.html" class="brand-logo" data-testid="navbar-logo">
               ${ICONS.package}
               <span>Chorbajar<span class="dot">.</span></span>
             </a>
 
             <!-- Search Form -->
             <div class="search-container">
-              <form class="search-form" id="navbar-search-form" action="search.html" method="GET">
+              <form class="search-form" id="navbar-search-form" action="${base}shop/search.html" method="GET">
                 <input 
                   type="text" 
                   name="q" 
@@ -189,14 +202,14 @@
             <!-- Navbar Actions -->
             <div class="navbar-actions">
               <!-- Wishlist -->
-              <a href="wishlist.html" class="nav-icon-link" data-testid="navbar-wishlist-btn" title="Wishlist">
+              <a href="${base}shop/wishlist.html" class="nav-icon-link" data-testid="navbar-wishlist-btn" title="Wishlist">
                 ${ICONS.heart}
                 <span class="badge-count" id="wishlist-badge" data-testid="wishlist-count">0</span>
                 <span>Wishlist</span>
               </a>
 
               <!-- Cart -->
-              <a href="cart.html" class="nav-icon-link" data-testid="navbar-cart-btn" title="Shopping Cart">
+              <a href="${base}shop/cart.html" class="nav-icon-link" data-testid="navbar-cart-btn" title="Shopping Cart">
                 ${ICONS.shoppingBag}
                 <span class="badge-count" id="cart-badge" data-testid="cart-count">0</span>
                 <span>Cart</span>
@@ -206,7 +219,7 @@
               ${currentUser ? `
                 <div class="account-menu">
                   <button class="account-btn" id="navbar-account-toggle" data-testid="navbar-user-btn">
-                    <img src="${currentUser.avatar || 'harshit.png'}" alt="${currentUser.name}">
+                    <img src="${base}${currentUser.avatar || 'harshit.png'}" alt="${currentUser.name}">
                     <span>${currentUser.name.split(' ')[0]}</span>
                     <span style="font-size: 0.7rem;">▼</span>
                   </button>
@@ -216,17 +229,17 @@
                       <div class="user-role">${currentUser.role === 'admin' ? 'Administrator' : 'Verified Customer'}</div>
                     </div>
                     ${isAdmin ? `
-                      <a href="admin-dashboard.html" class="dropdown-item" data-testid="nav-admin-dashboard">Admin Dashboard</a>
-                      <a href="admin-products.html" class="dropdown-item" data-testid="nav-admin-products">Manage Products</a>
-                      <a href="admin-orders.html" class="dropdown-item" data-testid="nav-admin-orders">Manage Orders</a>
-                      <a href="admin-users.html" class="dropdown-item" data-testid="nav-admin-users">Manage Users</a>
-                      <a href="admin-settings.html" class="dropdown-item" data-testid="nav-admin-settings">Admin Settings</a>
+                      <a href="${base}admin/dashboard.html" class="dropdown-item" data-testid="nav-admin-dashboard">Admin Dashboard</a>
+                      <a href="${base}admin/products.html" class="dropdown-item" data-testid="nav-admin-products">Manage Products</a>
+                      <a href="${base}admin/orders.html" class="dropdown-item" data-testid="nav-admin-orders">Manage Orders</a>
+                      <a href="${base}admin/users.html" class="dropdown-item" data-testid="nav-admin-users">Manage Users</a>
+                      <a href="${base}admin/settings.html" class="dropdown-item" data-testid="nav-admin-settings">Admin Settings</a>
                       <div class="dropdown-divider"></div>
                     ` : `
-                      <a href="account-profile.html" class="dropdown-item" data-testid="nav-account-profile">My Profile</a>
-                      <a href="account-orders.html" class="dropdown-item" data-testid="nav-account-orders">My Orders</a>
-                      <a href="account-addresses.html" class="dropdown-item" data-testid="nav-account-addresses">Saved Addresses</a>
-                      <a href="account-settings.html" class="dropdown-item" data-testid="nav-account-settings">Account Settings</a>
+                      <a href="${base}account/profile.html" class="dropdown-item" data-testid="nav-account-profile">My Profile</a>
+                      <a href="${base}account/orders.html" class="dropdown-item" data-testid="nav-account-orders">My Orders</a>
+                      <a href="${base}account/addresses.html" class="dropdown-item" data-testid="nav-account-addresses">Saved Addresses</a>
+                      <a href="${base}account/settings.html" class="dropdown-item" data-testid="nav-account-settings">Account Settings</a>
                       <div class="dropdown-divider"></div>
                     `}
                     <button class="dropdown-item" id="nav-logout-btn" data-testid="navbar-logout-btn" style="color: var(--danger); width: 100%; text-align: left;">
@@ -235,7 +248,7 @@
                   </div>
                 </div>
               ` : `
-                <a href="login.html" class="btn btn-outline-primary btn-sm" data-testid="navbar-login-btn">
+                <a href="${base}auth/login.html" class="btn btn-outline-primary btn-sm" data-testid="navbar-login-btn">
                   ${ICONS.user}
                   <span>Sign In</span>
                 </a>
@@ -246,9 +259,9 @@
           <!-- Category Navigation Strip -->
           <div class="category-nav-bar">
             <div class="container cat-strip-inner">
-              <a href="products.html" class="cat-link all-deals" data-testid="cat-link-all">🔥 All Products</a>
+              <a href="${base}shop/products.html" class="cat-link all-deals" data-testid="cat-link-all">🔥 All Products</a>
               ${categories.map(cat => `
-                <a href="category.html?name=${encodeURIComponent(cat.slug)}" class="cat-link" data-testid="cat-link-${cat.slug}">
+                <a href="${base}shop/category.html?name=${encodeURIComponent(cat.slug)}" class="cat-link" data-testid="cat-link-${cat.slug}">
                   ${cat.name}
                 </a>
               `).join('')}
@@ -290,7 +303,7 @@
           window.ChorbajarStorage.logout();
           this.showToast('Logged out successfully.', 'info');
           setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = `${base}index.html`;
           }, 400);
         };
       }
@@ -301,42 +314,43 @@
       const footerElem = document.getElementById('site-footer-container');
       if (!footerElem) return;
 
+      const base = this.getBasePath();
+
       footerElem.innerHTML = `
         <footer class="site-footer">
           <div class="container">
             <div class="footer-grid">
               <div class="footer-col">
-                <a href="index.html" class="brand-logo" style="color: #ffffff; margin-bottom: 1rem; display: inline-flex;">
+                <a href="${base}index.html" class="brand-logo" style="color: #ffffff; margin-bottom: 1rem; display: inline-flex;">
                   ${ICONS.package}
                   <span>Chorbajar<span class="dot" style="color: var(--accent);">.</span></span>
                 </a>
                 <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
                   Chorbajar is an authentic, modern e-commerce testing playground crafted specifically for Manual QA, Playwright automated testing, and Cross-Browser automation suites.
                 </p>
-              
               </div>
 
               <div class="footer-col">
                 <h5>Categories</h5>
                 <ul class="footer-links">
-                  <li><a href="category.html?name=electronics">Electronics</a></li>
-                  <li><a href="category.html?name=mobile-phones">Mobile Phones</a></li>
-                  <li><a href="category.html?name=laptops-computers">Laptops & Computers</a></li>
-                  <li><a href="category.html?name=clothing">Fashion & Clothing</a></li>
-                  <li><a href="category.html?name=shoes">Shoes & Footwear</a></li>
-                  <li><a href="category.html?name=watches">Watches</a></li>
+                  <li><a href="${base}shop/category.html?name=electronics">Electronics</a></li>
+                  <li><a href="${base}shop/category.html?name=mobile-phones">Mobile Phones</a></li>
+                  <li><a href="${base}shop/category.html?name=laptops-computers">Laptops & Computers</a></li>
+                  <li><a href="${base}shop/category.html?name=clothing">Fashion & Clothing</a></li>
+                  <li><a href="${base}shop/category.html?name=shoes">Shoes & Footwear</a></li>
+                  <li><a href="${base}shop/category.html?name=watches">Watches</a></li>
                 </ul>
               </div>
 
               <div class="footer-col">
                 <h5>Quick Links</h5>
                 <ul class="footer-links">
-                  <li><a href="products.html">All Products</a></li>
-                  <li><a href="wishlist.html">My Wishlist</a></li>
-                  <li><a href="cart.html">Shopping Cart</a></li>
-                  <li><a href="login.html">Sign In / Register</a></li>
-                  <li><a href="account-orders.html">Track Order</a></li>
-                  <li><a href="admin-dashboard.html">Admin Portal</a></li>
+                  <li><a href="${base}shop/products.html">All Products</a></li>
+                  <li><a href="${base}shop/wishlist.html">My Wishlist</a></li>
+                  <li><a href="${base}shop/cart.html">Shopping Cart</a></li>
+                  <li><a href="${base}auth/login.html">Sign In / Register</a></li>
+                  <li><a href="${base}account/orders.html">Track Order</a></li>
+                  <li><a href="${base}admin/dashboard.html">Admin Portal</a></li>
                 </ul>
               </div>
 
@@ -357,8 +371,8 @@
             <div class="footer-bottom">
               <div>&copy; 2026 Chorbajar Marketplace. Designed for Quality Assurance & Test Automation.</div>
               <div style="display: flex; gap: 1rem;">
-                <a href="privacy.html" style="color: #94a3b8;">Privacy Policy</a>
-                <a href="terms.html" style="color: #94a3b8;">Terms of Service</a>
+                <a href="${base}legal/privacy.html" style="color: #94a3b8;">Privacy Policy</a>
+                <a href="${base}legal/terms.html" style="color: #94a3b8;">Terms of Service</a>
                 <a href="javascript:void(0)" onclick="window.ChorbajarStorage.resetToDefaults(); location.reload();" style="color: #38bdf8;">Reset App State</a>
               </div>
             </div>
@@ -400,6 +414,7 @@
 
     // Render Product Card
     renderProductCard(product) {
+      const base = this.getBasePath();
       const isWishlisted = window.ChorbajarStorage.isInWishlist(product.id);
       return `
         <div class="product-card" data-testid="product-card" data-product-id="${product.id}">
@@ -414,15 +429,15 @@
             >
               ${isWishlisted ? ICONS.heartFilled : ICONS.heart}
             </button>
-            <a href="product-details.html?id=${product.id}">
-              <img src="${product.image}" alt="${product.name}" loading="lazy" />
+            <a href="${base}shop/product-details.html?id=${product.id}">
+              <img src="${base}${product.image}" alt="${product.name}" loading="lazy" />
             </a>
           </div>
 
           <div class="product-card-body">
             <div class="product-card-brand">${product.brand}</div>
             <h3 class="product-card-title">
-              <a href="product-details.html?id=${product.id}" title="${product.name}">${product.name}</a>
+              <a href="${base}shop/product-details.html?id=${product.id}" title="${product.name}">${product.name}</a>
             </h3>
 
             <div class="product-card-rating">
@@ -478,15 +493,16 @@
 
     // Route guards
     requireAuth(allowedRole = null) {
+      const base = this.getBasePath();
       const user = window.ChorbajarStorage.getCurrentUser();
       if (!user) {
         this.showToast('Please sign in to access this page.', 'warning');
-        window.location.href = `login.html?returnUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`;
+        window.location.href = `${base}auth/login.html?returnUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`;
         return false;
       }
       if (allowedRole && user.role !== allowedRole) {
         this.showToast('Unauthorized access. Admin role required.', 'danger');
-        window.location.href = 'index.html';
+        window.location.href = `${base}index.html`;
         return false;
       }
       return true;

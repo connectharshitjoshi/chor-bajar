@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Category | Chorbajar</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
 </head>
 <body>
 
@@ -14,7 +14,7 @@
   <main class="container">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs" data-testid="breadcrumbs">
-      <a href="index.html">Home</a>
+      <a href="../index.html">Home</a>
       <span class="separator">/</span>
       <a href="products.html">Categories</a>
       <span class="separator">/</span>
@@ -101,9 +101,9 @@
   <div id="site-footer-container"></div>
 
   <!-- Scripts -->
-  <script src="js/products-data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/app.js"></script>
+  <script src="../js/products-data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const catParam = window.ChorbajarApp.getUrlParam('name') || 'electronics';
@@ -115,7 +115,7 @@
       document.getElementById('category-breadcrumb-title').textContent = currentCategory.name;
       document.getElementById('category-title').textContent = currentCategory.name;
       document.getElementById('category-description').textContent = currentCategory.description;
-      document.getElementById('category-banner-img').src = currentCategory.image;
+      document.getElementById('category-banner-img').src = '../' + currentCategory.image;
 
       // Filter products
       const allProducts = window.ChorbajarStorage.getProducts();

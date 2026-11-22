@@ -52,41 +52,92 @@ The application is powered by the **`ecommerce-products/`** local dataset contai
 
 ---
 
-## 3. Application Pages & Route Map
+## 3. Application Pages & Structured Folder Map
 
-### A. Customer-Facing Pages
+```text
+chorbajar/
+├── index.html                      # Storefront Homepage
+├── harshit.png                     # Default User & Admin Avatar
+├── package.json                    # Project metadata & start scripts
+├── README.md                       # Documentation
+├── css/
+│   └── styles.css                  # Master stylesheet
+├── js/
+│   ├── app.js                      # Core UI, dynamic path resolution & helpers
+│   ├── storage.js                  # Centralized localStorage manager
+│   └── products-data.js            # Initial dataset (180 products, coupons, users)
+├── ecommerce-products/             # 180 authentic 800×800 JPG images (12 categories)
+├── admin/                          # Admin Management Portal
+│   ├── dashboard.html              # Analytics & summary KPI metrics
+│   ├── products.html               # Product catalog management
+│   ├── product-add.html            # Add / Edit product form
+│   ├── orders.html                 # Order fulfillment & status updates
+│   ├── users.html                  # User directory & account status
+│   └── settings.html               # Store rules & factory reset
+├── account/                        # Customer Account Pages (Harshit Joshi)
+│   ├── profile.html                # Personal information & avatar upload
+│   ├── orders.html                 # Order history & status filters
+│   ├── order-details.html          # Order tracking timeline & print invoice
+│   ├── addresses.html              # Address book with Indian PIN code validation
+│   └── settings.html               # Password changes & notifications
+├── auth/                           # Authentication & Verification
+│   ├── login.html                  # Sign in with quick demo fill buttons
+│   ├── register.html               # New account registration
+│   ├── forgot-password.html        # Password reset initiation
+│   ├── verify-otp.html             # 6-digit OTP with 60s countdown timer
+│   ├── verify-email.html           # Email verification status simulation
+│   └── reset-password.html         # New password with live strength meter
+├── shop/                           # Storefront & Checkout Flow
+│   ├── products.html               # Catalog with multi-facet filters & pagination
+│   ├── product-details.html        # Product gallery, variants, and reviews
+│   ├── category.html               # Category specific listing & filters
+│   ├── search.html                 # Search results & keyword matching
+│   ├── wishlist.html               # Saved wishlist items
+│   ├── cart.html                   # Cart & promo coupon engine
+│   ├── checkout.html               # 3-step shipping & payment checkout
+│   └── order-success.html          # Order confirmation & receipt
+└── legal/                          # Information & Policy Pages
+    ├── privacy.html                # QA testing data isolation & privacy notice
+    └── terms.html                  # Terms of service
+```
+
+### A. Customer-Facing Storefront (`shop/`)
 1. **Home Page (`index.html`)**: Hero deals carousel, category cards, featured picks, promotional guarantee strip, trending items, and newsletter subscription form.
-2. **Product Catalog (`products.html`)**: Multi-facet filter sidebar (categories, brands, price range, ratings, in-stock toggle), sorting, and pagination.
-3. **Product Details (`product-details.html?id=...`)**: Image gallery with interactive thumbnails, stock indicators, size/color variant selection, quantity increment/decrement, specs table, and customer review submission.
-4. **Search Results (`search.html?q=...`)**: Full-text search across titles, brands, and categories with no-results fallback and popular search suggestions.
-5. **Category Showcase (`category.html?name=...`)**: Category banners, category-specific brand filters, and filtered catalog items.
-6. **Wishlist (`wishlist.html`)**: Saved favorites, item removal, and instant "Move to Cart" workflow.
-7. **Shopping Cart (`cart.html`)**: Real-time quantity steppers bounded by stock limits, coupon discount engine, dynamic free shipping calculation, and line item removal.
-8. **Checkout (`checkout.html`)**: 3-step checkout flow (Contact details, shipping address with Indian PIN code validation, payment method selector, and duplicate submission prevention).
-9. **Order Success (`order-success.html?orderId=...`)**: Order confirmation, unique demo Order ID, shipping destination, cost breakdown, and printable invoice layout.
+2. **Product Catalog (`shop/products.html`)**: Multi-facet filter sidebar (categories, brands, price range, ratings, in-stock toggle), sorting, and pagination.
+3. **Product Details (`shop/product-details.html?id=...`)**: Image gallery with interactive thumbnails, stock indicators, size/color variant selection, quantity increment/decrement, specs table, and customer review submission.
+4. **Search Results (`shop/search.html?q=...`)**: Full-text search across titles, brands, and categories with no-results fallback and popular search suggestions.
+5. **Category Showcase (`shop/category.html?name=...`)**: Category banners, category-specific brand filters, and filtered catalog items.
+6. **Wishlist (`shop/wishlist.html`)**: Saved favorites, item removal, and instant "Move to Cart" workflow.
+7. **Shopping Cart (`shop/cart.html`)**: Real-time quantity steppers bounded by stock limits, coupon discount engine, dynamic free shipping calculation, and line item removal.
+8. **Checkout (`shop/checkout.html`)**: 3-step checkout flow (Contact details, shipping address with Indian PIN code validation, payment method selector, and duplicate submission prevention).
+9. **Order Success (`shop/order-success.html?orderId=...`)**: Order confirmation, unique demo Order ID, shipping destination, cost breakdown, and printable invoice layout.
 
-### B. Authentication & Verification Flows
-10. **Login (`login.html`)**: Email & password authentication with show/hide password toggle, remember me, quick-fill demo login buttons, and form validation.
-11. **Registration (`register.html`)**: Full name, email, 10-digit Indian mobile validation, password confirmation, duplicate email detection, and terms acceptance.
-12. **Forgot Password (`forgot-password.html`)**: Email validation and simulated password reset link generation.
-13. **OTP Verification (`verify-otp.html`)**: 6-digit OTP code verification, 60-second live countdown timer, and simulated resend functionality.
-14. **Email Verification (`verify-email.html`)**: Email verification status badge with simulated verification link.
-15. **Reset Password (`reset-password.html`)**: New password creation with real-time strength meter (Weak / Medium / Strong) and password confirmation matching.
+### B. Authentication & Verification Flows (`auth/`)
+10. **Login (`auth/login.html`)**: Email & password authentication with show/hide password toggle, remember me, quick-fill demo login buttons, and form validation.
+11. **Registration (`auth/register.html`)**: Full name, email, 10-digit Indian mobile validation, password confirmation, duplicate email detection, and terms acceptance.
+12. **Forgot Password (`auth/forgot-password.html`)**: Email validation and simulated password reset link generation.
+13. **OTP Verification (`auth/verify-otp.html`)**: 6-digit OTP code verification, 60-second live countdown timer, and simulated resend functionality.
+14. **Email Verification (`auth/verify-email.html`)**: Email verification status badge with simulated verification link.
+15. **Reset Password (`auth/reset-password.html`)**: New password creation with real-time strength meter (Weak / Medium / Strong) and password confirmation matching.
 
-### C. Customer Account Portal
-16. **My Profile (`account-profile.html`)**: View & update personal information, phone number, and simulated avatar photo reader.
-17. **Order History (`account-orders.html`)**: List of customer orders with status filter pills and live ID search.
-18. **Order Details & Tracking (`account-order-details.html?id=...`)**: Visual order tracking timeline (*Order Placed &rarr; Confirmed &rarr; Shipped &rarr; Out for Delivery &rarr; Delivered*), itemized receipt, order cancellation, and invoice printout.
-19. **Address Book (`account-addresses.html`)**: Add, edit, delete, and set default shipping addresses with Indian postal PIN code validation.
-20. **Account Settings (`account-settings.html`)**: Change password form, notification toggles (SMS, Promotional, WhatsApp), and simulated account deactivation.
+### C. Customer Account Portal (`account/`)
+16. **My Profile (`account/profile.html`)**: View & update personal information, phone number, and simulated avatar photo reader.
+17. **Order History (`account/orders.html`)**: List of customer orders with status filter pills and live ID search.
+18. **Order Details & Tracking (`account/order-details.html?id=...`)**: Visual order tracking timeline (*Order Placed &rarr; Confirmed &rarr; Shipped &rarr; Out for Delivery &rarr; Delivered*), itemized receipt, order cancellation, and invoice printout.
+19. **Address Book (`account/addresses.html`)**: Add, edit, delete, and set default shipping addresses with Indian postal PIN code validation.
+20. **Account Settings (`account/settings.html`)**: Change password form, notification toggles (SMS, Promotional, WhatsApp), and simulated account deactivation.
 
-### D. Admin Management Portal
-21. **Admin Analytics Dashboard (`admin-dashboard.html`)**: KPI stat counters (Active Products, Orders, Simulated Revenue, Registered Users), category inventory breakdown, and recent orders feed.
-22. **Product Catalog Manager (`admin-products.html`)**: Comprehensive product table with search, category filter, in-stock badges, pagination, edit links, and deletion dialogs.
-23. **Add / Edit Product (`admin-product-add.html`)**: Full product CRUD form with live image preview and validation.
-24. **Order Fulfillment (`admin-orders.html`)**: Order status management with instant dropdown status updates (*Placed &rarr; Confirmed &rarr; Shipped &rarr; Delivered &rarr; Cancelled*).
-25. **Customer Directory (`admin-users.html`)**: Registered user accounts table with search and simulated account block/activate actions.
-26. **Store Settings (`admin-settings.html`)**: Configure store name, contact info, shipping fees, free delivery threshold, and full factory demo reset.
+### D. Admin Management Portal (`admin/`)
+21. **Admin Analytics Dashboard (`admin/dashboard.html`)**: KPI stat counters (Active Products, Orders, Simulated Revenue, Registered Users), category inventory breakdown, and recent orders feed.
+22. **Product Catalog Manager (`admin/products.html`)**: Comprehensive product table with search, category filter, in-stock badges, pagination, edit links, and deletion dialogs.
+23. **Add / Edit Product (`admin/product-add.html`)**: Full product CRUD form with live image preview and validation.
+24. **Order Fulfillment (`admin/orders.html`)**: Order status management with instant dropdown status updates (*Placed &rarr; Confirmed &rarr; Shipped &rarr; Delivered &rarr; Cancelled*).
+25. **Customer Directory (`admin/users.html`)**: Registered user accounts table with search and simulated account block/activate actions.
+26. **Store Settings (`admin/settings.html`)**: Configure store name, contact info, shipping fees, free delivery threshold, and full factory demo reset.
+
+### E. Legal & Policies (`legal/`)
+27. **Privacy Policy (`legal/privacy.html`)**: Local storage isolation and QA test environment notice.
+28. **Terms of Service (`legal/terms.html`)**: Platform usage disclaimer.
 
 ---
 

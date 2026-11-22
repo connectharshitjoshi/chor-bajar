@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Details | Chorbajar</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../ecommerce-products/electronics/wireless-bluetooth-headphones.jpg">
   <style>
     .details-layout {
       display: grid;
@@ -128,7 +128,7 @@
   <main class="container">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs" data-testid="breadcrumbs">
-      <a href="index.html">Home</a>
+      <a href="../index.html">Home</a>
       <span class="separator">/</span>
       <a href="products.html">Products</a>
       <span class="separator">/</span>
@@ -282,9 +282,9 @@
   <div id="site-footer-container"></div>
 
   <!-- Scripts -->
-  <script src="js/products-data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/app.js"></script>
+  <script src="../js/products-data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/app.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const productId = window.ChorbajarApp.getUrlParam('id');
@@ -333,13 +333,13 @@
 
       // Gallery Images
       const mainImg = document.getElementById('main-product-img');
-      mainImg.src = product.image;
+      mainImg.src = '../' + product.image;
 
       const thumbsContainer = document.getElementById('gallery-thumbs-container');
       const imagesList = product.images && product.images.length > 0 ? product.images : [product.image];
       thumbsContainer.innerHTML = imagesList.map((imgUrl, idx) => `
         <button class="thumb-btn ${idx === 0 ? 'active' : ''}" data-img="${imgUrl}" data-testid="thumb-${idx}">
-          <img src="${imgUrl}" alt="${product.name} thumbnail ${idx}">
+          <img src="../${imgUrl}" alt="${product.name} thumbnail ${idx}">
         </button>
       `).join('');
 
@@ -347,7 +347,7 @@
         btn.onclick = () => {
           thumbsContainer.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          mainImg.src = btn.getAttribute('data-img');
+          mainImg.src = '../' + btn.getAttribute('data-img');
         };
       });
 

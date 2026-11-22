@@ -1,0 +1,120 @@
+name: Chorbajar CI/CD & Automated QA Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-and-notify:
+    name: Run Automated Tests & Send Notification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Project Dependencies
+        run: npm ci || npm install
+
+      - name: Install Playwright Chromium Browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Core Playwright Test Suite
+        id: run_tests
+        run: npx playwright test
+
+      - name: Upload Test Report Artifacts (On Failure)
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+      - name: Send Email Notification (Pass / Fail)
+        uses: dawidd6/action-send-mail@v3
+        if: always()
+        continue-on-error: true
+        with:
+          server_address: ${{ secrets.MAIL_SERVER || 'smtp.gmail.com' }}
+          server_port: ${{ secrets.MAIL_PORT || 465 }}
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "${{ steps.run_tests.outcome == 'success' && '✅ PASS: Chorbajar CI/CD Pipeline - All Tests Succeeded' || '❌ FAIL: Chorbajar CI/CD Pipeline - Test Run Failed' }}"
+          to: ${{ secrets.MAIL_TO || 'harshit.joshi.in@gmail.com' }}
+          from: ${{ secrets.MAIL_FROM || 'Chorbajar CI/CD <notifications@chorbajar.in>' }}
+          html_body: |
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="utf-8">
+              <style>
+                body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; margin: 0; padding: 24px; color: #1e293b; }
+                .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+                .header-pass { background: #059669; color: #ffffff; padding: 24px; text-align: center; }
+                .header-fail { background: #dc2626; color: #ffffff; padding: 24px; text-align: center; }
+                .content { padding: 24px; }
+                .meta-table { width: 100%; border-collapse: collapse; margin-top: 16px; margin-bottom: 24px; }
+                .meta-table td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
+                .meta-table td:first-child { font-weight: 600; color: #64748b; width: 35%; }
+                .btn { display: inline-block; background: #0f172a; color: #ffffff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+                .footer { background: #f8fafc; padding: 16px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+              </style>
+            </head>
+            <body>
+              <div class="container">
+                <div class="${{ steps.run_tests.outcome == 'success' && 'header-pass' || 'header-fail' }}">
+                  <h1 style="margin: 0; font-size: 22px;">${{ steps.run_tests.outcome == 'success' && '✅ Test Run Passed' || '❌ Test Run Failed' }}</h1>
+                  <p style="margin: 6px 0 0; opacity: 0.9; font-size: 14px;">Chorbajar E-Commerce Automated Pipeline</p>
+                </div>
+                <div class="content">
+                  <p style="font-size: 15px; line-height: 1.5; margin-top: 0;">
+                    ${{ steps.run_tests.outcome == 'success' && 'All 7 Playwright automated test cases executed successfully without any regressions!' || 'One or more automated test cases failed during this pipeline run. Please review the details below.' }}
+                  </p>
+                  <table class="meta-table">
+                    <tr>
+                      <td>Repository</td>
+                      <td><strong>${{ github.repository }}</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Branch</td>
+                      <td><code>${{ github.ref_name }}</code></td>
+                    </tr>
+                    <tr>
+                      <td>Commit</td>
+                      <td><code>${{ github.sha }}</code></td>
+                    </tr>
+                    <tr>
+                      <td>Commit Message</td>
+                      <td>${{ github.event.head_commit.message || 'Workflow dispatch / PR' }}</td>
+                    </tr>
+                    <tr>
+                      <td>Author</td>
+                      <td>${{ github.event.head_commit.author.name || github.actor }}</td>
+                    </tr>
+                    <tr>
+                      <td>Live Deployment</td>
+                      <td><a href="https://connectharshitjoshi.github.io/chor-bajar/" target="_blank">https://connectharshitjoshi.github.io/chor-bajar/</a></td>
+                    </tr>
+                  </table>
+                  <div style="text-align: center; margin-top: 20px;">
+                    <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" class="btn">View Workflow Run on GitHub</a>
+                  </div>
+                </div>
+                <div class="footer">
+                  Automated notification generated by Chorbajar CI/CD
+                </div>
+              </div>
+            </body>
+            </html>

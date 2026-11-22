@@ -5,7 +5,9 @@
   "main": "index.html",
   "scripts": {
     "start": "npx serve . -l 3000",
-    "serve": "npx serve . -l 3000"
+    "serve": "npx serve . -l 3000",
+    "test": "playwright test",
+    "test:live": "npx playwright test --config=playwright.config.js"
   },
   "keywords": [
     "ecommerce",
@@ -16,5 +18,9 @@
     "vanilla-js"
   ],
   "author": "Chorbajar Team",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "serve": "^14.2.8"
+  }
 }

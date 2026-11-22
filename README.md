@@ -233,7 +233,40 @@ location.reload();
 
 ---
 
-## 7. Explicit Technical Limitations (Frontend Demonstration Only)
+## 7. CI/CD Pipeline & Automated Testing
+
+Chorbajar includes a complete **GitHub Actions CI/CD pipeline** (`.github/workflows/ci.yml`) that automatically runs on every `push` and `pull_request` to `main`.
+
+### Automated Test Cases (Playwright)
+Located in `tests/chorbajar.spec.js`:
+- **TC1**: Homepage loads successfully with branding and search bar
+- **TC2**: Featured products render with valid image sources and INR pricing
+- **TC3**: Category showcase navigation displays filtered category products
+- **TC4**: Search function finds products matching query (`/shop/search.html`)
+- **TC5**: Product details page renders title, price, gallery, and stock status
+- **TC6**: Adding an item to cart increments cart counter and displays in `/shop/cart.html`
+- **TC7**: Wishlist toggling adds item to wishlist and reflects in `/shop/wishlist.html`
+
+### Running Tests Locally
+```bash
+# Run tests against local static server
+npm test
+
+# Run tests directly against live GitHub Pages deployment
+npm run test:live
+```
+
+### Email Notification Setup (Pass / Fail)
+The CI/CD workflow sends an email on both **PASS** and **FAIL** states. To enable email delivery via Gmail or your SMTP provider, add the following secrets in **GitHub Repo > Settings > Secrets and variables > Actions**:
+- `MAIL_USERNAME`: Your email address (e.g., `your-email@gmail.com`)
+- `MAIL_PASSWORD`: Your Google App Password (generated via Google Account > Security > App Passwords)
+- `MAIL_TO`: *(Optional, defaults to `harshit.joshi.in@gmail.com`)*
+- `MAIL_SERVER`: *(Optional, defaults to `smtp.gmail.com`)*
+- `MAIL_PORT`: *(Optional, defaults to `465`)*
+
+---
+
+## 8. Explicit Technical Limitations (Frontend Demonstration Only)
 
 This application is purposefully designed **without a backend server, database, or payment gateway integration**:
 - **Simulated Authentication**: Passwords and session states are evaluated locally within browser storage. This setup is intended for functional QA testing and must never be represented as production security.

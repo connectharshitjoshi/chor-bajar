@@ -53,7 +53,7 @@ test.describe('Chorbajar E-Commerce Core Test Suite', () => {
     await page.goto('index.html');
 
     const searchInput = page.locator('[data-testid="navbar-search-input"]');
-    await searchInput.fill('Headphones1');
+    await searchInput.fill('Headphones');
     await page.locator('[data-testid="navbar-search-btn"]').click();
 
     // Verify search page loads
